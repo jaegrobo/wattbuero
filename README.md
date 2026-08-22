@@ -60,6 +60,20 @@ Zwei Wege, je nachdem wie viel Automatisierung du willst:
 **Weg B – Netlify direkt aus dieser Cowork-Sitzung heraus:**
 Es gibt einen Netlify-Connector, den ich gerade vorgeschlagen habe (Connect-Button oben in der Konversation). Verbindest du ihn, kann ich Deployments direkt aus dem Chat auslösen, ohne den Umweg über Zip-Export und lokalen Push – dann wäre Cowork nicht mehr nur "hier testen", sondern auch "hier publizieren". Das ist deine Entscheidung, nicht meine: es bedeutet, dass ich Schreibzugriff auf dein Netlify-Konto bekomme. Für GitHub selbst gibt es aktuell keinen entsprechenden Connector in der Registry – Versionierung/Push bleibt also so oder so Aufgabe der lokalen Claude-Code-Umgebung.
 
+## Netlify-Projekt (bereits angelegt)
+
+Über den verbundenen Netlify-Connector habe ich ein leeres Projekt angelegt:
+- Name: `wattbuero`, Site-ID: `6d79bfd1-cf80-4c30-9830-da3eaf40f635`
+- Verwaltung: https://app.netlify.com/projects/wattbuero
+- Vorläufige URL (noch ohne Inhalt): http://wattbuero.netlify.app
+
+**Wichtig, bevor es öffentlich live geht:** Bei der Anlage stand `requiresSSOTeamLogin: true` für alle Projekte des Teams – das kann bedeuten, dass Zugriff auf Team-Login beschränkt ist. Vor dem Livegang in den Projekteinstellungen prüfen und ggf. deaktivieren, sonst ist die Seite für Besucher nicht erreichbar.
+
+Der Connector kann Projekte anlegen/verwalten (Name, Env-Variablen, Formulare, Zugriffskontrolle) und Deploy-Status abfragen bzw. Redeploys eines bereits verknüpften Projekts auslösen – er kann aber keine Dateien/Ordner direkt hochladen. Für den eigentlichen Inhalt bleiben zwei Wege:
+
+1. **Sofort live testen (ohne GitHub):** Auf https://app.netlify.com/projects/wattbuero/deploys den entpackten `wattbuero-site`-Ordner per Drag & Drop hochladen – manueller Deploy, in Sekunden live.
+2. **Dauerhafte Pipeline (empfohlen):** GitHub-Repo anlegen und pushen (siehe Schritt 2 oben), danach in den Projekteinstellungen unter "Build & deploy" das Repo verknüpfen ("Link repository") – da dein Netlify-Konto schon mit GitHub verbunden ist, nur wenige Klicks. Danach deployt Netlify bei jedem Push automatisch, und ich kann von hier aus über den Connector Redeploys auslösen und den Status prüfen.
+
 ## Domain-Anbindung (wattbuero.de + Redirects)
 
 1. In Netlify unter "Domain settings" → "Add custom domain" → `wattbuero.de`.
