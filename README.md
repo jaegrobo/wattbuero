@@ -2,61 +2,76 @@
 
 ## Was das hier ist
 
-Eine handgeschriebene statische Website (reines HTML/CSS, kein Generator, kein Server, keine Abhängigkeiten). Ich konnte in meiner Sandbox keinen Hugo/Node-Build testen (kein Internetzugriff für Paketinstallation) – deshalb bewusst der einfachste, risikoärmste Weg: fertige Dateien, kein Build-Schritt, kein Wartungsaufwand.
+Eine handgeschriebene statische Website (reines HTML/CSS, kein Generator, kein Server, keine Abhängigkeiten). Bewusst der einfachste, risikoärmste Weg: fertige Dateien, kein Build-Schritt.
 
-Struktur:
 ```
-index.html              Startseite
-ausruestung.html         Kategorie: Ausrüstung
-training.html            Kategorie: Training
-strecken.html            Kategorie: Strecken
-ueber.html                Über-Seite (Platzhaltertext ersetzen!)
-style.css                 Gemeinsames Stylesheet
-posts/                    Einzelne Beiträge
-templates/_post-vorlage.html   Vorlage zum Duplizieren für neue Beiträge
-netlify.toml               Redirect-Konfiguration für die 3 Zweit-Domains
+index.html                Startseite
+ausruestung.html           Kategorie: Ausrüstung
+training.html              Kategorie: Training
+strecken.html              Kategorie: Strecken
+ueber.html                  Über-Seite (Platzhaltertext ersetzen!)
+style.css                   Gemeinsames Stylesheet
+posts/                      Einzelne Beiträge
+templates/_post-vorlage.html    Vorlage zum Duplizieren für neue Beiträge
+scripts/serve.sh             Lokaler Vorschau-Server
+scripts/check.py             Prüft Tag-Struktur + interne Links
+netlify.toml                 Redirect-Konfiguration für die 3 Zweit-Domains
 ```
 
-## Schritt 1: GitHub-Repository anlegen
+Ein lokales Git-Repository mit erstem Commit ist bereits enthalten (`git log` zeigt den Stand). Wenn du das Zip entpackst, hast du sofort eine Versionshistorie zum Weiterarbeiten – kein `git init` mehr nötig.
 
-1. Auf github.com ein neues, privates oder öffentliches Repository anlegen, z. B. `wattbuero`.
-2. Alle Dateien aus diesem Ordner in das Repository hochladen (per Drag & Drop im Browser über "Add file → Upload files", kein Git-Client nötig).
+## Zwei Arbeitsumgebungen, eine Quelle der Wahrheit
 
-## Schritt 2: Mit Netlify verbinden
+Du hast zwei Orte, an denen du an der Seite arbeiten kannst: hier in Cowork, oder lokal über Claude Code am Terminal. Wichtig, um Chaos zu vermeiden: **behandle nicht beide als unabhängige Kopien.** Wenn du abwechselnd hier und lokal Änderungen machst, ohne dazwischen zu synchronisieren, laufen die Stände auseinander und du bekommst Merge-Konflikte. Die Lösung: sobald du ein GitHub-Repo angelegt hast (siehe unten), ist **das GitHub-Repo die alleinige Quelle der Wahrheit** – beide Umgebungen pullen von dort und pushen dorthin, keine arbeitet isoliert über mehrere Sitzungen hinweg.
 
-1. Auf netlify.com kostenlos registrieren, "Add new site → Import an existing project" wählen, GitHub-Repo verbinden.
-2. Build-Einstellungen: **kein Build-Kommando**, Publish-Verzeichnis `/` (Root) – ist bereits in `netlify.toml` hinterlegt.
-3. Deploy auslösen – die Seite ist danach unter einer `*.netlify.app`-Adresse erreichbar (zum Testen).
+**Technische Einschränkung dieser Cowork-Sandbox:** Sie hat keinen Zugriff auf github.com oder api.netlify.com direkt (von der Umgebung blockiert, geprüft). Ich kann hier also nicht selbst `git push` machen oder direkt mit der Netlify-API sprechen – außer über einen verbundenen Connector (siehe Schritt 3). Von deinem lokalen Rechner über Claude Code aus hast du dagegen normalen Internetzugriff, dort funktioniert alles direkt.
 
-## Schritt 3: Domain wattbuero.de anbinden
+## Schritt 1: Lokal testen
 
-1. In Netlify unter "Domain settings" → "Add custom domain" → `wattbuero.de` eintragen.
-2. Bei deinem Domain-Registrar (wo du wattbuero.de registriert hast) die DNS-Einträge setzen, die Netlify dir nach Schritt 1 konkret anzeigt. Stand meines Wissens typischerweise:
-   - Für die nackte Domain (`wattbuero.de`): A-Record auf die von Netlify angezeigte IP, oder – falls dein Registrar das unterstützt – ALIAS/ANAME-Record auf die von Netlify angegebene Zieladresse.
-   - Für `www.wattbuero.de`: CNAME auf die von Netlify angezeigte `*.netlify.app`-Adresse.
-   - **[Wahrscheinlich, bitte gegenchecken]:** Diese Records können sich ändern – nimm die Werte, die dir Netlify beim Einrichten live anzeigt, nicht diese Anleitung als exakte Quelle.
-3. Netlify aktiviert automatisch ein kostenloses HTTPS-Zertifikat, sobald die DNS-Einträge propagiert sind (kann bis zu 24 Std. dauern).
+Funktioniert identisch hier in Cowork (ich kann es für dich ausführen und prüfen) und auf deinem Rechner über Claude Code:
 
-## Schritt 4: wattbuero.com / .global / .store als Redirects einrichten
+```bash
+bash scripts/serve.sh        # startet Server auf http://localhost:8000
+python3 scripts/check.py     # prüft HTML-Struktur und interne Links, ohne Server nötig
+```
 
-Diese drei Domains dienen nur dem Markenschutz und leiten auf wattbuero.de um (bereits in `netlify.toml` konfiguriert):
+Kein npm, kein Hugo, keine Installation – nur Python 3, das auf macOS/Linux vorinstalliert ist. Ich habe beide Skripte gerade in der Sandbox getestet: Server startet, alle Seiten liefern HTTP 200, `check.py` meldet keine Fehler.
 
-1. In Netlify unter "Domain settings" alle drei zusätzlich als "Domain alias" zur selben Site hinzufügen.
-2. Bei jedem der drei Registrare dieselben DNS-Einträge setzen wie in Schritt 3 (auf dieselbe Netlify-Site zeigend).
-3. Die Redirects in `netlify.toml` sorgen dafür, dass Besucher automatisch auf wattbuero.de landen (301 = dauerhafte Weiterleitung, gut für SEO, kein Duplicate-Content-Problem).
+## Schritt 2: GitHub-Repository als gemeinsame Quelle anlegen
 
-## Schritt 5: Neuen Beitrag anlegen (ohne lokale Tools)
+1. Auf github.com ein neues Repository anlegen, z. B. `wattbuero`.
+2. Lokal (über Claude Code auf deinem Rechner, da von dort aus Netzwerkzugriff besteht):
+   ```bash
+   cd wattbuero-site
+   git remote add origin <deine-repo-url>
+   git push -u origin master
+   ```
+3. Ab jetzt: in Cowork erarbeitete Änderungen bekommst du als Zip von mir, entpackst sie lokal in denselben Ordner, committest und pushst. Umgekehrt: lokale Änderungen einfach pushen, dann sag mir Bescheid, damit ich hier vom aktuellen Stand ausgehe.
 
-1. Auf GitHub.com im Ordner `posts/` auf "Add file → Create new file" klicken.
-2. Inhalt von `templates/_post-vorlage.html` hineinkopieren, Dateinamen vergeben (z. B. `posts/ausruestung-zweiter-test.html`).
-3. Alle `[Platzhalter]`-Texte ersetzen.
-4. In der passenden Kategorie-Seite (`ausruestung.html` etc.) eine neue Karte im `card-grid` ergänzen, die auf den neuen Beitrag verlinkt.
-5. Commit klicken – Netlify deployt automatisch neu, meist innerhalb 1 Minute.
+## Schritt 3: Direkt publizieren
 
-Kein Code-Editor, kein Terminal, kein Build nötig – nur Text im Browser ersetzen.
+Zwei Wege, je nachdem wie viel Automatisierung du willst:
+
+**Weg A – über Netlify, automatisch bei jedem Push (empfohlen):**
+1. Auf netlify.com registrieren, "Add new site → Import an existing project", GitHub-Repo verbinden.
+2. Kein Build-Kommando nötig, Publish-Verzeichnis `/` (bereits in `netlify.toml` hinterlegt).
+3. Jeder `git push` auf das Repo deployed automatisch neu – egal ob der Push von deinem Rechner oder (nach Zip-Import) von dir nach einer Cowork-Sitzung kommt.
+
+**Weg B – Netlify direkt aus dieser Cowork-Sitzung heraus:**
+Es gibt einen Netlify-Connector, den ich gerade vorgeschlagen habe (Connect-Button oben in der Konversation). Verbindest du ihn, kann ich Deployments direkt aus dem Chat auslösen, ohne den Umweg über Zip-Export und lokalen Push – dann wäre Cowork nicht mehr nur "hier testen", sondern auch "hier publizieren". Das ist deine Entscheidung, nicht meine: es bedeutet, dass ich Schreibzugriff auf dein Netlify-Konto bekomme. Für GitHub selbst gibt es aktuell keinen entsprechenden Connector in der Registry – Versionierung/Push bleibt also so oder so Aufgabe der lokalen Claude-Code-Umgebung.
+
+## Domain-Anbindung (wattbuero.de + Redirects)
+
+1. In Netlify unter "Domain settings" → "Add custom domain" → `wattbuero.de`.
+2. Bei deinem Registrar die DNS-Einträge setzen, die Netlify dir dabei konkret anzeigt (A-Record bzw. ALIAS/ANAME für die nackte Domain, CNAME für www) – nimm die Live-Werte aus dem Netlify-UI, nicht diese Anleitung als exakte Quelle, das kann sich ändern.
+3. wattbuero.com / .global / .store zusätzlich als Domain-Alias hinzufügen; die 301-Redirects auf wattbuero.de sind in `netlify.toml` bereits vorbereitet.
 
 ## Rechtliches (vor dem Livegang prüfen)
 
-- **Impressumspflicht:** Auch private/nebenberufliche Websites mit geschäftlichem Zweck (Affiliate-Links) unterliegen in Deutschland i. d. R. der Impressumspflicht nach § 5 TMG – noch nicht auf dieser Seite enthalten, unbedingt ergänzen.
-- **Affiliate-Kennzeichnung:** "Werbung"-Hinweis ist in den Beitrags-Vorlagen vorbereitet, muss aber pro Beitrag aktiv befüllt werden, sobald echte Affiliate-Links eingebaut sind.
-- **[Prüfhinweis]:** Der genaue Rechtsstand (TMG/UWG, Kennzeichnungspflichten) kann sich seit meinem Wissensstand geändert haben – vor dem Livegang kurz mit aktueller Quelle oder einem Anwalt/einer Anwältin für IT-/Wettbewerbsrecht abgleichen, insbesondere weil du auch beruflich in einem regulierten Umfeld unterwegs bist und dir Sorgfalt hier wahrscheinlich wichtig ist.
+- **Impressumspflicht** nach § 5 TMG greift i. d. R. auch bei nebenberuflichen Seiten mit Affiliate-Links – noch nicht enthalten, ergänzen.
+- **Affiliate-Kennzeichnung** ist in den Post-Vorlagen vorbereitet, muss pro Beitrag aktiv befüllt werden.
+- **[Prüfhinweis]:** Rechtsstand (TMG/UWG) kann sich seit meinem Wissensstand geändert haben – vor Livegang kurz gegenchecken, gerade weil du beruflich in einem regulierten Umfeld unterwegs bist.
+
+## Nächster Schritt
+
+Aufbau/Design (Dashboard, weitere Infoseiten zu Strecken etc.) bewusst noch nicht begonnen – laut Absprache erst, wenn die Test-/Publish-Pipeline steht.
