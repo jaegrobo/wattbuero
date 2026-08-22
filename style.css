@@ -1,0 +1,176 @@
+/* Wattbüro – gemeinsames Stylesheet für alle Seiten */
+:root {
+  --wb-dark: #0f1b2b;
+  --wb-blue: #1b4965;
+  --wb-accent: #f2a541;
+  --wb-green: #4c9a6a;
+  --wb-bg: #f7f9fb;
+  --wb-text: #1a1a1a;
+  --wb-muted: #5a6472;
+  --wb-max-width: 960px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--wb-bg);
+  color: var(--wb-text);
+  line-height: 1.6;
+}
+
+header.site-header {
+  background: var(--wb-dark);
+  color: #fff;
+  padding: 1rem 1.25rem;
+}
+
+.site-header .header-inner {
+  max-width: var(--wb-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.site-header .logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-header .logo span {
+  color: var(--wb-accent);
+}
+
+.site-header nav a {
+  color: #d8e3ee;
+  text-decoration: none;
+  margin-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+  color: var(--wb-accent);
+}
+
+main {
+  max-width: var(--wb-max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.hero {
+  background: linear-gradient(120deg, var(--wb-blue), var(--wb-dark));
+  color: #fff;
+  padding: 3rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin: 0;
+  color: #d8e3ee;
+  max-width: 40em;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin: 2.5rem 0 1rem;
+  border-bottom: 2px solid var(--wb-accent);
+  padding-bottom: 0.4rem;
+  display: inline-block;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(15, 27, 43, 0.08);
+  transform: translateY(-2px);
+}
+
+.card .tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--wb-blue);
+  background: #eaf1f6;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+
+.card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--wb-muted);
+  font-size: 0.92rem;
+}
+
+.post-meta {
+  color: var(--wb-muted);
+  font-size: 0.88rem;
+  margin-bottom: 1.5rem;
+}
+
+article.post h1 {
+  margin-bottom: 0.3rem;
+}
+
+article.post .affiliate-note {
+  background: #fff7e8;
+  border: 1px solid #f2d8a1;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  margin: 1.5rem 0;
+  color: #6b4f16;
+}
+
+footer.site-footer {
+  border-top: 1px solid #e3e8ee;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  color: var(--wb-muted);
+  font-size: 0.85rem;
+}
+
+.instructions {
+  background: #eef6ef;
+  border: 1px dashed var(--wb-green);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}

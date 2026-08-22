@@ -1,0 +1,40 @@
+[build]
+  publish = "."
+
+# Kein Build-Kommando nötig, da reine statische HTML/CSS-Dateien ohne Generator.
+
+[[redirects]]
+  from = "http://wattbuero.com/*"
+  to = "https://wattbuero.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://wattbuero.com/*"
+  to = "https://wattbuero.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://wattbuero.global/*"
+  to = "https://wattbuero.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://wattbuero.global/*"
+  to = "https://wattbuero.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://wattbuero.store/*"
+  to = "https://wattbuero.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://wattbuero.store/*"
+  to = "https://wattbuero.de/:splat"
+  status = 301
+  force = true
