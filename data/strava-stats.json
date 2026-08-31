@@ -1,0 +1,57 @@
+{
+  "rolling_28_days": {
+    "ride_count": 9,
+    "distance_km": 476.2,
+    "elevation_gain_m": 1422,
+    "moving_time_hours": 17.5,
+    "average_watts": 157
+  },
+  "recent_activities": [
+    {
+      "id": 19964857248,
+      "name": "Mittagsradfahrt",
+      "date": "2026-08-30T12:01:44Z",
+      "distance_km": 112.3,
+      "elevation_gain_m": 348,
+      "moving_time_min": 238,
+      "average_watts": 163.9
+    },
+    {
+      "id": 19936554742,
+      "name": "Morning Ride",
+      "date": "2026-08-28T10:39:18Z",
+      "distance_km": 75.3,
+      "elevation_gain_m": 185,
+      "moving_time_min": 146,
+      "average_watts": 173.0
+    },
+    {
+      "id": 19865658606,
+      "name": "Morning Ride",
+      "date": "2026-08-23T10:58:07Z",
+      "distance_km": 104.5,
+      "elevation_gain_m": 581,
+      "moving_time_min": 227,
+      "average_watts": null
+    },
+    {
+      "id": 19811630063,
+      "name": "Afternoon Ride",
+      "date": "2026-08-19T16:25:26Z",
+      "distance_km": 50.4,
+      "elevation_gain_m": 80,
+      "moving_time_min": 113,
+      "average_watts": 153.2
+    },
+    {
+      "id": 19737488042,
+      "name": "Abendradfahrt",
+      "date": "2026-08-13T18:32:10Z",
+      "distance_km": 39.8,
+      "elevation_gain_m": 76,
+      "moving_time_min": 90,
+      "average_watts": 150.8
+    }
+  ],
+  "generated_at": "2026-08-31T17:26:33.927054+00:00"
+}
