@@ -1,14 +1,20 @@
 /* Wattbüro – gemeinsames Stylesheet für alle Seiten */
+/* Design-Richtung "Rennlogbuch": Schwarz/Weiß, ein Signalakzent, Mono-Zahlen */
 :root {
-  --wb-dark: #0f1b2b;
-  --wb-blue: #1b4965;
-  --wb-accent: #f2a541;
-  --wb-green: #4c9a6a;
-  --wb-bg: #f7f9fb;
-  --wb-text: #1a1a1a;
-  --wb-muted: #5a6472;
+  --wb-bg: #121212;
+  --wb-surface: #1a1a1a;
+  --wb-surface-2: #000;
+  --wb-border: #2c2c2c;
+  --wb-border-strong: #444;
+  --wb-text: #f2f2ee;
+  --wb-muted: #9a9a9a;
+  --wb-accent: #c8ff4d;
+  --wb-accent-text: #2c3d0a;
   --wb-max-width: 960px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Space Grotesk", var(--font-body);
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  font-family: var(--font-body);
 }
 
 * { box-sizing: border-box; }
@@ -20,10 +26,13 @@ body {
   line-height: 1.6;
 }
 
+a { color: inherit; }
+
 header.site-header {
-  background: var(--wb-dark);
-  color: #fff;
+  background: var(--wb-surface-2);
+  color: var(--wb-text);
   padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--wb-border);
 }
 
 .site-header .header-inner {
@@ -37,6 +46,7 @@ header.site-header {
 }
 
 .site-header .logo {
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.3rem;
   color: #fff;
@@ -49,10 +59,12 @@ header.site-header {
 }
 
 .site-header nav a {
-  color: #d8e3ee;
+  color: var(--wb-muted);
   text-decoration: none;
   margin-left: 1.25rem;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .site-header nav a:hover,
@@ -67,26 +79,34 @@ main {
 }
 
 .hero {
-  background: linear-gradient(120deg, var(--wb-blue), var(--wb-dark));
+  background: var(--wb-surface-2);
   color: #fff;
   padding: 3rem 1.5rem;
-  border-radius: 10px;
+  border: 1px solid var(--wb-border);
   margin-bottom: 2.5rem;
 }
 
 .hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
   margin: 0 0 0.5rem;
   font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .hero p {
   margin: 0;
-  color: #d8e3ee;
+  color: var(--wb-muted);
   max-width: 40em;
 }
 
 .section-title {
-  font-size: 1.3rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   margin: 2.5rem 0 1rem;
   border-bottom: 2px solid var(--wb-accent);
   padding-bottom: 0.4rem;
@@ -100,36 +120,39 @@ main {
 }
 
 .card {
-  background: #fff;
-  border: 1px solid #e3e8ee;
-  border-radius: 8px;
+  background: var(--wb-surface);
+  border: 1px solid var(--wb-border);
+  border-radius: 4px;
   padding: 1.25rem;
   text-decoration: none;
   color: inherit;
   display: block;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 .card:hover {
-  box-shadow: 0 6px 18px rgba(15, 27, 43, 0.08);
+  border-color: var(--wb-accent);
   transform: translateY(-2px);
 }
 
 .card .tag {
   display: inline-block;
-  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--wb-blue);
-  background: #eaf1f6;
+  color: var(--wb-accent-text);
+  background: var(--wb-accent);
   padding: 0.15rem 0.5rem;
-  border-radius: 4px;
+  border-radius: 3px;
   margin-bottom: 0.6rem;
 }
 
 .card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
   margin: 0 0 0.4rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .card p {
@@ -139,13 +162,28 @@ main {
 }
 
 .post-meta {
+  font-family: var(--font-mono);
   color: var(--wb-muted);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   margin-bottom: 1.5rem;
 }
 
 article.post h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   margin-bottom: 0.3rem;
+}
+
+article.post h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 article.post img {
@@ -153,20 +191,22 @@ article.post img {
   height: auto;
   display: block;
   margin: 0 auto 1.5rem;
+  border: 1px solid var(--wb-border);
+  border-radius: 4px;
 }
 
 article.post .affiliate-note {
-  background: #fff7e8;
-  border: 1px solid #f2d8a1;
-  border-radius: 6px;
+  background: var(--wb-surface);
+  border: 1px solid var(--wb-accent);
+  border-radius: 4px;
   padding: 0.75rem 1rem;
   font-size: 0.88rem;
   margin: 1.5rem 0;
-  color: #6b4f16;
+  color: var(--wb-accent);
 }
 
 footer.site-footer {
-  border-top: 1px solid #e3e8ee;
+  border-top: 1px solid var(--wb-border);
   padding: 1.5rem 1.25rem;
   text-align: center;
   color: var(--wb-muted);
@@ -174,12 +214,13 @@ footer.site-footer {
 }
 
 .instructions {
-  background: #eef6ef;
-  border: 1px dashed var(--wb-green);
-  border-radius: 6px;
+  background: var(--wb-surface);
+  border: 1px dashed var(--wb-accent);
+  border-radius: 4px;
   padding: 1rem 1.25rem;
   font-size: 0.9rem;
   margin-bottom: 2rem;
+  color: var(--wb-muted);
 }
 
 /* Strava-Mini-Stats (auf Training-Posts) und volles Dashboard (Über-Seite) */
@@ -187,9 +228,9 @@ footer.site-footer {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  background: #eef4f8;
-  border: 1px solid #dbe6ee;
-  border-radius: 8px;
+  background: var(--wb-surface-2);
+  border: 1px solid var(--wb-border);
+  border-radius: 4px;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
 }
@@ -200,12 +241,17 @@ footer.site-footer {
 }
 
 .mini-stats strong {
+  font-family: var(--font-mono);
+  font-weight: 700;
   font-size: 1.3rem;
-  color: var(--wb-blue);
+  color: var(--wb-accent);
 }
 
 .mini-stats span {
-  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.75rem;
   color: var(--wb-muted);
 }
 
@@ -220,21 +266,39 @@ footer.site-footer {
 .activity-table td {
   text-align: left;
   padding: 0.5rem 0.6rem;
-  border-bottom: 1px solid #e3e8ee;
+  border-bottom: 1px solid var(--wb-border);
 }
 
 .activity-table th {
+  font-family: var(--font-mono);
   color: var(--wb-muted);
-  font-weight: 600;
-  font-size: 0.78rem;
+  font-weight: 500;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+}
+
+.activity-table td {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
 }
 
 .stats-updated {
-  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   color: var(--wb-muted);
   margin-top: -0.5rem;
+}
+
+.impressum dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.impressum dd {
+  margin: 0 0 0.25rem;
+  color: var(--wb-muted);
 }
 
 .post-gallery {
@@ -249,16 +313,8 @@ footer.site-footer {
   height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--wb-border);
   display: block;
   margin: 0;
-}
-
-.impressum dt {
-  font-weight: 600;
-  margin-top: 0.75rem;
-}
-
-.impressum dd {
-  margin: 0 0 0.25rem;
 }
