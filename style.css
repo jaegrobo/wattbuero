@@ -148,6 +148,13 @@ article.post h1 {
   margin-bottom: 0.3rem;
 }
 
+article.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
 article.post .affiliate-note {
   background: #fff7e8;
   border: 1px solid #f2d8a1;
