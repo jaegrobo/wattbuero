@@ -7,6 +7,15 @@
   4. Die zutreffende Kategorie-Übersichtsseite (ausruestung.html / training.html / strecken.html)
      ebenfalls öffnen und dort im card-grid eine neue <a class="card">-Karte mit Link auf den neuen Post ergänzen.
   5. Commit -> Netlify baut die Seite automatisch neu (dauert ca. 1 Minute).
+
+  NUR BEI KATEGORIE = TRAINING zusätzlich:
+  - <body> zu <body data-root=".."> ändern (steht unten schon so, nicht nochmal ändern nötig)
+  - direkt nach der post-meta-Zeile den Block <div id="wattbuero-mini-stats">Lade Trainingsdaten…</div>
+    einfügen (steht unten schon drin) - zeigt automatisch die aktuellen 28-Tage-Werte aus Strava.
+  - vor </body> steht schon <script src="../scripts/stats-widget.js"></script> - nicht entfernen.
+  Bei Ausrüstung/Strecken-Posts beide Zeilen (Mini-Stats-Div + Script) wieder löschen, die gehören
+  nur zu Training-Posts.
+
   Diesen Kommentarblock beim fertigen Post entfernen oder drin lassen, er wird nicht sichtbar angezeigt.
 -->
 <!DOCTYPE html>
@@ -18,7 +27,7 @@
 <meta name="description" content="[Platzhalter: 1-2 Sätze Beschreibung für Suchmaschinen]">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-root="..">
 
 <header class="site-header">
   <div class="header-inner">
@@ -38,6 +47,9 @@
     <h1>[Platzhalter-Titel]</h1>
     <p class="post-meta">Kategorie: [Ausrüstung/Training/Strecken] · [Datum]</p>
 
+    <!-- Nur bei Kategorie Training drin lassen, sonst löschen: -->
+    <div id="wattbuero-mini-stats">Lade Trainingsdaten…</div>
+
     <p>[Platzhalter-Text]</p>
 
     <h2>[Platzhalter-Zwischenüberschrift]</h2>
@@ -54,5 +66,7 @@
   &copy; 2026 Wattbüro · <a href="../ueber.html">Über diese Seite</a>
 </footer>
 
+<!-- Nur bei Kategorie Training drin lassen, sonst löschen: -->
+<script src="../scripts/stats-widget.js"></script>
 </body>
 </html>

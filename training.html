@@ -7,7 +7,7 @@
 <meta name="description" content="Trainingsdaten, Wattmessungen und Leistungsauswertungen.">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-root=".">
 
 <header class="site-header">
   <div class="header-inner">
@@ -26,7 +26,14 @@
   <h1>Training</h1>
   <p>Eigene Trainingsdaten, Wattwerte und Auswertungen – nachvollziehbar dokumentiert statt nur behauptet.</p>
 
+  <div id="wattbuero-mini-stats">Lade Trainingsdaten…</div>
+
   <div class="card-grid">
+    <a class="card" href="posts/training-112km-essenbach.html">
+      <span class="tag">Training</span>
+      <h3>112 km rund um Essenbach</h3>
+      <p>Lange Ausfahrt als Baustein auf dem Weg zur 300-km-Tour.</p>
+    </a>
     <a class="card" href="posts/training-erste-auswertung.html">
       <span class="tag">Training</span>
       <h3>Meine ersten Wattmessungen im Vergleich</h3>
@@ -39,5 +46,6 @@
   &copy; 2026 Wattbüro · <a href="ueber.html">Über diese Seite</a>
 </footer>
 
+<script src="scripts/stats-widget.js"></script>
 </body>
 </html>

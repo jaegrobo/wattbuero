@@ -174,3 +174,67 @@ footer.site-footer {
   font-size: 0.9rem;
   margin-bottom: 2rem;
 }
+
+/* Strava-Mini-Stats (auf Training-Posts) und volles Dashboard (Über-Seite) */
+.mini-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: #eef4f8;
+  border: 1px solid #dbe6ee;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.mini-stats > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-stats strong {
+  font-size: 1.3rem;
+  color: var(--wb-blue);
+}
+
+.mini-stats span {
+  font-size: 0.8rem;
+  color: var(--wb-muted);
+}
+
+.activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.activity-table th,
+.activity-table td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #e3e8ee;
+}
+
+.activity-table th {
+  color: var(--wb-muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.stats-updated {
+  font-size: 0.78rem;
+  color: var(--wb-muted);
+  margin-top: -0.5rem;
+}
+
+.impressum dt {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.impressum dd {
+  margin: 0 0 0.25rem;
+}
