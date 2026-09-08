@@ -1,12 +1,39 @@
 {
   "rolling_28_days": {
-    "ride_count": 9,
-    "distance_km": 476.2,
-    "elevation_gain_m": 1422,
-    "moving_time_hours": 17.5,
-    "average_watts": 157
+    "ride_count": 8,
+    "distance_km": 589.1,
+    "elevation_gain_m": 3064,
+    "moving_time_hours": 21.9,
+    "average_watts": 155
   },
   "recent_activities": [
+    {
+      "id": 20046072672,
+      "name": "Zweimal rund ums Valsugana Tal",
+      "date": "2026-09-05T09:14:44Z",
+      "distance_km": 109.1,
+      "elevation_gain_m": 760,
+      "moving_time_min": 257,
+      "average_watts": 150.3
+    },
+    {
+      "id": 20021825007,
+      "name": "Um den Gallnötsch",
+      "date": "2026-09-03T15:24:34Z",
+      "distance_km": 48.2,
+      "elevation_gain_m": 432,
+      "moving_time_min": 113,
+      "average_watts": 156.1
+    },
+    {
+      "id": 20004155340,
+      "name": "Die italienische Lady zu Hause ausgeführt",
+      "date": "2026-09-02T10:20:11Z",
+      "distance_km": 49.5,
+      "elevation_gain_m": 602,
+      "moving_time_min": 132,
+      "average_watts": 139.7
+    },
     {
       "id": 19964857248,
       "name": "Mittagsradfahrt",
@@ -24,34 +51,7 @@
       "elevation_gain_m": 185,
       "moving_time_min": 146,
       "average_watts": 173.0
-    },
-    {
-      "id": 19865658606,
-      "name": "Morning Ride",
-      "date": "2026-08-23T10:58:07Z",
-      "distance_km": 104.5,
-      "elevation_gain_m": 581,
-      "moving_time_min": 227,
-      "average_watts": null
-    },
-    {
-      "id": 19811630063,
-      "name": "Afternoon Ride",
-      "date": "2026-08-19T16:25:26Z",
-      "distance_km": 50.4,
-      "elevation_gain_m": 80,
-      "moving_time_min": 113,
-      "average_watts": 153.2
-    },
-    {
-      "id": 19737488042,
-      "name": "Abendradfahrt",
-      "date": "2026-08-13T18:32:10Z",
-      "distance_km": 39.8,
-      "elevation_gain_m": 76,
-      "moving_time_min": 90,
-      "average_watts": 150.8
     }
   ],
-  "generated_at": "2026-08-31T17:26:33.927054+00:00"
+  "generated_at": "2026-09-07T11:56:08.921415+00:00"
 }
