@@ -318,3 +318,138 @@ footer.site-footer {
   display: block;
   margin: 0;
 }
+
+/* Trainingsdashboard (Startseite + Training) */
+.dashboard-panel {
+  background: var(--wb-surface);
+  border: 1px solid var(--wb-border);
+  border-radius: 4px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-header h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.dashboard-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-tabs button {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: transparent;
+  color: var(--wb-muted);
+  border: 1px solid var(--wb-border-strong);
+  border-radius: 3px;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+.dashboard-tabs button.active {
+  background: var(--wb-accent);
+  color: var(--wb-accent-text);
+  border-color: var(--wb-accent);
+}
+
+.dashboard-gauges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.dashboard-gauges > div {
+  flex: 1 1 130px;
+  background: var(--wb-surface-2);
+  border: 1px solid var(--wb-border);
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+}
+
+.dashboard-gauges .g-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--wb-muted);
+}
+
+.dashboard-gauges .g-value {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--wb-accent);
+  line-height: 1.2;
+  margin-top: 0.2rem;
+}
+
+.dashboard-gauges .g-value span {
+  font-size: 0.8rem;
+  color: var(--wb-muted);
+  margin-left: 0.2rem;
+}
+
+.dashboard-chart-wrap {
+  position: relative;
+  height: 240px;
+}
+
+.dashboard-note {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--wb-muted);
+  border: 1px dashed var(--wb-border-strong);
+  border-radius: 4px;
+  padding: 1rem 1.1rem;
+  line-height: 1.6;
+}
+
+.dashboard-caption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--wb-muted);
+  margin-top: 0.6rem;
+}
+
+.dashboard-floater {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--wb-bg);
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.dashboard-link-note {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--wb-muted);
+  border: 1px dashed var(--wb-accent);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+}
+
+.dashboard-link-note a {
+  color: var(--wb-accent);
+}
