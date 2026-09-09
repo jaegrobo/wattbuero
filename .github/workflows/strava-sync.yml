@@ -35,4 +35,11 @@ jobs:
             exit 0
           fi
           git commit -m "Automatischer Strava-Sync $(date -u +%Y-%m-%d)"
+          # Zwischen Checkout und Push kann main durch einen normalen Push
+          # (z. B. manuelles Merge einer Website-Änderung) weitergewandert
+          # sein - dann lehnt GitHub den Push als Non-Fast-Forward ab.
+          # data/strava-stats.json wird ausschließlich von diesem Bot
+          # geschrieben, ein Rebase-Konflikt ist daher praktisch
+          # ausgeschlossen. Vor dem Push einmal nachziehen, das behebt es.
+          git pull --rebase origin main
           git push
