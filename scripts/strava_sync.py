@@ -142,7 +142,11 @@ def is_cycling(a):
 def volume_bucket(a):
     if a.get("commute"):
         return "commute_km"
-    if a.get("trainer"):
+    # Stravas "trainer"-Flag kommt in der Aktivitätsliste (im Gegensatz zur
+    # Detailansicht einer einzelnen Aktivität) nicht zuverlässig mit - in der
+    # Praxis stand es bei allen VirtualRide-Aktivitäten trotzdem auf false.
+    # sport_type=="VirtualRide" ist das robustere Signal für Indoor/Trainer.
+    if a.get("trainer") or (a.get("sport_type") or a.get("type")) == "VirtualRide":
         return "indoor_km"
     return "outdoor_km"
 
