@@ -6,6 +6,146 @@
     "moving_time_hours": 21.9,
     "average_watts": 155
   },
+  "monthly": [
+    {
+      "ym": "2025-10",
+      "outdoor_km": 890.4,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 8718,
+      "rides": 37,
+      "hours": 37.8,
+      "avg_cadence": 74.8
+    },
+    {
+      "ym": "2025-11",
+      "outdoor_km": 399.3,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 4275,
+      "rides": 14,
+      "hours": 17.2,
+      "avg_cadence": 79.4
+    },
+    {
+      "ym": "2025-12",
+      "outdoor_km": 440.2,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 4185,
+      "rides": 16,
+      "hours": 18.4,
+      "avg_cadence": 83.5
+    },
+    {
+      "ym": "2026-01",
+      "outdoor_km": 531.5,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 4563,
+      "rides": 18,
+      "hours": 20.0,
+      "avg_cadence": 80.5
+    },
+    {
+      "ym": "2026-02",
+      "outdoor_km": 643.8,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 6172,
+      "rides": 24,
+      "hours": 26.1,
+      "avg_cadence": 82.7
+    },
+    {
+      "ym": "2026-03",
+      "outdoor_km": 852.9,
+      "indoor_km": 0.0,
+      "commute_km": 38.6,
+      "elevation_m": 4764,
+      "rides": 22,
+      "hours": 35.7,
+      "avg_cadence": 79.1
+    },
+    {
+      "ym": "2026-04",
+      "outdoor_km": 792.6,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 2795,
+      "rides": 14,
+      "hours": 30.4,
+      "avg_cadence": 80.3
+    },
+    {
+      "ym": "2026-05",
+      "outdoor_km": 808.3,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 5438,
+      "rides": 12,
+      "hours": 30.3,
+      "avg_cadence": 84.2
+    },
+    {
+      "ym": "2026-06",
+      "outdoor_km": 981.3,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 2957,
+      "rides": 25,
+      "hours": 37.9,
+      "avg_cadence": 81.2
+    },
+    {
+      "ym": "2026-07",
+      "outdoor_km": 1262.5,
+      "indoor_km": 0.0,
+      "commute_km": 19.1,
+      "elevation_m": 7724,
+      "rides": 31,
+      "hours": 53.2,
+      "avg_cadence": 80.3
+    },
+    {
+      "ym": "2026-08",
+      "outdoor_km": 511.0,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 1443,
+      "rides": 11,
+      "hours": 19.1,
+      "avg_cadence": 85.0
+    },
+    {
+      "ym": "2026-09",
+      "outdoor_km": 206.8,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 1794,
+      "rides": 3,
+      "hours": 8.4,
+      "avg_cadence": 82.4
+    }
+  ],
+  "sport_split": [
+    {
+      "name": "Rennrad",
+      "km": 4763.9
+    },
+    {
+      "name": "Virtual",
+      "km": 2174.5
+    },
+    {
+      "name": "Gravel",
+      "km": 1806.0
+    },
+    {
+      "name": "E-Bike",
+      "km": 250.7
+    }
+  ],
   "recent_activities": [
     {
       "id": 20046072672,
@@ -53,5 +193,5 @@
       "average_watts": 173.0
     }
   ],
-  "generated_at": "2026-09-07T11:56:08.921415+00:00"
+  "generated_at": "2026-09-09T10:08:22.772538+00:00"
 }
