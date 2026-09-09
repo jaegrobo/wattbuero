@@ -371,6 +371,31 @@ footer.site-footer {
   border-color: var(--wb-accent);
 }
 
+.dashboard-ranges {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-ranges button {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: transparent;
+  color: var(--wb-muted);
+  border: 1px solid var(--wb-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  cursor: pointer;
+}
+
+.dashboard-ranges button.active {
+  background: var(--wb-surface-2);
+  color: var(--wb-text);
+  border-color: var(--wb-border-strong);
+}
+
 .dashboard-gauges {
   display: flex;
   flex-wrap: wrap;
