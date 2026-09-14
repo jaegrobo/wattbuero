@@ -1,16 +1,16 @@
 {
   "rolling_28_days": {
-    "ride_count": 8,
-    "distance_km": 589.1,
-    "elevation_gain_m": 3064,
-    "moving_time_hours": 21.9,
-    "average_watts": 155
+    "ride_count": 12,
+    "distance_km": 837.0,
+    "elevation_gain_m": 3817,
+    "moving_time_hours": 32.0,
+    "average_watts": 149
   },
   "monthly": [
     {
       "ym": "2025-10",
-      "outdoor_km": 890.4,
-      "indoor_km": 0.0,
+      "outdoor_km": 286.6,
+      "indoor_km": 603.8,
       "commute_km": 0.0,
       "elevation_m": 8718,
       "rides": 37,
@@ -19,8 +19,8 @@
     },
     {
       "ym": "2025-11",
-      "outdoor_km": 399.3,
-      "indoor_km": 0.0,
+      "outdoor_km": 204.2,
+      "indoor_km": 195.1,
       "commute_km": 0.0,
       "elevation_m": 4275,
       "rides": 14,
@@ -29,8 +29,8 @@
     },
     {
       "ym": "2025-12",
-      "outdoor_km": 440.2,
-      "indoor_km": 0.0,
+      "outdoor_km": 189.0,
+      "indoor_km": 251.2,
       "commute_km": 0.0,
       "elevation_m": 4185,
       "rides": 16,
@@ -39,8 +39,8 @@
     },
     {
       "ym": "2026-01",
-      "outdoor_km": 531.5,
-      "indoor_km": 0.0,
+      "outdoor_km": 112.4,
+      "indoor_km": 419.1,
       "commute_km": 0.0,
       "elevation_m": 4563,
       "rides": 18,
@@ -49,8 +49,8 @@
     },
     {
       "ym": "2026-02",
-      "outdoor_km": 643.8,
-      "indoor_km": 0.0,
+      "outdoor_km": 287.9,
+      "indoor_km": 355.9,
       "commute_km": 0.0,
       "elevation_m": 6172,
       "rides": 24,
@@ -59,8 +59,8 @@
     },
     {
       "ym": "2026-03",
-      "outdoor_km": 852.9,
-      "indoor_km": 0.0,
+      "outdoor_km": 796.6,
+      "indoor_km": 56.2,
       "commute_km": 38.6,
       "elevation_m": 4764,
       "rides": 22,
@@ -119,19 +119,19 @@
     },
     {
       "ym": "2026-09",
-      "outdoor_km": 206.8,
+      "outdoor_km": 494.5,
       "indoor_km": 0.0,
       "commute_km": 0.0,
-      "elevation_m": 1794,
-      "rides": 3,
-      "hours": 8.4,
-      "avg_cadence": 82.4
+      "elevation_m": 2623,
+      "rides": 8,
+      "hours": 20.0,
+      "avg_cadence": 82.8
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 4763.9
+      "km": 4894.9
     },
     {
       "name": "Virtual",
@@ -139,7 +139,7 @@
     },
     {
       "name": "Gravel",
-      "km": 1806.0
+      "km": 1962.7
     },
     {
       "name": "E-Bike",
@@ -148,50 +148,50 @@
   ],
   "recent_activities": [
     {
-      "id": 20046072672,
-      "name": "Zweimal rund ums Valsugana Tal",
-      "date": "2026-09-05T09:14:44Z",
-      "distance_km": 109.1,
-      "elevation_gain_m": 760,
-      "moving_time_min": 257,
-      "average_watts": 150.3
+      "id": 20166549646,
+      "name": "In die Arbeit",
+      "date": "2026-09-14T07:24:50Z",
+      "distance_km": 11.6,
+      "elevation_gain_m": 19,
+      "moving_time_min": 42,
+      "average_watts": null
     },
     {
-      "id": 20021825007,
-      "name": "Um den Gallnötsch",
-      "date": "2026-09-03T15:24:34Z",
-      "distance_km": 48.2,
-      "elevation_gain_m": 432,
-      "moving_time_min": 113,
-      "average_watts": 156.1
+      "id": 20146161808,
+      "name": "Einkaufen",
+      "date": "2026-09-12T17:04:16Z",
+      "distance_km": 9.3,
+      "elevation_gain_m": 44,
+      "moving_time_min": 31,
+      "average_watts": null
     },
     {
-      "id": 20004155340,
-      "name": "Die italienische Lady zu Hause ausgeführt",
-      "date": "2026-09-02T10:20:11Z",
-      "distance_km": 49.5,
-      "elevation_gain_m": 602,
-      "moving_time_min": 132,
-      "average_watts": 139.7
-    },
-    {
-      "id": 19964857248,
+      "id": 20145162432,
       "name": "Mittagsradfahrt",
-      "date": "2026-08-30T12:01:44Z",
-      "distance_km": 112.3,
-      "elevation_gain_m": 348,
-      "moving_time_min": 238,
-      "average_watts": 163.9
+      "date": "2026-09-12T11:37:36Z",
+      "distance_km": 110.0,
+      "elevation_gain_m": 339,
+      "moving_time_min": 242,
+      "average_watts": 152.0
     },
     {
-      "id": 19936554742,
-      "name": "Morning Ride",
-      "date": "2026-08-28T10:39:18Z",
-      "distance_km": 75.3,
-      "elevation_gain_m": 185,
-      "moving_time_min": 146,
-      "average_watts": 173.0
+      "id": 20130261710,
+      "name": "Easy rollen",
+      "date": "2026-09-11T12:27:58Z",
+      "distance_km": 48.1,
+      "elevation_gain_m": 131,
+      "moving_time_min": 136,
+      "average_watts": 108.9
+    },
+    {
+      "id": 20117328161,
+      "name": "Lunch Gravel Ride",
+      "date": "2026-09-10T11:22:16Z",
+      "distance_km": 108.6,
+      "elevation_gain_m": 296,
+      "moving_time_min": 245,
+      "average_watts": 146.0
     }
   ],
-  "generated_at": "2026-09-09T10:21:57.352350+00:00"
+  "generated_at": "2026-09-14T12:11:35.462484+00:00"
 }
