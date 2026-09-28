@@ -1,10 +1,10 @@
 {
   "rolling_28_days": {
     "ride_count": 15,
-    "distance_km": 798.6,
-    "elevation_gain_m": 3393,
-    "moving_time_hours": 31.3,
-    "average_watts": 153
+    "distance_km": 704.0,
+    "elevation_gain_m": 3491,
+    "moving_time_hours": 29.2,
+    "average_watts": 149
   },
   "monthly": [
     {
@@ -119,19 +119,19 @@
     },
     {
       "ym": "2026-09",
-      "outdoor_km": 611.1,
+      "outdoor_km": 704.0,
       "indoor_km": 0.0,
       "commute_km": 0.0,
-      "elevation_m": 2860,
-      "rides": 13,
-      "hours": 24.9,
+      "elevation_m": 3491,
+      "rides": 15,
+      "hours": 29.2,
       "avg_cadence": 83.7
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 4964.9
+      "km": 5057.8
     },
     {
       "name": "Virtual",
@@ -147,6 +147,24 @@
     }
   ],
   "recent_activities": [
+    {
+      "id": 20351426649,
+      "name": "Auf Pantanis Spuren",
+      "date": "2026-09-27T11:04:58Z",
+      "distance_km": 82.5,
+      "elevation_gain_m": 627,
+      "moving_time_min": 217,
+      "average_watts": null
+    },
+    {
+      "id": 20337721096,
+      "name": "Cesenatico erkunden",
+      "date": "2026-09-26T14:51:09Z",
+      "distance_km": 10.5,
+      "elevation_gain_m": 4,
+      "moving_time_min": 43,
+      "average_watts": null
+    },
     {
       "id": 20242268874,
       "name": "Afternoon Gravel Ride",
@@ -173,25 +191,7 @@
       "elevation_gain_m": 0,
       "moving_time_min": 40,
       "average_watts": null
-    },
-    {
-      "id": 20243695901,
-      "name": "In die Arbeit",
-      "date": "2026-09-18T07:10:00Z",
-      "distance_km": 14.0,
-      "elevation_gain_m": 0,
-      "moving_time_min": 50,
-      "average_watts": null
-    },
-    {
-      "id": 20172337772,
-      "name": "Von Arbeit heim",
-      "date": "2026-09-14T17:30:07Z",
-      "distance_km": 9.0,
-      "elevation_gain_m": 9,
-      "moving_time_min": 24,
-      "average_watts": null
     }
   ],
-  "generated_at": "2026-09-21T12:19:53.440733+00:00"
+  "generated_at": "2026-09-28T13:16:18.480573+00:00"
 }
