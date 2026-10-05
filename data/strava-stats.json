@@ -1,22 +1,12 @@
 {
   "rolling_28_days": {
-    "ride_count": 15,
-    "distance_km": 704.0,
-    "elevation_gain_m": 3491,
-    "moving_time_hours": 29.2,
-    "average_watts": 149
+    "ride_count": 19,
+    "distance_km": 961.1,
+    "elevation_gain_m": 4062,
+    "moving_time_hours": 42.1,
+    "average_watts": 148
   },
   "monthly": [
-    {
-      "ym": "2025-10",
-      "outdoor_km": 286.6,
-      "indoor_km": 603.8,
-      "commute_km": 0.0,
-      "elevation_m": 8718,
-      "rides": 37,
-      "hours": 37.8,
-      "avg_cadence": 74.8
-    },
     {
       "ym": "2025-11",
       "outdoor_km": 204.2,
@@ -119,23 +109,33 @@
     },
     {
       "ym": "2026-09",
-      "outdoor_km": 704.0,
+      "outdoor_km": 856.0,
       "indoor_km": 0.0,
       "commute_km": 0.0,
-      "elevation_m": 3491,
-      "rides": 15,
-      "hours": 29.2,
+      "elevation_m": 3761,
+      "rides": 18,
+      "hours": 36.7,
       "avg_cadence": 83.7
+    },
+    {
+      "ym": "2026-10",
+      "outdoor_km": 311.9,
+      "indoor_km": 0.0,
+      "commute_km": 0.0,
+      "elevation_m": 2094,
+      "rides": 4,
+      "hours": 13.8,
+      "avg_cadence": null
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 5057.8
+      "km": 5414.0
     },
     {
       "name": "Virtual",
-      "km": 2174.5
+      "km": 2035.2
     },
     {
       "name": "Gravel",
@@ -143,55 +143,55 @@
     },
     {
       "name": "E-Bike",
-      "km": 250.7
+      "km": 213.3
     }
   ],
   "recent_activities": [
     {
-      "id": 20351426649,
-      "name": "Auf Pantanis Spuren",
-      "date": "2026-09-27T11:04:58Z",
-      "distance_km": 82.5,
-      "elevation_gain_m": 627,
-      "moving_time_min": 217,
+      "id": 20446910811,
+      "name": "Radfahrt am Mittag",
+      "date": "2026-10-04T12:12:44Z",
+      "distance_km": 22.3,
+      "elevation_gain_m": 12,
+      "moving_time_min": 105,
       "average_watts": null
     },
     {
-      "id": 20337721096,
-      "name": "Cesenatico erkunden",
-      "date": "2026-09-26T14:51:09Z",
-      "distance_km": 10.5,
-      "elevation_gain_m": 4,
-      "moving_time_min": 43,
+      "id": 20434786446,
+      "name": "Monte Titano nach San Remo hoch und über Rimini zurück",
+      "date": "2026-10-03T10:24:39Z",
+      "distance_km": 115.9,
+      "elevation_gain_m": 966,
+      "moving_time_min": 301,
       "average_watts": null
     },
     {
-      "id": 20242268874,
-      "name": "Afternoon Gravel Ride",
-      "date": "2026-09-19T14:10:03Z",
-      "distance_km": 46.6,
-      "elevation_gain_m": 85,
-      "moving_time_min": 104,
-      "average_watts": 174.7
+      "id": 20428067176,
+      "name": "Rimini und zurück",
+      "date": "2026-10-02T14:15:25Z",
+      "distance_km": 69.9,
+      "elevation_gain_m": 113,
+      "moving_time_min": 166,
+      "average_watts": null
     },
     {
-      "id": 20242260078,
-      "name": "Lunch Ride",
-      "date": "2026-09-19T12:09:33Z",
-      "distance_km": 36.0,
-      "elevation_gain_m": 144,
-      "moving_time_min": 79,
-      "average_watts": 160.7
+      "id": 20408398910,
+      "name": "Nach San Leo für nen Aperol Spritz und zurück",
+      "date": "2026-10-01T13:15:46Z",
+      "distance_km": 103.8,
+      "elevation_gain_m": 1004,
+      "moving_time_min": 259,
+      "average_watts": null
     },
     {
-      "id": 20243706576,
-      "name": "Arbeit nach Hause",
-      "date": "2026-09-18T14:45:00Z",
-      "distance_km": 11.0,
-      "elevation_gain_m": 0,
-      "moving_time_min": 40,
+      "id": 20409232827,
+      "name": "Rumfahren",
+      "date": "2026-09-30T14:33:37Z",
+      "distance_km": 16.1,
+      "elevation_gain_m": 7,
+      "moving_time_min": 94,
       "average_watts": null
     }
   ],
-  "generated_at": "2026-09-28T13:16:18.480573+00:00"
+  "generated_at": "2026-10-05T13:59:11.523588+00:00"
 }
