@@ -1,10 +1,10 @@
 {
   "rolling_28_days": {
-    "ride_count": 19,
-    "distance_km": 961.1,
-    "elevation_gain_m": 4062,
-    "moving_time_hours": 42.1,
-    "average_watts": 148
+    "ride_count": 15,
+    "distance_km": 741.1,
+    "elevation_gain_m": 3734,
+    "moving_time_hours": 33.3,
+    "average_watts": 168
   },
   "monthly": [
     {
@@ -119,34 +119,43 @@
     },
     {
       "ym": "2026-10",
-      "outdoor_km": 311.9,
+      "outdoor_km": 379.6,
       "indoor_km": 0.0,
       "commute_km": 0.0,
-      "elevation_m": 2094,
-      "rides": 4,
-      "hours": 13.8,
+      "elevation_m": 2596,
+      "rides": 5,
+      "hours": 16.6,
       "avg_cadence": null
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 5414.0
-    },
-    {
-      "name": "Virtual",
-      "km": 2035.2
+      "km": 5381.7
     },
     {
       "name": "Gravel",
       "km": 2009.3
     },
     {
+      "name": "Virtual",
+      "km": 1921.3
+    },
+    {
       "name": "E-Bike",
-      "km": 213.3
+      "km": 198.6
     }
   ],
   "recent_activities": [
+    {
+      "id": 20475478996,
+      "name": "Afternoon Ride",
+      "date": "2026-10-06T14:01:58Z",
+      "distance_km": 67.7,
+      "elevation_gain_m": 501,
+      "moving_time_min": 166,
+      "average_watts": null
+    },
     {
       "id": 20446910811,
       "name": "Radfahrt am Mittag",
@@ -182,16 +191,7 @@
       "elevation_gain_m": 1004,
       "moving_time_min": 259,
       "average_watts": null
-    },
-    {
-      "id": 20409232827,
-      "name": "Rumfahren",
-      "date": "2026-09-30T14:33:37Z",
-      "distance_km": 16.1,
-      "elevation_gain_m": 7,
-      "moving_time_min": 94,
-      "average_watts": null
     }
   ],
-  "generated_at": "2026-10-05T13:59:11.523588+00:00"
+  "generated_at": "2026-10-12T14:48:19.762926+00:00"
 }
