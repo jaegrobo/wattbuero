@@ -1,10 +1,10 @@
 {
   "rolling_28_days": {
-    "ride_count": 11,
-    "distance_km": 638.9,
-    "elevation_gain_m": 3726,
-    "moving_time_hours": 28.9,
-    "average_watts": 143
+    "ride_count": 10,
+    "distance_km": 480.7,
+    "elevation_gain_m": 2964,
+    "moving_time_hours": 21.8,
+    "average_watts": 158
   },
   "monthly": [
     {
@@ -119,19 +119,19 @@
     },
     {
       "ym": "2026-10",
-      "outdoor_km": 379.6,
-      "indoor_km": 14.3,
+      "outdoor_km": 388.0,
+      "indoor_km": 22.3,
       "commute_km": 0.0,
-      "elevation_m": 2826,
-      "rides": 6,
-      "hours": 17.2,
-      "avg_cadence": 86.2
+      "elevation_m": 2852,
+      "rides": 8,
+      "hours": 17.8,
+      "avg_cadence": 88.2
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 5253.4
+      "km": 5201.1
     },
     {
       "name": "Gravel",
@@ -139,7 +139,7 @@
     },
     {
       "name": "Virtual",
-      "km": 1838.2
+      "km": 1726.4
     },
     {
       "name": "E-Bike",
@@ -147,6 +147,24 @@
     }
   ],
   "recent_activities": [
+    {
+      "id": 20733774389,
+      "name": "In die Arbeit",
+      "date": "2026-10-26T07:22:11Z",
+      "distance_km": 8.5,
+      "elevation_gain_m": 18,
+      "moving_time_min": 23,
+      "average_watts": null
+    },
+    {
+      "id": 20665367552,
+      "name": "ROUVY - L´Etape Rio de Janeiro | Sprint Route | Brazil",
+      "date": "2026-10-20T20:50:53Z",
+      "distance_km": 8.0,
+      "elevation_gain_m": 8,
+      "moving_time_min": 12,
+      "average_watts": 172.1
+    },
     {
       "id": 20636211779,
       "name": "ROUVY - Cape Point | Cape Town | South Africa",
@@ -173,25 +191,7 @@
       "elevation_gain_m": 12,
       "moving_time_min": 105,
       "average_watts": null
-    },
-    {
-      "id": 20434786446,
-      "name": "Monte Titano nach San Remo hoch und über Rimini zurück",
-      "date": "2026-10-03T10:24:39Z",
-      "distance_km": 115.9,
-      "elevation_gain_m": 966,
-      "moving_time_min": 301,
-      "average_watts": null
-    },
-    {
-      "id": 20428067176,
-      "name": "Rimini und zurück",
-      "date": "2026-10-02T14:15:25Z",
-      "distance_km": 69.9,
-      "elevation_gain_m": 113,
-      "moving_time_min": 166,
-      "average_watts": null
     }
   ],
-  "generated_at": "2026-10-19T12:33:10.335463+00:00"
+  "generated_at": "2026-10-26T12:30:35.247112+00:00"
 }
