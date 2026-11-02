@@ -1,10 +1,10 @@
 {
   "rolling_28_days": {
-    "ride_count": 10,
-    "distance_km": 480.7,
-    "elevation_gain_m": 2964,
-    "moving_time_hours": 21.8,
-    "average_watts": 158
+    "ride_count": 11,
+    "distance_km": 181.0,
+    "elevation_gain_m": 1316,
+    "moving_time_hours": 7.0,
+    "average_watts": 152
   },
   "monthly": [
     {
@@ -119,19 +119,19 @@
     },
     {
       "ym": "2026-10",
-      "outdoor_km": 388.0,
-      "indoor_km": 22.3,
+      "outdoor_km": 412.8,
+      "indoor_km": 80.1,
       "commute_km": 0.0,
-      "elevation_m": 2852,
-      "rides": 8,
-      "hours": 17.8,
-      "avg_cadence": 88.2
+      "elevation_m": 3410,
+      "rides": 15,
+      "hours": 20.8,
+      "avg_cadence": 83.2
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 5201.1
+      "km": 5145.0
     },
     {
       "name": "Gravel",
@@ -139,7 +139,7 @@
     },
     {
       "name": "Virtual",
-      "km": 1726.4
+      "km": 1628.9
     },
     {
       "name": "E-Bike",
@@ -148,50 +148,50 @@
   ],
   "recent_activities": [
     {
-      "id": 20733774389,
-      "name": "In die Arbeit",
-      "date": "2026-10-26T07:22:11Z",
-      "distance_km": 8.5,
-      "elevation_gain_m": 18,
-      "moving_time_min": 23,
-      "average_watts": null
+      "id": 20806153206,
+      "name": "ROUVY - Three Valley Lake from Sicamous | Canada",
+      "date": "2026-10-31T15:22:10Z",
+      "distance_km": 46.7,
+      "elevation_gain_m": 293,
+      "moving_time_min": 81,
+      "average_watts": 163.5
     },
     {
-      "id": 20665367552,
-      "name": "ROUVY - L´Etape Rio de Janeiro | Sprint Route | Brazil",
-      "date": "2026-10-20T20:50:53Z",
-      "distance_km": 8.0,
+      "id": 20781755158,
+      "name": "ROUVY - FTP Ramp Test",
+      "date": "2026-10-29T18:59:09Z",
+      "distance_km": 5.1,
+      "elevation_gain_m": 108,
+      "moving_time_min": 16,
+      "average_watts": 175.6
+    },
+    {
+      "id": 20755927039,
+      "name": "ROUVY - FTP Ramp Test",
+      "date": "2026-10-27T20:53:58Z",
+      "distance_km": 0.5,
+      "elevation_gain_m": 3,
+      "moving_time_min": 2,
+      "average_watts": 95.9
+    },
+    {
+      "id": 20755759465,
+      "name": "ROUVY - 20 min FTP Test (10 min Warm-Up)",
+      "date": "2026-10-27T20:25:04Z",
+      "distance_km": 5.5,
+      "elevation_gain_m": 119,
+      "moving_time_min": 17,
+      "average_watts": 161.6
+    },
+    {
+      "id": 20752690282,
+      "name": "Arbeit nach Hause",
+      "date": "2026-10-27T16:34:11Z",
+      "distance_km": 8.9,
       "elevation_gain_m": 8,
-      "moving_time_min": 12,
-      "average_watts": 172.1
-    },
-    {
-      "id": 20636211779,
-      "name": "ROUVY - Cape Point | Cape Town | South Africa",
-      "date": "2026-10-18T15:49:27Z",
-      "distance_km": 14.3,
-      "elevation_gain_m": 230,
-      "moving_time_min": 36,
-      "average_watts": 143.2
-    },
-    {
-      "id": 20475478996,
-      "name": "Afternoon Ride",
-      "date": "2026-10-06T14:01:58Z",
-      "distance_km": 67.7,
-      "elevation_gain_m": 501,
-      "moving_time_min": 166,
-      "average_watts": null
-    },
-    {
-      "id": 20446910811,
-      "name": "Radfahrt am Mittag",
-      "date": "2026-10-04T12:12:44Z",
-      "distance_km": 22.3,
-      "elevation_gain_m": 12,
-      "moving_time_min": 105,
+      "moving_time_min": 23,
       "average_watts": null
     }
   ],
-  "generated_at": "2026-10-26T12:30:35.247112+00:00"
+  "generated_at": "2026-11-02T15:05:03.799327+00:00"
 }
