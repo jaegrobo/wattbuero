@@ -555,6 +555,9 @@ def main():
     OUT.write_text(json.dumps(stats, ensure_ascii=False, indent=1) + "\n")
     CACHE.write_text(json.dumps(dict(sorted(cache.items())), indent=0) + "\n")
     r = stats["rolling_28_days"]
+    pendel = sum(1 for a in acts if is_cycling(a) and is_commute(a, zonen))
+    print(f"Pendelfahrten erkannt (nur Anzahl, {HISTORY_DAYS} Tage): {pendel}"
+          + ("" if zonen else " – nur über den Namen, WB_PENDEL_ZONEN fehlt oder ist falsch formatiert"))
     print(f"✓ {len(acts)} Aktivitäten gelesen, {geladen} FIT-Dateien neu, "
           f"28 Tage: {r['ride_count']} Fahrten, {r['distance_km']} km. "
           f"Form: {(stats['load'] or {}).get('zustand') or 'noch keine TSS-Werte'}")
