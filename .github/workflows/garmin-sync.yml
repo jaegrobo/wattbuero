@@ -1,0 +1,42 @@
+name: Garmin Sync
+
+"on":
+  schedule:
+    # täglich 04:17 UTC = 05:17/06:17 Uhr deutscher Zeit (krumme Minute: zur vollen
+    # Stunde sind die GitHub-Runner überlastet und starten oft verspätet)
+    - cron: "17 4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daten-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch Garmin data
+        env:
+          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
+          WB_PENDEL_ZONEN: ${{ secrets.WB_PENDEL_ZONEN }}
+          WB_RAEDER: ${{ secrets.WB_RAEDER }}
+        run: python3 scripts/garmin_sync.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "wattbuero-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/garmin-stats.json data/garmin-cache.json
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen an den Garmin-Daten."
+            exit 0
+          fi
+          git commit -m "Automatischer Garmin-Sync $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push
