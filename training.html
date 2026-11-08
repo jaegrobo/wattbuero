@@ -63,7 +63,7 @@
         </div>
         <figure class="diagramm" style="margin:0">
           <svg id="c-monat" viewBox="0 0 760 300" role="img" aria-labelledby="c-monat-t"><title id="c-monat-t">Kilometer je Monat, draußen und auf der Rolle, letzte zwölf Monate</title></svg>
-          <figcaption class="quelle" id="q1">Strava · Stand –</figcaption>
+          <figcaption class="quelle" id="q1">Stand –</figcaption>
         </figure>
         <div class="tabelle">
           <table>
@@ -75,7 +75,7 @@
         <details class="herleitung">
           <summary>Herleitung</summary>
           <ol>
-            <li>Eingang: alle Radfahrten aus Strava, draußen, auf der Rolle (ROUVY) und Pendelfahrten.</li>
+            <li>Eingang: alle Radfahrten aus Garmin Connect, draußen, auf der Rolle (ROUVY) und Pendelfahrten.</li>
             <li>Berechnung: Summe der Distanz im gleitenden Fenster der letzten 28 Tage; je Monat getrennt nach draußen und Rolle.</li>
             <li>Ergebnis: die große Zahl oben. Die gestrichelte Linie im Diagramm ist der Monatsschnitt der vollen Monate.</li>
             <li>Pendelfahrten zählen in alle Summen, erscheinen aber nie einzeln und nur auf 10 km gerundet. So lässt sich keine Strecke zurückrechnen.</li>
@@ -87,15 +87,35 @@
       <section class="station" id="s2" aria-labelledby="s2-t">
         <div class="geist" aria-hidden="true">02</div>
         <div class="station-kopf"><span class="nr">02 · Zustand</span><h2 id="s2-t">Wie es mir damit geht</h2></div>
-        <div class="hauptzahl"><span class="z" style="color:var(--ink-faint)">–</span><span class="cap">Form heute</span></div>
-        <div class="formskala" aria-hidden="true">
-          <div class="achse"><i style="left:0"></i><i style="left:25%"></i><i style="left:50%"></i><i style="left:75%"></i><i style="left:100%"></i></div>
-          <ol><li>Frisch</li><li>Produktiv</li><li>Ermüdet</li><li>Überlastet</li></ol>
+        <div class="hauptzeile">
+          <div class="hauptzahl"><span class="z" id="f-tsb">–</span><span class="cap" id="f-zustand">Form heute</span></div>
+          <dl class="nebenwerte">
+            <div><dt>Fitness</dt><dd id="f-ctl">–</dd></div>
+            <div><dt>Ermüdung</dt><dd id="f-atl">–</dd></div>
+            <div><dt>Fahrten mit Leistung</dt><dd id="f-abdeckung">–</dd></div>
+          </dl>
         </div>
-        <div class="leerzustand">
+        <div class="formskala" id="f-skala">
+          <div class="achse" aria-hidden="true"><i style="left:0"></i><i style="left:25%"></i><i style="left:50%"></i><i style="left:75%"></i><i style="left:100%"></i><b class="zeiger" id="f-zeiger" hidden></b></div>
+          <ol><li data-z="Frisch">Frisch</li><li data-z="Produktiv">Produktiv</li><li data-z="Ermüdet">Ermüdet</li><li data-z="Überlastet">Überlastet</li></ol>
+        </div>
+        <figure class="diagramm" style="margin:0" id="f-fig" hidden>
+          <svg id="c-form" viewBox="0 0 760 300" role="img" aria-labelledby="c-form-t"><title id="c-form-t">Fitness, Ermüdung und Form der letzten zwölf Wochen</title></svg>
+          <figcaption class="quelle" id="q2">Stand –</figcaption>
+        </figure>
+        <div class="leerzustand" id="f-leer">
           <p>Fitness, Ermüdung und Form kommen mit dem Garmin-Sync.</p>
-          <p class="klein">Dafür braucht es die Trainingsbelastung jeder Fahrt. Strava liefert sie nicht frei, Garmin schon. Sobald der Abruf läuft, steht hier der Formstand auf der Skala und die Kurve der letzten zwölf Wochen.</p>
+          <p class="klein">Dafür braucht es die Trainingsbelastung jeder Fahrt, und die liefert Garmin.</p>
         </div>
+        <details class="herleitung">
+          <summary>Herleitung</summary>
+          <ol>
+            <li>Eingang: die Trainingsbelastung (TSS) jeder Fahrt mit Leistungsmesser, wie Garmin sie berechnet. Fahrten ohne Leistungsmesser haben keinen TSS und fehlen; wie viele das in den letzten 28 Tagen waren, steht oben.</li>
+            <li>Fitness: gleitender Schnitt der täglichen Belastung über 42 Tage. Ermüdung: dasselbe über 7 Tage.</li>
+            <li>Form = Fitness minus Ermüdung vom Vortag. Über +5 frisch, bis −10 produktiv, bis −30 ermüdet, darunter überlastet. Die Schwellen sind übliche Praxis, keine feste Norm.</li>
+            <li>Einzelne Fahrten mit über 600 TSS gelten als Messfehler und zählen nicht.</li>
+          </ol>
+        </details>
       </section>
 
       <!-- 03 ------------------------------------------------------------ -->
@@ -105,13 +125,24 @@
         <div class="hauptzeile">
           <div class="hauptzahl"><span class="z"><span id="t-w">–</span><small>W</small></span><span class="cap">Ø Leistung, letzte 28 Tage</span></div>
         </div>
-        <div class="leerzustand">
+        <dl class="nebenwerte" id="p-werte" hidden>
+          <div><dt>5 s</dt><dd id="p-5">–</dd></div>
+          <div><dt>1 min</dt><dd id="p-60">–</dd></div>
+          <div><dt>5 min</dt><dd id="p-300">–</dd></div>
+          <div><dt>20 min</dt><dd id="p-1200">–</dd></div>
+          <div><dt>1 h</dt><dd id="p-3600">–</dd></div>
+        </dl>
+        <figure class="diagramm" style="margin:0" id="p-fig" hidden>
+          <svg id="c-kurve" viewBox="0 0 760 300" role="img" aria-labelledby="c-kurve-t"><title id="c-kurve-t">Leistungskurve: beste Durchschnittsleistung je Dauer, Saison und alle Zeiten</title></svg>
+          <figcaption class="quelle" id="q3">Stand –</figcaption>
+        </figure>
+        <div class="leerzustand" id="p-leer">
           <p>Leistungskurve und Bestwerte kommen mit dem Garmin-Sync.</p>
-          <p class="klein">Dann zeigt die Kurve die besten Durchschnittswerte je Dauer, von 5 Sekunden bis 2 Stunden, für diese Saison und für alle Zeiten.</p>
+          <p class="klein">Dann zeigt die Kurve die besten Durchschnittswerte je Dauer, von 1 Sekunde bis 5 Stunden, für diese Saison und für alle Zeiten.</p>
         </div>
         <details class="herleitung">
           <summary>Herleitung</summary>
-          <p>Durchschnittliche Leistung aller Fahrten mit Leistungsmesser im Fenster der letzten 28 Tage, wie Strava sie ausgibt. Fahrten ohne Leistungsmesser zählen nicht mit.</p>
+          <p>Große Zahl: durchschnittliche Leistung aller Fahrten mit Leistungsmesser in den letzten 28 Tagen, gewichtet nach Fahrzeit. Kurve: für jede Dauer die höchste Durchschnittsleistung einer einzelnen Fahrt, wie Garmin sie je Fahrt ausweist. „Saison“ ist das laufende Kalenderjahr, „alle Zeiten“ alles seit Beginn des Garmin-Abrufs. Fahrten, die in Garmin von der Leistungskurve ausgeschlossen sind, zählen nicht.</p>
         </details>
       </section>
 
@@ -127,12 +158,12 @@
           </dl>
         </div>
         <div class="distanz">
-          <div class="bahn" aria-hidden="true"><span class="grund"></span><span class="fuell" style="width:37.6%"></span><span class="marke" style="left:37.6%"></span><span class="ende"></span></div>
-          <div class="skala"><span>0 km</span><span>längste Fahrt 112,3 km</span><span>299 km</span></div>
+          <div class="bahn" aria-hidden="true"><span class="grund"></span><span class="fuell" id="d-fuell" style="width:0"></span><span class="marke" id="d-marke" style="left:0"></span><span class="ende"></span></div>
+          <div class="skala"><span>0 km</span><span id="d-text">längste Fahrt –</span><span>299 km</span></div>
         </div>
         <details class="herleitung">
           <summary>Herleitung</summary>
-          <p>Die längste dokumentierte Fahrt ist die Runde um Essenbach am 30.08.2026 mit 112,3 km. Das sind gut 37 % der Renndistanz von 299 km. Die Kilometer seit Jahresbeginn sind die Summe der Monate aus Strava.</p>
+          <p>Die Bahn zeigt die längste Fahrt draußen in diesem Jahr im Verhältnis zur Renndistanz von 299 km. Die Kilometer seit Jahresbeginn sind alle Radfahrten des laufenden Jahres, draußen und auf der Rolle.</p>
         </details>
       </section>
     </div>
