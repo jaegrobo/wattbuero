@@ -133,14 +133,21 @@ BASE_FMT = {0x00: "B", 0x01: "b", 0x02: "B", 0x83: "h", 0x84: "H", 0x85: "i", 0x
 INVALID = {"B": 0xFF, "H": 0xFFFF, "I": 0xFFFFFFFF}
 
 
+PROFIL_MSG = {6: 0, 12: 3}   # bike_profile.name, sport.name (Name des Rad-/Aktivitätsprofils am Edge)
+
+
 def fit_devices(data):
-    """Liest alle device_info-Nachrichten (global 23) aus einer FIT-Datei.
-    Rückgabe: Liste von dicts mit serial, manufacturer, product, device_type, name."""
+    return fit_scan(data)[0]
+
+
+def fit_scan(data):
+    """Liest aus einer FIT-Datei die device_info-Nachrichten (global 23) und die Namen
+    von Rad- und Aktivitätsprofil. Rückgabe: (Geräteliste, Profilnamen)."""
     if not data or len(data) < 14 or data[8:12] != b".FIT":
-        return []
+        return [], []
     hsize = data[0]
     end = hsize + struct.unpack_from("<I", data, 4)[0]
-    pos, defs, devices = hsize, {}, []
+    pos, defs, devices, namen = hsize, {}, [], []
     while pos < min(end, len(data)):
         h = data[pos]; pos += 1
         if h & 0x80:                         # komprimierter Zeitstempel
@@ -168,7 +175,7 @@ def fit_devices(data):
         rec = {}
         for num, size, bt in fields:
             raw = data[pos:pos + size]; pos += size
-            if gnum != 23:
+            if gnum != 23 and gnum not in PROFIL_MSG:
                 continue
             f = BASE_FMT.get(bt, "B")
             if f == "s":
@@ -184,7 +191,11 @@ def fit_devices(data):
             devices.append({"serial": str(rec[3]), "manufacturer": rec.get(2),
                             "product": rec.get(4), "device_type": rec.get(1),
                             "name": rec.get(27)})
-    return devices
+        if gnum in PROFIL_MSG and isinstance(rec.get(PROFIL_MSG[gnum]), str):
+            n = rec[PROFIL_MSG[gnum]].strip()
+            if n and n not in namen:
+                namen.append(n)
+    return devices, namen
 
 
 # ---------------------------------------------------------------- Einordnung
@@ -244,14 +255,28 @@ def load_bikes():
     return cfg
 
 
-def bike_for(a, devices, cfg):
+def bike_for(a, devices, cfg, namen=()):
+    """Rad einer Fahrt draußen. Gezählt wird, wie viele bekannte Seriennummern je Rad
+    in der FIT-Datei stehen. Räder ohne Leistungsmesser scheiden aus, wenn die Fahrt
+    Leistungswerte hat. So zieht ein anderes Rad, das zufällig in Funkreichweite
+    aufgewacht ist, die Fahrt nicht an sich."""
     if is_indoor(a):
         return cfg["indoor"]
-    for d in devices or []:
-        rad = cfg["serials"].get(d["serial"])
-        if rad:
-            return rad
-    # Kein bekanntes AXS-Gerät gekoppelt: das Rad ohne AXS (Gazzetta), falls konfiguriert
+    ohne_pm = set(cfg.get("ohne_leistungsmesser", []))
+    stimmen = {}
+    for serial in {d["serial"] for d in devices or []}:
+        rad = cfg["serials"].get(serial)
+        if rad and not (a.get("avgPower") and rad in ohne_pm):
+            stimmen[rad] = stimmen.get(rad, 0) + 1
+    if stimmen:
+        return max(sorted(stimmen), key=lambda r: stimmen[r])
+    # Keine bekannte Seriennummer: Radprofil am Edge als zweites Merkmal.
+    # Sensoren gehen vor, weil das Profil auch mal falsch gewählt ist.
+    profile = {k.lower(): v for k, v in cfg.get("profile", {}).items()}
+    for n in namen:
+        if n.lower() in profile:
+            return profile[n.lower()]
+    # Weder Sensor noch bekanntes Profil: das Rad ohne Elektronik (Gazzetta)
     return cfg.get("fallback_outdoor")
 
 
@@ -461,13 +486,15 @@ def assign_bikes(H, acts, cache, cfg, fit_loader):
         geladen += 1
         if fit is None:
             continue                       # nächster Lauf versucht es erneut
-        cache[aid] = bike_for(a, fit_devices(fit), cfg)
+        devs, namen = fit_scan(fit)
+        cache[aid] = bike_for(a, devs, cfg, namen)
     return geladen
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--discover", action="store_true", help="Seriennummern der letzten Fahrten anzeigen")
+    ap.add_argument("--anzahl", type=int, default=15, help="mit --discover: so viele Fahrten")
     ap.add_argument("--fixture", help="Aktivitätsliste aus Datei statt API (Test)")
     ap.add_argument("--fit-dir", help="mit --fixture: FIT-Dateien <id>.fit aus diesem Ordner")
     ap.add_argument("--today", help="mit --fixture: Stichtag JJJJ-MM-TT")
@@ -494,11 +521,16 @@ def main():
 
     if args.discover:
         print("Fahrten draußen, gekoppelte Geräte mit Seriennummer:")
-        for a in [x for x in acts if is_cycling(x) and not is_indoor(x)][:15]:
-            devs = fit_devices(fit_loader(H, a.get("activityId")))
+        for a in [x for x in acts if is_cycling(x) and not is_indoor(x)][:args.anzahl]:
+            devs, namen = fit_scan(fit_loader(H, a.get("activityId")))
             print(f"\n{local_dt(a):%d.%m.%Y}  {(a.get('distance') or 0)/1000:6.1f} km  "
-                  f"{'mit Leistung' if a.get('avgPower') else 'ohne Leistung'}")
+                  f"{'mit Leistung' if a.get('avgPower') else 'ohne Leistung'}"
+                  f"  Profil: {' / '.join(namen) or '–'}")
+            gesehen = set()
             for d in devs:
+                if (d["serial"], d["manufacturer"]) in gesehen or d["manufacturer"] is None:
+                    continue
+                gesehen.add((d["serial"], d["manufacturer"]))
                 print(f"   Seriennr. {d['serial']:>12}  Hersteller {d['manufacturer']}  "
                       f"Produkt {d['product']}  Typ {d['device_type']}  {d['name'] or ''}")
         print("\nSRAM hat die Herstellernummer 268. Seriennummern je Rad in "
