@@ -1,83 +1,78 @@
 ---
 name: Wattbüro
-description: Rennrad-Logbuch mit Ausrüstungstests, Trainingsdaten und Streckenberichten. Bestandsaufnahme vor dem Redesign (Stand 2026-11-01).
+description: Rennrad-Logbuch mit Trainingsdaten, Ausrüstung und Streckenberichten. Designsystem „Weiterentwicklung" (Stand 2026-11-07); Regeln im Detail in design-system/wattbuero/MASTER.md.
 colors:
-  page-graphite: "#121212"
-  surface-graphite: "#1a1a1a"
-  hero-black: "#000000"
-  hairline: "#2c2c2c"
-  hairline-strong: "#444444"
-  paper-white: "#f2f2ee"
-  muted-grey: "#9a9a9a"
-  signal-lime: "#c8ff4d"
-  lime-ink: "#2c3d0a"
+  ground: "#0d0d0d"
+  panel: "#131313"
+  line: "#2a2a2a"
+  line-soft: "#1e1e1e"
+  ghost: "#1c1c1c"
+  ink: "#ecebe6"
+  ink-dim: "#a3a29c"
+  ink-faint: "#8a8984"
+  marker: "#f2c230"
+  ink-on-ink: "#0d0d0d"
 typography:
   display:
-    fontFamily: "Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
-    fontSize: "2rem"
-    fontWeight: 700
-    letterSpacing: "0.01em"
+    fontFamily: "Science Gothic, Arial Narrow, system-ui, sans-serif"
+    fontSize: "clamp(40px, 7.4vw, 104px)"
+    fontWeight: 800
+  number:
+    fontFamily: "Science Gothic, Arial Narrow, system-ui, sans-serif"
+    fontSize: "clamp(52px, 8vw, 104px)"
+    fontWeight: 200
   headline:
-    fontFamily: "Space Grotesk, -apple-system, sans-serif"
-    fontSize: "1.2rem"
+    fontFamily: "Science Gothic, Arial Narrow, system-ui, sans-serif"
+    fontSize: "28px"
     fontWeight: 700
-    letterSpacing: "0.03em"
-  title:
-    fontFamily: "Space Grotesk, -apple-system, sans-serif"
-    fontSize: "1.05rem"
-    fontWeight: 700
-  body:
-    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-    fontSize: "1rem"
+  hero-title:
+    fontFamily: "Science Gothic, Arial Narrow, system-ui, sans-serif"
+    fontSize: "clamp(30px, 6vw, 84px)"
+    fontWeight: 800
+  page-title:
+    fontFamily: "Science Gothic, Arial Narrow, system-ui, sans-serif"
+    fontSize: "clamp(28px, 4vw, 54px)"
+    fontWeight: 800
+  key-figure:
+    fontFamily: "Science Gothic, Arial Narrow, system-ui, sans-serif"
+    fontSize: "clamp(40px, 5.4vw, 68px)"
+    fontWeight: 200
+  lead:
+    fontFamily: "IBM Plex Sans, system-ui, sans-serif"
+    fontSize: "18px"
     lineHeight: 1.6
+  body:
+    fontFamily: "IBM Plex Sans, system-ui, sans-serif"
+    fontSize: "16px"
+    lineHeight: 1.6
+  dimension:
+    fontFamily: "IBM Plex Mono, ui-monospace, monospace"
+    fontSize: "11px"
+    letterSpacing: "0.12em"
   label:
-    fontFamily: "JetBrains Mono, SF Mono, Consolas, monospace"
-    fontSize: "0.72rem"
-    fontWeight: 500
-    letterSpacing: "0.04em"
+    fontFamily: "IBM Plex Mono, ui-monospace, monospace"
+    fontSize: "13px"
+    fontWeight: 400
+    letterSpacing: "0.08em"
   data:
-    fontFamily: "JetBrains Mono, SF Mono, Consolas, monospace"
-    fontSize: "1.5rem"
-    fontWeight: 700
+    fontFamily: "IBM Plex Mono, ui-monospace, monospace"
+    fontSize: "20px"
+    fontWeight: 600
 rounded:
-  tag: "3px"
-  card: "4px"
-  pill: "999px"
+  none: "0px"
+  small: "2px"
 spacing:
-  gutter: "1.25rem"
-  section: "2.5rem"
-  max-width: "960px"
-components:
-  card:
-    backgroundColor: "{colors.surface-graphite}"
-    rounded: "{rounded.card}"
-    padding: "1.25rem"
-  tag:
-    backgroundColor: "{colors.signal-lime}"
-    textColor: "{colors.lime-ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.tag}"
-    padding: "0.15rem 0.5rem"
-  tab-active:
-    backgroundColor: "{colors.signal-lime}"
-    textColor: "{colors.lime-ink}"
-    rounded: "{rounded.tag}"
-    padding: "0.35rem 0.7rem"
-  stat-gauge:
-    backgroundColor: "{colors.hero-black}"
-    textColor: "{colors.signal-lime}"
-    typography: "{typography.data}"
-    rounded: "{rounded.card}"
-    padding: "0.7rem 0.9rem"
+  scale: "4 8 12 16 24 32 48 64 96"
+  max-width: "1180px"
 ---
 
-# Design System: Wattbüro (Bestand)
+# Design System: Wattbüro
 
-> **Abgelöst:** Das neue Designsystem steht in `design-system/wattbuero/MASTER.md` (E-5 „Weiterentwicklung", 06.11.2026). Diese Datei dokumentiert nur noch den alten Stand.
->
-> Bestandsaufnahme vor dem Redesign, per Impeccable `document` im Scan-Modus aus `style.css` extrahiert. Die qualitativen Beschreibungen stammen aus dem bestehenden Stylesheet-Kommentar („Rennlogbuch") und sind noch nicht mit Robert abgestimmt. Ob dieses System behalten oder ersetzt wird, entscheidet E-5.
+> Die Werte oben gelten seit dem Redesign (Branch `redesign`). Die verbindlichen Regeln stehen in `design-system/wattbuero/MASTER.md`, die Seiten-Ausnahmen in `design-system/wattbuero/pages/`. Der Text unten beschreibt noch den alten Stand „Rennlogbuch" und bleibt nur als Archiv stehen.
 
-## Overview
+## Archiv: alter Stand „Rennlogbuch"
+
+### Overview
 
 Arbeitstitel „Rennlogbuch": dunkle, kontrastreiche Oberfläche, ein einziger Signalakzent, alle Zahlen in Monospace. Die Seite wirkt wie ein technisches Protokoll, nicht wie ein Magazin. Headlines stehen in Versalien, Labels sind klein, gesperrt und monospaced.
 

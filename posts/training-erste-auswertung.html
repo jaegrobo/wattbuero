@@ -2,35 +2,34 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Meine ersten Wattmessungen im Vergleich – Wattbüro</title>
 <meta name="description" content="Was die Zahlen wirklich über Fortschritt aussagen – und was nicht.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&family=IBM+Plex+Sans:wdth,wght@75..100,300..600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../css/wb.css">
 </head>
 <body data-root="..">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="../index.html">Watt<span>büro</span></a>
-    <nav>
-      <a href="../index.html">Start</a>
-      <a href="../ausruestung.html">Ausrüstung</a>
-      <a href="../training.html" class="active">Training</a>
+<header class="kopf">
+  <div class="frame">
+    <a class="marke" href="../index.html"><img src="../images/start/wordmark-giallo.webp" width="990" height="173" alt="Wattbüro – zur Startseite"></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="../training.html" aria-current="page">Training</a>
       <a href="../strecken.html">Strecken</a>
+      <a href="../ausruestung.html">Ausrüstung</a>
       <a href="../ueber.html">Über</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <article class="post">
+  <article class="beitrag frame">
+    <a class="zurueck" href="../training.html">← Training</a>
     <h1>Meine ersten Wattmessungen im Vergleich</h1>
     <p class="post-meta">Kategorie: Training · [Platzhalter-Datum]</p>
-
-    <div id="wattbuero-mini-stats">Lade Trainingsdaten…</div>
 
     <p>[Platzhalter-Text: Ausgangslage – z. B. FTP-Test-Ergebnis, Zeitraum, Trainingsumfang.]</p>
 
@@ -46,10 +45,15 @@
   </article>
 </main>
 
-<footer class="site-footer">
-  &copy; 2026 Wattbüro · <a href="../ueber.html">Über diese Seite</a>
+<footer class="fuss">
+  <div class="frame">
+    <p class="name" aria-hidden="true">Wattbüro</p>
+    <div class="zeile">
+      <span>Rennrad-Logbuch · Watt für Watt</span>
+      <nav aria-label="Rechtliches"><a href="../ueber.html">Über &amp; Impressum</a></nav>
+      <span>&copy; 2026</span>
+    </div>
+  </div>
 </footer>
-
-<script src="../scripts/stats-widget.js"></script>
 </body>
 </html>

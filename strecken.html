@@ -2,45 +2,58 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Strecken – Wattbüro</title>
-<meta name="description" content="Streckenprofile, Tourenberichte und Empfehlungen fürs Rennrad.">
+<meta name="description" content="Streckenberichte mit Profil, Pausen und ehrlicher Einschätzung.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&family=IBM+Plex+Sans:wdth,wght@75..100,300..600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/wb.css">
 </head>
-<body>
+<body data-root=".">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">Watt<span>büro</span></a>
-    <nav>
-      <a href="index.html">Start</a>
-      <a href="ausruestung.html">Ausrüstung</a>
+<header class="kopf">
+  <div class="frame">
+    <!-- Platzhalter: Wortmarke als Rasterbild aus dem Logo-Entwurf, wird durch SVG ersetzt -->
+    <a class="marke" href="index.html"><img src="images/start/wordmark-giallo.webp" width="990" height="173" alt="Wattbüro – zur Startseite"></a>
+    <nav aria-label="Hauptnavigation">
       <a href="training.html">Training</a>
-      <a href="strecken.html" class="active">Strecken</a>
+      <a href="strecken.html" aria-current="page">Strecken</a>
+      <a href="ausruestung.html">Ausrüstung</a>
       <a href="ueber.html">Über</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <h1>Strecken</h1>
-  <p>Tourenberichte mit Streckenprofil, Einkehrmöglichkeiten und ehrlicher Schwierigkeitseinschätzung.</p>
-
-  <div class="card-grid">
-    <a class="card" href="posts/strecken-erste-tour.html">
-      <span class="tag">Strecken</span>
-      <h3>Eine Tour, die sich wirklich lohnt</h3>
-      <p>Streckenprofil, Einkehrmöglichkeiten und ehrliche Schwierigkeitseinschätzung.</p>
-    </a>
+  <div class="frame seitenkopf gross">
+    <h1><span class="fett">Strecken</span><span class="duenn">Runden, die sich lohnen</span></h1>
+    <p>Touren mit Profil, Pausen und ehrlicher Einschätzung, wie schwer sie wirklich sind.</p>
   </div>
+
+  <section class="frame beitraege" aria-labelledby="s-t" style="padding-top:var(--s5)">
+    <h2 id="s-t">Berichte</h2>
+    <ol class="liste">
+      <li><a href="posts/training-112km-essenbach.html"><time datetime="2026-08-30">30.08.2026</time><span class="kat">Runde</span><span class="t">112 km rund um Essenbach</span><span class="w">112,3 km · 348 hm</span></a></li>
+    </ol>
+    <div class="leerzustand">
+      <p>Weitere Streckenberichte folgen.</p>
+      <p class="klein">Jeder Bericht bekommt ein großes Landschaftsfoto, die Werte genau dieser Fahrt und aufklappbare Details zu Profil, Splits und Pausen.</p>
+    </div>
+    <!-- posts/strecken-erste-tour.html ist noch Platzhalter (Datum, Region, Text) und wird erst verlinkt, wenn er ausgefüllt ist -->
+  </section>
 </main>
 
-<footer class="site-footer">
-  &copy; 2026 Wattbüro · <a href="ueber.html">Über diese Seite</a>
+<footer class="fuss">
+  <div class="frame">
+    <p class="name" aria-hidden="true">Wattbüro</p>
+    <div class="zeile">
+      <span>Rennrad-Logbuch · Watt für Watt</span>
+      <nav aria-label="Rechtliches"><a href="ueber.html">Über &amp; Impressum</a></nav>
+      <span>&copy; 2026</span>
+    </div>
+  </div>
 </footer>
-
 </body>
 </html>

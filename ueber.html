@@ -2,63 +2,66 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Über – Wattbüro</title>
-<meta name="description" content="Über Wattbüro.">
+<meta name="description" content="Wer hinter Wattbüro steht, und das Impressum.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&family=IBM+Plex+Sans:wdth,wght@75..100,300..600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/wb.css">
 </head>
 <body data-root=".">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">Watt<span>büro</span></a>
-    <nav>
-      <a href="index.html">Start</a>
-      <a href="ausruestung.html">Ausrüstung</a>
+<header class="kopf">
+  <div class="frame">
+    <!-- Platzhalter: Wortmarke als Rasterbild aus dem Logo-Entwurf, wird durch SVG ersetzt -->
+    <a class="marke" href="index.html"><img src="images/start/wordmark-giallo.webp" width="990" height="173" alt="Wattbüro – zur Startseite"></a>
+    <nav aria-label="Hauptnavigation">
       <a href="training.html">Training</a>
       <a href="strecken.html">Strecken</a>
-      <a href="ueber.html" class="active">Über</a>
+      <a href="ausruestung.html">Ausrüstung</a>
+      <a href="ueber.html" aria-current="page">Über</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <h1>Über Wattbüro</h1>
-  <p>Wattbüro dokumentiert Ausrüstung, Training und Strecken rund ums Rennradfahren – nachvollziehbar statt werblich.</p>
-  <p>Ich bin Robert – arbeite hauptberuflich in der Energiebranche, fahre in der Freizeit Rennrad und dokumentiere hier, was dabei an Ausrüstung, Trainingsdaten und Strecken zusammenkommt. Kein Sponsoring, keine Marketing-Versprechen – nur das, was ich selbst gefahren, aufgebaut oder nachgemessen habe.</p>
-
-  <div class="dashboard-link-note">Das Trainingsdashboard mit allen Kennzahlen findest du jetzt auf der <a href="training.html">Training-Seite</a>.</div>
-
-  <div class="instructions">
-    <strong>Hinweis (kann nach dem Livegang entfernt werden):</strong> Affiliate-Links auf dieser Seite sind unter jedem betroffenen Beitrag gekennzeichnet. Nach § 6 TMG / UWG besteht in Deutschland eine Kennzeichnungspflicht für Werbung/Affiliate-Links – die genaue rechtliche Ausgestaltung (z. B. "Werbung"-Label) bitte vor dem Livegang kurz prüfen, das kann sich seit meinem Wissensstand geändert haben.
+  <div class="frame seitenkopf gross mit-bild"><picture class="kopfbild"><source srcset="images/ausruestung/rose.webp" type="image/webp"><img src="images/ausruestung/rose.jpg" width="800" height="600" alt="Rose Backroad am Geländer über einem Fluss, schwarz-weiß"></picture>
+    <h1><span class="fett">Über</span><span class="duenn">Wattbüro</span></h1>
+    <p>Ausrüstung, Training und Strecken rund ums Rennradfahren, nachvollziehbar statt werblich.</p>
   </div>
 
-  <h2 class="section-title">Impressum</h2>
-  <dl class="impressum">
-    <dt>Angaben gemäß § 5 TMG</dt>
-    <dd>Robert Jäger</dd>
-    <dd>Badstr. 7</dd>
-    <dd>84051 Essenbach</dd>
+  <section class="frame ueber" aria-labelledby="u-t">
+    <h2 id="u-t">Wer hier schreibt</h2>
+    <p>Ich bin Robert, arbeite hauptberuflich in der Energiebranche, fahre in der Freizeit Rennrad und dokumentiere hier, was dabei an Ausrüstung, Trainingsdaten und Strecken zusammenkommt. Kein Sponsoring, keine Marketing-Versprechen, nur das, was ich selbst gefahren, aufgebaut oder nachgemessen habe.</p>
+    <p>Die Trainingszahlen findest du auf der Seite <a href="training.html">Training</a>.</p>
+    <p class="klein">Affiliate-Links sind unter jedem betroffenen Beitrag gekennzeichnet.</p>
+    <!-- Prüfhinweis (vor Livegang): Seit 14.05.2024 ersetzt das Digitale-Dienste-Gesetz (DDG) das TMG. Impressumspflicht jetzt § 5 DDG,
+         Kennzeichnung kommerzieller Kommunikation § 6 DDG bzw. UWG. Rechtsstand vor dem Livegang prüfen. -->
+  </section>
 
-    <dt>Kontakt</dt>
-    <dd>Telefon: +49 173 866 18 57</dd>
-    <dd>E-Mail: robert@wattbuero.de</dd>
-
-    <dt>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</dt>
-    <dd>Robert Jäger (Anschrift wie oben)</dd>
-
-    <dt>Umsatzsteuer</dt>
-    <dd>Kein Ausweis der Umsatzsteuer gemäß § 19 Abs. 1 UStG (Kleinunternehmerregelung).</dd>
-  </dl>
-  <p><em>[Prüfhinweis: Der Hinweis auf § 19 UStG geht davon aus, dass die Seite (noch) keine oder nur geringe Einnahmen erzielt – sobald sich das ändert, diesen Absatz mit Steuerberater/Finanzamt neu bewerten, nicht einfach stehen lassen.]</em></p>
+  <section class="frame impressum-block" aria-labelledby="i-t">
+    <h2 id="i-t">Impressum</h2>
+    <dl class="impressum">
+      <div><dt>Angaben gemäß § 5 DDG</dt><dd>Robert Jäger<br>Badstr. 7<br>84051 Essenbach</dd></div>
+      <div><dt>Kontakt</dt><dd>Telefon: +49 173 866 18 57<br>E-Mail: robert@wattbuero.de</dd></div>
+      <div><dt>Verantwortlich nach § 18 Abs. 2 MStV</dt><dd>Robert Jäger, Anschrift wie oben</dd></div>
+      <div><dt>Umsatzsteuer</dt><dd>Kein Ausweis der Umsatzsteuer gemäß § 19 Abs. 1 UStG (Kleinunternehmerregelung).</dd></div>
+    </dl>
+    <!-- Prüfhinweis: § 19 UStG setzt voraus, dass die Seite keine oder nur geringe Einnahmen erzielt. Bei Einnahmen mit Steuerberatung neu bewerten. -->
+  </section>
 </main>
 
-<footer class="site-footer">
-  &copy; 2026 Wattbüro
+<footer class="fuss">
+  <div class="frame">
+    <p class="name" aria-hidden="true">Wattbüro</p>
+    <div class="zeile">
+      <span>Rennrad-Logbuch · Watt für Watt</span>
+      <nav aria-label="Rechtliches"><a href="ueber.html">Über &amp; Impressum</a></nav>
+      <span>&copy; 2026</span>
+    </div>
+  </div>
 </footer>
-
 </body>
 </html>

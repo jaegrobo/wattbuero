@@ -2,65 +2,77 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Ausrüstung – Wattbüro</title>
-<meta name="description" content="Ausrüstungstests und Produktvergleiche rund ums Rennrad.">
+<meta name="description" content="Meine Räder und der Indoor-Trainer: Aufbauten, Teile und Gewichte.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&family=IBM+Plex+Sans:wdth,wght@75..100,300..600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/wb.css">
 </head>
-<body>
+<body data-root=".">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">Watt<span>büro</span></a>
-    <nav>
-      <a href="index.html">Start</a>
-      <a href="ausruestung.html" class="active">Ausrüstung</a>
+<header class="kopf">
+  <div class="frame">
+    <!-- Platzhalter: Wortmarke als Rasterbild aus dem Logo-Entwurf, wird durch SVG ersetzt -->
+    <a class="marke" href="index.html"><img src="images/start/wordmark-giallo.webp" width="990" height="173" alt="Wattbüro – zur Startseite"></a>
+    <nav aria-label="Hauptnavigation">
       <a href="training.html">Training</a>
       <a href="strecken.html">Strecken</a>
+      <a href="ausruestung.html" aria-current="page">Ausrüstung</a>
       <a href="ueber.html">Über</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <h1>Ausrüstung</h1>
-  <p>Tests und Vergleiche zu Rädern, Komponenten und Bekleidung – eingeordnet nach Preis-Leistung, nicht nach Marketing.</p>
-
-  <div class="card-grid">
-    <a class="card" href="posts/ausruestung-erster-test.html">
-      <span class="tag">Ausrüstung</span>
-      <h3>Cinelli Aeroscoop – mein Aufbau</h3>
-      <p>SRAM RED AXS, DT Swiss ARC 1400 Dicut 55 – ein individueller Aufbau statt Werkskonfiguration.</p>
-    </a>
-    <a class="card" href="posts/ausruestung-rose-backroad-ff.html">
-      <span class="tag">Ausrüstung</span>
-      <h3>Rose Backroad FF</h3>
-      <p>Gravel-Race-Bike mit SRAM Force AXS XPLR, 1x12 und Rennrad-naher Geometrie.</p>
-    </a>
-    <a class="card" href="posts/ausruestung-cube-agree-c62-slx.html">
-      <span class="tag">Ausrüstung</span>
-      <h3>Cube Agree C:62 SLX</h3>
-      <p>Leichtes Carbon-Rennrad mit SRAM Force AXS und Newmen-Carbonlaufrädern.</p>
-    </a>
-    <a class="card" href="posts/ausruestung-cinelli-gazzetta-della-strada.html">
-      <span class="tag">Ausrüstung</span>
-      <h3>Cinelli Gazzetta della Strada</h3>
-      <p>Stahlrahmen-Bike mit Scheibenbremsen für Stadt und Landstraße statt reiner Renngeometrie.</p>
-    </a>
-    <a class="card" href="posts/ausruestung-tacx-neo-smart-t8000.html">
-      <span class="tag">Ausrüstung</span>
-      <h3>Garmin Tacx Neo Smart T8000 Bike</h3>
-      <p>Kompletter Indoor-Smart-Bike-Trainer mit kontaktloser Elektrobremse bis 2.200 W.</p>
-    </a>
+  <div class="frame seitenkopf gross">
+    <h1><span class="fett">Ausrüstung</span><span class="duenn">vier Räder, ein Trainer</span></h1>
+    <p>Was ich fahre und wie es aufgebaut ist. Fakten mit Quelle, Einschätzungen aus eigener Erfahrung.</p>
   </div>
+
+  <section class="frame geraete" aria-labelledby="g-t">
+    <h2 id="g-t" class="sr-only">Alle Räder und Geräte</h2>
+    <ol class="geraeteliste">
+      <li><a href="posts/ausruestung-erster-test.html">
+        <picture><source srcset="images/ausruestung/aeroscoop.webp" type="image/webp"><img src="images/ausruestung/aeroscoop.jpg" width="800" height="600" alt="Cinelli Aeroscoop, schwarz-weiß" loading="lazy"></picture>
+        <span class="text"><span class="kat">Aero-Rennrad, mein Aufbau</span><span class="t">Cinelli Aeroscoop</span><span class="spec">SRAM RED AXS · DT Swiss ARC 1400 Dicut</span></span>
+        <span class="w">Mai 2026</span>
+      </a></li>
+      <li><a href="posts/ausruestung-cube-agree-c62-slx.html">
+        <picture><source srcset="images/ausruestung/cube.webp" type="image/webp"><img src="images/ausruestung/cube.jpg" width="800" height="600" alt="Cube Agree an einer hellen Wand" loading="lazy"></picture>
+        <span class="text"><span class="kat">Carbon-Rennrad</span><span class="t">Cube Agree C:62 SLX</span><span class="spec">SRAM Force AXS · ≈ 7,5 kg laut Hersteller</span></span>
+        <span class="w">Juni 2025</span>
+      </a></li>
+      <li><a href="posts/ausruestung-rose-backroad-ff.html">
+        <picture><source srcset="images/ausruestung/rose.webp" type="image/webp"><img src="images/ausruestung/rose.jpg" width="800" height="600" alt="Rose Backroad am Geländer über einem Fluss" loading="lazy"></picture>
+        <span class="text"><span class="kat">Gravel</span><span class="t">Rose Backroad FF</span><span class="spec">SRAM Force AXS XPLR 1×12 · ≈ 8 kg laut Hersteller</span></span>
+        <span class="w">Dez. 2025</span>
+      </a></li>
+      <li><a href="posts/ausruestung-cinelli-gazzetta-della-strada.html">
+        <picture><source srcset="images/ausruestung/gazzetta.webp" type="image/webp"><img src="images/ausruestung/gazzetta.jpg" width="800" height="600" alt="Cinelli Gazzetta auf Pflaster" loading="lazy"></picture>
+        <span class="text"><span class="kat">Stahl, Stadt und Landstraße</span><span class="t">Cinelli Gazzetta della Strada</span><span class="spec">Scheibenbremsen · ≈ 12,5 kg laut Hersteller</span></span>
+        <span class="w">Juli 2026</span>
+      </a></li>
+      <li><a href="posts/ausruestung-tacx-neo-smart-t8000.html">
+        <picture><source srcset="images/ausruestung/tacx.webp" type="image/webp"><img src="images/ausruestung/tacx.jpg" width="800" height="600" alt="Tacx Neo Smart Bike im Zimmer" loading="lazy"></picture>
+        <span class="text"><span class="kat">Indoor-Trainer</span><span class="t">Garmin Tacx Neo Smart T8000</span><span class="spec">Elektrobremse bis 2.200 W</span></span>
+        <span class="w">Sep. 2025</span>
+      </a></li>
+    </ol>
+  </section>
 </main>
 
-<footer class="site-footer">
-  &copy; 2026 Wattbüro · <a href="ueber.html">Über diese Seite</a>
+<footer class="fuss">
+  <div class="frame">
+    <p class="name" aria-hidden="true">Wattbüro</p>
+    <div class="zeile">
+      <span>Rennrad-Logbuch · Watt für Watt</span>
+      <nav aria-label="Rechtliches"><a href="ueber.html">Über &amp; Impressum</a></nav>
+      <span>&copy; 2026</span>
+    </div>
+  </div>
 </footer>
-
 </body>
 </html>

@@ -24,6 +24,7 @@ install nötig) - passt zum Rest des Projekts.
 """
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -139,8 +140,18 @@ def is_cycling(a):
     return st in CYCLING_TYPES
 
 
+# Pendelfahrten: Strava-Flag "commute" oder typische Namen. Sie zählen in die
+# Summen, erscheinen aber nie einzeln (kein Name, kein Datum, keine ID), damit
+# Wohn- und Arbeitsort nicht aus Einzelfahrten ablesbar sind.
+COMMUTE_WORDS = re.compile(r"(arbeit|pendel|commute|nach hause|heimweg|b(ü|ue)ro)", re.I)
+
+
+def is_commute(a):
+    return bool(a.get("commute")) or bool(COMMUTE_WORDS.search(a.get("name") or ""))
+
+
 def volume_bucket(a):
-    if a.get("commute"):
+    if is_commute(a):
         return "commute_km"
     # Stravas "trainer"-Flag kommt in der Aktivitätsliste (im Gegensatz zur
     # Detailansicht einer einzelnen Aktivität) nicht zuverlässig mit - in der
@@ -209,8 +220,16 @@ def summarize(activities):
         if km > 0
     ]
 
+    commutes_28 = [a for a in rolling if is_commute(a)]
+    commute_28 = {
+        "count": len(commutes_28),
+        # auf 10 km gerundet, damit sich keine Einzelstrecke zurückrechnen lässt
+        "km_rounded": int(round(sum(a.get("distance", 0) for a in commutes_28) / 10000.0) * 10),
+    }
+
     recent = []
-    for a in sorted(rides, key=lambda x: x.get("start_date_local", ""), reverse=True)[:5]:
+    public = [a for a in rides if not is_commute(a)]
+    for a in sorted(public, key=lambda x: x.get("start_date_local", ""), reverse=True)[:5]:
         recent.append(
             {
                 "id": a.get("id"),
@@ -230,6 +249,7 @@ def summarize(activities):
             "elevation_gain_m": round(elevation_m),
             "moving_time_hours": round(moving_time_h, 1),
             "average_watts": avg_watts,
+            "commute": commute_28,
         },
         "monthly": monthly,
         "sport_split": sport_split,

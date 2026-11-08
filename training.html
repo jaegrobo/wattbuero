@@ -2,59 +2,154 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Training – Wattbüro</title>
-<meta name="description" content="Trainingsdaten, Wattmessungen und Leistungsauswertungen.">
+<meta name="description" content="Trainingsdaten als Kette: was ich fahre, wie es mir damit geht, was dabei herauskommt und wofür.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&family=IBM+Plex+Sans:wdth,wght@75..100,300..600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/wb.css">
 </head>
 <body data-root=".">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">Watt<span>büro</span></a>
-    <nav>
-      <a href="index.html">Start</a>
-      <a href="ausruestung.html">Ausrüstung</a>
-      <a href="training.html" class="active">Training</a>
+<header class="kopf">
+  <div class="frame">
+    <!-- Platzhalter: Wortmarke als Rasterbild aus dem Logo-Entwurf, wird durch SVG ersetzt -->
+    <a class="marke" href="index.html"><img src="images/start/wordmark-giallo.webp" width="990" height="173" alt="Wattbüro – zur Startseite"></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="training.html" aria-current="page">Training</a>
       <a href="strecken.html">Strecken</a>
+      <a href="ausruestung.html">Ausrüstung</a>
       <a href="ueber.html">Über</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <h1>Training</h1>
-  <p>Eigene Trainingsdaten, Wattwerte und Auswertungen – nachvollziehbar dokumentiert statt nur behauptet.</p>
-
-  <div class="dashboard-floater">
-    <div id="wattbuero-dashboard">Lade Trainingsdaten…</div>
+  <div class="frame seitenkopf">
+    <h1><span class="fett">Training</span><span class="duenn">vom Kilometer zum Ziel</span></h1>
+    <p>Vier Stationen, eine baut auf der vorigen auf: was ich fahre, wie es mir damit geht, was dabei herauskommt und wofür.</p>
   </div>
 
-  <div id="wattbuero-mini-stats">Lade Trainingsdaten…</div>
+  <div class="frame kette">
+    <nav class="kette-nav" aria-label="Stationen">
+      <a href="#s1" data-s="s1" class="aktiv"><span>01</span>Training</a>
+      <a href="#s2" data-s="s2"><span>02</span>Zustand</a>
+      <a href="#s3" data-s="s3"><span>03</span>Leistung</a>
+      <a href="#s4" data-s="s4"><span>04</span>Ziel</a>
+    </nav>
+    <nav class="fortschritt" aria-label="Stationen">
+      <a href="#s1" data-s="s1" class="aktiv" aria-label="01 Training"><span></span></a>
+      <a href="#s2" data-s="s2" aria-label="02 Zustand"><span></span></a>
+      <a href="#s3" data-s="s3" aria-label="03 Leistung"><span></span></a>
+      <a href="#s4" data-s="s4" aria-label="04 Ziel"><span></span></a>
+    </nav>
 
-  <div class="card-grid">
-    <a class="card" href="posts/training-112km-essenbach.html">
-      <span class="tag">Training</span>
-      <h3>112 km rund um Essenbach</h3>
-      <p>Lange Ausfahrt als Baustein auf dem Weg zur 300-km-Tour.</p>
-    </a>
-    <a class="card" href="posts/training-erste-auswertung.html">
-      <span class="tag">Training</span>
-      <h3>Meine ersten Wattmessungen im Vergleich</h3>
-      <p>Was die Zahlen wirklich über Fortschritt aussagen – und was nicht.</p>
-    </a>
+    <div>
+      <!-- 01 ------------------------------------------------------------ -->
+      <section class="station" id="s1" aria-labelledby="s1-t">
+        <div class="geist" aria-hidden="true">01</div>
+        <div class="station-kopf"><span class="nr">01 · Training</span><h2 id="s1-t">Was ich fahre</h2></div>
+        <div class="hauptzeile">
+          <div class="hauptzahl"><span class="z"><span id="t-km">–</span><small>km</small></span><span class="cap">in den letzten 28 Tagen</span></div>
+          <dl class="nebenwerte">
+            <div><dt id="t-n-l">Fahrten</dt><dd id="t-n">–</dd></div>
+            <div><dt>Höhenmeter</dt><dd id="t-hm">–</dd></div>
+            <div><dt>Fahrzeit</dt><dd id="t-h">–</dd></div>
+            <div id="t-pendel-w" hidden><dt>davon Pendeln</dt><dd id="t-pendel">–</dd></div>
+          </dl>
+        </div>
+        <figure class="diagramm" style="margin:0">
+          <svg id="c-monat" viewBox="0 0 760 300" role="img" aria-labelledby="c-monat-t"><title id="c-monat-t">Kilometer je Monat, draußen und auf der Rolle, letzte zwölf Monate</title></svg>
+          <figcaption class="quelle" id="q1">Strava · Stand –</figcaption>
+        </figure>
+        <div class="tabelle">
+          <table>
+            <caption class="quelle" style="caption-side:bottom;text-align:left;padding-top:8px">Letzte fünf Fahrten</caption>
+            <thead><tr><th scope="col">Datum</th><th scope="col">Fahrt</th><th scope="col">km</th><th scope="col">hm</th><th scope="col">Zeit</th><th scope="col">Ø W</th></tr></thead>
+            <tbody id="t-fahrten"><tr><td colspan="6" class="leer">Fahrten werden geladen …</td></tr></tbody>
+          </table>
+        </div>
+        <details class="herleitung">
+          <summary>Herleitung</summary>
+          <ol>
+            <li>Eingang: alle Radfahrten aus Strava, draußen, auf der Rolle (ROUVY) und Pendelfahrten.</li>
+            <li>Berechnung: Summe der Distanz im gleitenden Fenster der letzten 28 Tage; je Monat getrennt nach draußen und Rolle.</li>
+            <li>Ergebnis: die große Zahl oben. Die gestrichelte Linie im Diagramm ist der Monatsschnitt der vollen Monate.</li>
+            <li>Pendelfahrten zählen in alle Summen, erscheinen aber nie einzeln und nur auf 10 km gerundet. So lässt sich keine Strecke zurückrechnen.</li>
+          </ol>
+        </details>
+      </section>
+
+      <!-- 02 ------------------------------------------------------------ -->
+      <section class="station" id="s2" aria-labelledby="s2-t">
+        <div class="geist" aria-hidden="true">02</div>
+        <div class="station-kopf"><span class="nr">02 · Zustand</span><h2 id="s2-t">Wie es mir damit geht</h2></div>
+        <div class="hauptzahl"><span class="z" style="color:var(--ink-faint)">–</span><span class="cap">Form heute</span></div>
+        <div class="formskala" aria-hidden="true">
+          <div class="achse"><i style="left:0"></i><i style="left:25%"></i><i style="left:50%"></i><i style="left:75%"></i><i style="left:100%"></i></div>
+          <ol><li>Frisch</li><li>Produktiv</li><li>Ermüdet</li><li>Überlastet</li></ol>
+        </div>
+        <div class="leerzustand">
+          <p>Fitness, Ermüdung und Form kommen mit dem Garmin-Sync.</p>
+          <p class="klein">Dafür braucht es die Trainingsbelastung jeder Fahrt. Strava liefert sie nicht frei, Garmin schon. Sobald der Abruf läuft, steht hier der Formstand auf der Skala und die Kurve der letzten zwölf Wochen.</p>
+        </div>
+      </section>
+
+      <!-- 03 ------------------------------------------------------------ -->
+      <section class="station" id="s3" aria-labelledby="s3-t">
+        <div class="geist" aria-hidden="true">03</div>
+        <div class="station-kopf"><span class="nr">03 · Leistung</span><h2 id="s3-t">Was dabei herauskommt</h2></div>
+        <div class="hauptzeile">
+          <div class="hauptzahl"><span class="z"><span id="t-w">–</span><small>W</small></span><span class="cap">Ø Leistung, letzte 28 Tage</span></div>
+        </div>
+        <div class="leerzustand">
+          <p>Leistungskurve und Bestwerte kommen mit dem Garmin-Sync.</p>
+          <p class="klein">Dann zeigt die Kurve die besten Durchschnittswerte je Dauer, von 5 Sekunden bis 2 Stunden, für diese Saison und für alle Zeiten.</p>
+        </div>
+        <details class="herleitung">
+          <summary>Herleitung</summary>
+          <p>Durchschnittliche Leistung aller Fahrten mit Leistungsmesser im Fenster der letzten 28 Tage, wie Strava sie ausgibt. Fahrten ohne Leistungsmesser zählen nicht mit.</p>
+        </details>
+      </section>
+
+      <!-- 04 ------------------------------------------------------------ -->
+      <section class="station" id="s4" aria-labelledby="s4-t">
+        <div class="geist" aria-hidden="true">04</div>
+        <div class="station-kopf"><span class="nr">04 · Ziel</span><h2 id="s4-t">Wofür</h2></div>
+        <p class="lead">Granfondo Milano–Sanremo, die lange Runde mit knapp 300 km.</p>
+        <div class="hauptzeile">
+          <div class="hauptzahl"><span class="z"><span id="t-tage">–</span><small>Tage</small></span><span class="cap">bis zum Start am 06.06.2027</span></div>
+          <dl class="nebenwerte">
+            <div><dt>km seit 1. Januar</dt><dd id="t-jahr">–</dd></div>
+          </dl>
+        </div>
+        <div class="distanz">
+          <div class="bahn" aria-hidden="true"><span class="grund"></span><span class="fuell" style="width:37.6%"></span><span class="marke" style="left:37.6%"></span><span class="ende"></span></div>
+          <div class="skala"><span>0 km</span><span>längste Fahrt 112,3 km</span><span>299 km</span></div>
+        </div>
+        <details class="herleitung">
+          <summary>Herleitung</summary>
+          <p>Die längste dokumentierte Fahrt ist die Runde um Essenbach am 30.08.2026 mit 112,3 km. Das sind gut 37 % der Renndistanz von 299 km. Die Kilometer seit Jahresbeginn sind die Summe der Monate aus Strava.</p>
+        </details>
+      </section>
+    </div>
   </div>
 </main>
 
-<footer class="site-footer">
-  &copy; 2026 Wattbüro · <a href="ueber.html">Über diese Seite</a>
+<footer class="fuss">
+  <div class="frame">
+    <p class="name" aria-hidden="true">Wattbüro</p>
+    <div class="zeile">
+      <span>Rennrad-Logbuch · Watt für Watt</span>
+      <nav aria-label="Rechtliches"><a href="ueber.html">Über &amp; Impressum</a></nav>
+      <span>&copy; 2026</span>
+    </div>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="scripts/dashboard.js"></script>
-<script src="scripts/stats-widget.js"></script>
+<script src="scripts/testdaten.js"></script>
+<script src="scripts/training.js"></script>
 </body>
 </html>

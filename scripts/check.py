@@ -15,7 +15,7 @@ import re
 import sys
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
-VOID_TAGS = {"meta", "link", "br", "img", "input", "hr"}
+VOID_TAGS = {"meta", "link", "br", "img", "input", "hr", "source", "wbr", "track", "area", "col", "embed"}
 
 
 class TagChecker(html.parser.HTMLParser):

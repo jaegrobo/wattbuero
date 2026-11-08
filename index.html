@@ -2,68 +2,107 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Wattbüro – Rennrad, Watt für Watt</title>
-<meta name="description" content="Wattbüro: Ausrüstungstests, Trainingsdaten und Streckenberichte rund ums Rennradfahren.">
+<meta name="description" content="Wattbüro: Rennrad-Logbuch mit Trainingsdaten, Ausrüstungstests und Streckenberichten.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&family=IBM+Plex+Sans:wdth,wght@75..100,300..600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/wb.css">
 </head>
 <body data-root=".">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="index.html">Watt<span>büro</span></a>
-    <nav>
-      <a href="index.html" class="active">Start</a>
-      <a href="ausruestung.html">Ausrüstung</a>
+<header class="kopf">
+  <div class="frame">
+    <!-- Platzhalter: Wortmarke als Rasterbild aus dem Logo-Entwurf, wird durch SVG ersetzt -->
+    <a class="marke" href="index.html"><img src="images/start/wordmark-giallo.webp" width="990" height="173" alt="Wattbüro – zur Startseite"></a>
+    <nav aria-label="Hauptnavigation">
       <a href="training.html">Training</a>
       <a href="strecken.html">Strecken</a>
+      <a href="ausruestung.html">Ausrüstung</a>
       <a href="ueber.html">Über</a>
     </nav>
   </div>
 </header>
 
 <main>
+  <section class="startbild" aria-labelledby="titel">
+    <!-- Platzhalter bis zum Foto-Shooting (F-1): Aeroscoop-Freisteller schwarz-weiß auf dunklem Grund -->
+    <picture>
+      <source media="(max-width: 900px)" srcset="images/start/hero-aeroscoop-mobil.webp" type="image/webp">
+      <source media="(max-width: 900px)" srcset="images/start/hero-aeroscoop-mobil.jpg">
+      <source srcset="images/start/hero-aeroscoop-16x9.webp" type="image/webp">
+      <img src="images/start/hero-aeroscoop-16x9.jpg" width="1600" height="900" alt="Cinelli Aeroscoop in Schwarz-Weiß vor dunklem Hintergrund" fetchpriority="high">
+    </picture>
+    <div class="frame">
+      <h1 id="titel"><span class="fett">Watt für Watt</span><span class="duenn">ein Rennrad-Logbuch</span></h1>
+      <p class="satz">Trainingsdaten, Ausrüstung und Strecken eines Hobbyfahrers. Gemessen, nicht geschätzt.</p>
 
-  <section class="hero">
-    <h1>Watt für Watt zu mehr Leistung</h1>
-    <p>Ausrüstungstests, Trainingsdaten und Streckenberichte fürs Rennrad – aus erster Hand, ohne Marketing-Blabla.</p>
+      <dl class="kerninfo" id="kerninfo">
+        <div>
+          <dt>Form heute <span class="leer" id="ki-form-hinweis">· ab Garmin-Sync</span></dt>
+          <dd class="leer" id="ki-form">–</dd>
+        </div>
+        <div class="bemasst">
+          <dt>Kilometer</dt>
+          <dd><span class="masslinie" aria-hidden="true"><i></i><span>28 Tage</span><i></i></span><span id="ki-km">–</span></dd>
+        </div>
+        <div>
+          <dt>Tage bis Milano–Sanremo</dt>
+          <dd id="ki-tage">–</dd>
+        </div>
+      </dl>
+
+      <a class="aktion" href="training.html">Zum Training <span class="pfeil" aria-hidden="true">→</span></a>
+    </div>
   </section>
 
-  <div id="wattbuero-dashboard">Lade Trainingsdaten…</div>
-
-  <h2 class="section-title">Neueste Beiträge</h2>
-  <div class="card-grid">
-
-    <a class="card" href="posts/ausruestung-erster-test.html">
-      <span class="tag">Ausrüstung</span>
-      <h3>Erster Ausrüstungstest: Worauf es wirklich ankommt</h3>
-      <p>Ein strukturierter Blick auf Preis-Leistung statt Marketing-Versprechen.</p>
-    </a>
-
-    <a class="card" href="posts/training-erste-auswertung.html">
-      <span class="tag">Training</span>
-      <h3>Meine ersten Wattmessungen im Vergleich</h3>
-      <p>Was die Zahlen wirklich über Fortschritt aussagen – und was nicht.</p>
-    </a>
-
-    <a class="card" href="posts/strecken-erste-tour.html">
-      <span class="tag">Strecken</span>
-      <h3>Eine Tour, die sich wirklich lohnt</h3>
-      <p>Streckenprofil, Einkehrmöglichkeiten und ehrliche Schwierigkeitseinschätzung.</p>
-    </a>
-
-  </div>
-
+  <nav class="teaser" aria-label="Aktuell">
+    <div class="frame">
+      <a href="posts/ausruestung-cinelli-gazzetta-della-strada.html">
+        <span class="lab">Neuester Test</span>
+        <span class="titel">Cinelli Gazzetta della Strada</span>
+        <span class="wert">Juli 2026</span>
+      </a>
+      <a href="posts/training-112km-essenbach.html">
+        <span class="lab">Letzte Strecke</span>
+        <span class="titel">112 km rund um Essenbach</span>
+        <span class="wert">30.08.2026</span>
+      </a>
+      <a href="training.html">
+        <span class="lab">Training</span>
+        <span class="titel">Vom Kilometer zum Ziel</span>
+        <span class="wert" id="ki-stand">Strava · Stand –</span>
+      </a>
+    </div>
+  </nav>
+  <section class="beitraege frame" aria-labelledby="beitraege-titel">
+    <h2 id="beitraege-titel">Neueste Beiträge</h2>
+    <ol class="liste">
+        <li><a href="posts/training-112km-essenbach.html"><time datetime="2026-08-30">30.08.2026</time><span class="kat">Training</span><span class="t">112 km rund um Essenbach</span><span class="w">112,3 km · 348 hm</span></a></li>
+        <li><a href="posts/ausruestung-cinelli-gazzetta-della-strada.html"><time datetime="2026-07">Juli 2026</time><span class="kat">Ausrüstung</span><span class="t">Cinelli Gazzetta della Strada</span><span class="w">≈ 12,5 kg</span></a></li>
+        <li><a href="posts/ausruestung-erster-test.html"><time datetime="2026-05">Mai 2026</time><span class="kat">Ausrüstung</span><span class="t">Cinelli Aeroscoop – mein Aufbau</span><span class="w"></span></a></li>
+        <li><a href="posts/ausruestung-rose-backroad-ff.html"><time datetime="2025-12">Dez. 2025</time><span class="kat">Ausrüstung</span><span class="t">Rose Backroad FF – mein Gravel-Aufbau</span><span class="w">≈ 8 kg</span></a></li>
+        <li><a href="posts/ausruestung-tacx-neo-smart-t8000.html"><time datetime="2025-09">Sep. 2025</time><span class="kat">Ausrüstung</span><span class="t">Garmin Tacx Neo Smart T8000 Bike</span><span class="w"></span></a></li>
+        <li><a href="posts/ausruestung-cube-agree-c62-slx.html"><time datetime="2025-06">Juni 2025</time><span class="kat">Ausrüstung</span><span class="t">Cube Agree C:62 SLX</span><span class="w">≈ 7,5 kg</span></a></li>
+    </ol>
+    <!-- Ohne Datum, noch Platzhalter-Inhalte: posts/training-erste-auswertung.html, posts/strecken-erste-tour.html -->
+  </section>
 </main>
 
-<footer class="site-footer">
-  &copy; 2026 Wattbüro · <a href="ueber.html">Über diese Seite</a>
+<footer class="fuss">
+  <div class="frame">
+    <p class="name" aria-hidden="true">Wattbüro</p>
+    <div class="zeile">
+      <span>Rennrad-Logbuch · Watt für Watt</span>
+      <nav aria-label="Rechtliches"><a href="ueber.html">Über &amp; Impressum</a></nav>
+      <span>&copy; 2026</span>
+    </div>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="scripts/dashboard.js"></script>
+<script src="scripts/testdaten.js"></script>
+<script src="scripts/start.js"></script>
 </body>
 </html>

@@ -1,57 +1,54 @@
 <!--
-  ANLEITUNG ZUM DUPLIZIEREN (siehe auch README.md):
-  1. Diese Datei kopieren, z.B. auf GitHub.com im Repo-Ordner "posts/" auf "Add file" -> "Create new file"
-     klicken, den Inhalt dieser Datei hineinkopieren, Dateiname vergeben (z.B. posts/ausruestung-zweiter-test.html).
-  2. Alle [Platzhalter]-Texte unten ersetzen.
-  3. Titel/Meta-Description im <head> anpassen.
-  4. Die zutreffende Kategorie-Übersichtsseite (ausruestung.html / training.html / strecken.html)
-     ebenfalls öffnen und dort im card-grid eine neue <a class="card">-Karte mit Link auf den neuen Post ergänzen.
-  5. Commit -> Netlify baut die Seite automatisch neu (dauert ca. 1 Minute).
-
-  NUR BEI KATEGORIE = TRAINING zusätzlich:
-  - <body> zu <body data-root=".."> ändern (steht unten schon so, nicht nochmal ändern nötig)
-  - direkt nach der post-meta-Zeile den Block <div id="wattbuero-mini-stats">Lade Trainingsdaten…</div>
-    einfügen (steht unten schon drin) - zeigt automatisch die aktuellen 28-Tage-Werte aus Strava.
-  - vor </body> steht schon <script src="../scripts/stats-widget.js"></script> - nicht entfernen.
-  Bei Ausrüstung/Strecken-Posts beide Zeilen (Mini-Stats-Div + Script) wieder löschen, die gehören
-  nur zu Training-Posts.
-
-  Diesen Kommentarblock beim fertigen Post entfernen oder drin lassen, er wird nicht sichtbar angezeigt.
+  ANLEITUNG NEUER BEITRAG (Designsystem: design-system/wattbuero/MASTER.md)
+  1. Diese Datei nach posts/<kategorie>-<kurzer-titel>.html kopieren.
+  2. Alle [Platzhalter] ersetzen, Titel und Beschreibung im <head> anpassen.
+     Bei der Kategorie zusätzlich: aria-current="page" auf den passenden Menüpunkt
+     und den Zurück-Link (← Training / Strecken / Ausrüstung) anpassen.
+  3. Kerninfo-Leiste: nur Werte DIESES Beitrags (km, hm, Fahrzeit bzw. Gewicht), nie Zeitraum-Summen.
+     Fehlt ein Wert, die Zeile weglassen statt „–“ einzutragen.
+  4. Fotos: eigene Aufnahmen, werden automatisch schwarz-weiß dargestellt. Keine fremden Herstellerfotos ohne Lizenz.
+  5. Persönliche Einschätzungen nur von Robert, fehlende als [Platzhalter: …].
+  6. Den Beitrag auf der Übersichtsseite (training.html, strecken.html oder ausruestung.html)
+     und in der Beitragsliste auf index.html als neue Zeile eintragen (neueste zuerst).
+  7. Vor dem Commit: python3 scripts/check.py
 -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>[Platzhalter-Titel] – Wattbüro</title>
 <meta name="description" content="[Platzhalter: 1-2 Sätze Beschreibung für Suchmaschinen]">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&family=IBM+Plex+Sans:wdth,wght@75..100,300..600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../css/wb.css">
 </head>
 <body data-root="..">
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo" href="../index.html">Watt<span>büro</span></a>
-    <nav>
-      <a href="../index.html">Start</a>
-      <a href="../ausruestung.html">Ausrüstung</a>
-      <a href="../training.html">Training</a>
+<header class="kopf">
+  <div class="frame">
+    <a class="marke" href="../index.html"><img src="../images/start/wordmark-giallo.webp" width="990" height="173" alt="Wattbüro – zur Startseite"></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="../training.html" aria-current="page">Training</a>
       <a href="../strecken.html">Strecken</a>
+      <a href="../ausruestung.html">Ausrüstung</a>
       <a href="../ueber.html">Über</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <article class="post">
+  <article class="beitrag frame">
+    <a class="zurueck" href="../training.html">← [Ausrüstung/Training/Strecken]</a>
     <h1>[Platzhalter-Titel]</h1>
     <p class="post-meta">Kategorie: [Ausrüstung/Training/Strecken] · [Datum]</p>
-
-    <!-- Nur bei Kategorie Training drin lassen, sonst löschen: -->
-    <div id="wattbuero-mini-stats">Lade Trainingsdaten…</div>
+    <dl class="kerninfo beitrag-kern">
+      <div><dt>km</dt><dd>[Platzhalter]</dd></div>
+      <div><dt>hm</dt><dd>[Platzhalter]</dd></div>
+      <div><dt>h Fahrzeit</dt><dd>[Platzhalter]</dd></div>
+    </dl>
 
     <p>[Platzhalter-Text]</p>
 
@@ -65,11 +62,15 @@
   </article>
 </main>
 
-<footer class="site-footer">
-  &copy; 2026 Wattbüro · <a href="../ueber.html">Über diese Seite</a>
+<footer class="fuss">
+  <div class="frame">
+    <p class="name" aria-hidden="true">Wattbüro</p>
+    <div class="zeile">
+      <span>Rennrad-Logbuch · Watt für Watt</span>
+      <nav aria-label="Rechtliches"><a href="../ueber.html">Über &amp; Impressum</a></nav>
+      <span>&copy; 2026</span>
+    </div>
+  </div>
 </footer>
-
-<!-- Nur bei Kategorie Training drin lassen, sonst löschen: -->
-<script src="../scripts/stats-widget.js"></script>
 </body>
 </html>
