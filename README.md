@@ -82,9 +82,9 @@ Der Connector kann Projekte anlegen/verwalten (Name, Env-Variablen, Formulare, Z
 
 ## Rechtliches (vor dem Livegang prüfen)
 
-- **Impressumspflicht** nach § 5 TMG greift i. d. R. auch bei nebenberuflichen Seiten mit Affiliate-Links – noch nicht enthalten, ergänzen.
+- **Impressumspflicht** nach § 5 DDG (bis Mai 2024 § 5 TMG) greift i. d. R. auch bei nebenberuflichen Seiten mit Affiliate-Links – noch nicht enthalten, ergänzen.
 - **Affiliate-Kennzeichnung** ist in den Post-Vorlagen vorbereitet, muss pro Beitrag aktiv befüllt werden.
-- **[Prüfhinweis]:** Rechtsstand (TMG/UWG) kann sich seit meinem Wissensstand geändert haben – vor Livegang kurz gegenchecken, gerade weil du beruflich in einem regulierten Umfeld unterwegs bist.
+- **[Prüfhinweis]:** Rechtsstand (DDG/UWG) kann sich seit meinem Wissensstand geändert haben – vor Livegang kurz gegenchecken, gerade weil du beruflich in einem regulierten Umfeld unterwegs bist.
 
 ## Nächster Schritt
 
