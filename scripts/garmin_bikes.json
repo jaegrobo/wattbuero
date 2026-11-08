@@ -1,0 +1,6 @@
+{
+  "_hinweis": "Seriennummern der AXS-Komponenten je Rad. Ermitteln mit: python3 scripts/garmin_sync.py --discover. Wer sie nicht öffentlich haben will, trägt dieselbe Struktur ins GitHub Secret WB_RAEDER ein und lässt serials hier leer.",
+  "serials": {},
+  "indoor": "rolle",
+  "fallback_outdoor": "gazzetta"
+}

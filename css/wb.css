@@ -14,7 +14,7 @@
   --ink: #ecebe6;       /* 16,3:1 */
   --ink-dim: #a3a29c;   /* 7,6:1 */
   --ink-faint: #8a8984; /* 5,6:1 */
-  --marker: #f2c230;    /* Giallo, nur Linie/Markierung */
+  --marker: #f2c230;    /* Giallo, nur Linie/Markierung; wechselt mit dem Rennkalender (scripts/akzent.js) */
 
   /* Schrift */
   --display: "Science Gothic", "Arial Narrow", system-ui, sans-serif;
@@ -37,6 +37,11 @@
 
   color-scheme: dark;
 }
+/* Rennkalender-Akzent: Rosa (Giro), Giallo (Tour), Rosso (Vuelta). Rosso hat 4,8:1 und bleibt Linie, nie kleine Schrift. */
+html[data-akzent="rosa"]  { --marker: #f07fa8; }
+html[data-akzent="giallo"] { --marker: #f2c230; }
+html[data-akzent="rosso"] { --marker: #e8402f; }
+
 
 @media (max-width: 600px) {
   :root { --stretch-display: 104%; --stretch-number: 112%; }
@@ -71,7 +76,10 @@ a { color: inherit; }
   gap: var(--s4) var(--s6); flex-wrap: wrap;
   padding-block: var(--s4);
 }
-.kopf .marke img { height: 30px; width: auto; }
+.kopf .marke { display: block; line-height: 0; }
+.wortmarke { height: 30px; width: auto; display: block; }
+.wortmarke .hl { fill: var(--ink); }
+.wortmarke .ak { fill: var(--marker); }
 .kopf nav { display: flex; gap: var(--s2) var(--s5); flex-wrap: wrap; }
 .kopf nav a {
   font: 600 13px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
