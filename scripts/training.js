@@ -93,7 +93,7 @@
     var L = schmal ? 40 : 48, R = schmal ? 372 : 744, T = schmal ? 40 : 30, B = schmal ? 240 : 262;
     var werte = []; serie.forEach(function (p) { werte.push(p.ctl, p.atl, p.tsb); });
     var wMin = Math.min(0, Math.min.apply(null, werte)), wMax = Math.max(10, Math.max.apply(null, werte) * 1.1);
-    var schritt = (wMax - wMin) > 80 ? (schmal ? 40 : 20) : (schmal ? 20 : 10);
+    var schritt = [10, 20, 25, 50, 100, 200].filter(function (st) { return (wMax - wMin) / st <= (schmal ? 5 : 8); })[0] || 200;
     var lo = Math.floor(wMin / schritt) * schritt, hi = Math.ceil(wMax / schritt) * schritt; // Raster läuft immer durch 0
     var y = function (v) { return B - (v - lo) / (hi - lo) * (B - T); };
     var x = function (i) { return L + i / (serie.length - 1 || 1) * (R - L); };

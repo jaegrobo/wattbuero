@@ -18,7 +18,7 @@ Herkunft der Entscheidungen: Robert, Referenzbilder-Durchgang 02.11., Entscheidu
 6. **Kennzahlen zeigen ihre Herleitung**: Kette 01 Training → 02 Zustand → 03 Leistung → 04 Ziel.
 7. **Große, angeschnittene Zahlen** nur für echte Werte oder echte Abfolgen, nie als Deko.
 8. **Bemaßungsraster** als Markenelement (Messtechnik × Rennrad).
-9. **Akzent nur als Linie oder Markierung**, nie als Fläche. Farbton Giallo `#f2c230`, abgestimmt am 07.11.2026 (3:1 gegen Rosa `#f07fa8`). Einzige gelbe Fläche ist die Wortmarke im Logo.
+9. **Akzent nur als Linie oder Markierung**, nie als Fläche. Der Farbton folgt dem Rennkalender (entschieden 08.11.2026): Rosa `#f07fa8` bis zum Ende des Giro, Giallo `#f2c230` bis zum Ende der Tour, Rosso `#e8402f` bis zum Ende der Vuelta, danach wieder Rosa. Wechsel am Tag nach der Schlussetappe über `scripts/akzent.js`; ohne JavaScript Giallo. Einzige Fläche in Akzentfarbe ist „buero“ in der Wortmarke. Rosso (4,8:1) nur für Linien und Markierungen, nie für Text unter 18 px. (Vorher: Giallo fest, abgestimmt am 07.11.2026 mit 3:1 gegen Rosa.)
 10. **Statisches HTML/CSS/Vanilla-JS**, kein Build-Tool, keine erfundenen Zahlen.
 
 ---
@@ -35,7 +35,7 @@ Herkunft der Entscheidungen: Robert, Referenzbilder-Durchgang 02.11., Entscheidu
 | `--ink` | `#ecebe6` | Text, Hauptzahlen | 16,3:1 |
 | `--ink-dim` | `#a3a29c` | Nebentext, Labels, dünne Überschriftenzeile | 7,6:1 |
 | `--ink-faint` | `#8a8984` | kleinste Hinweise (≥ 12 px) | 5,6:1 |
-| `--marker` | `#f2c230` (Giallo) | aktive Station, aktueller Wert, Bestmarke, aktive Navigation | 11,6:1 (auf Foto-Grau `#3a3a3a` 6,8:1) |
+| `--marker` | wechselt: Rosa `#f07fa8` · Giallo `#f2c230` · Rosso `#e8402f` (Standard Giallo) | aktive Station, aktueller Wert, Bestmarke, aktive Navigation, Form-Linie | Rosa 7,7:1 · Giallo 11,6:1 · Rosso 4,8:1 |
 
 Regeln:
 - Keine weiteren Farben. Zustände (frisch, produktiv, ermüdet, überlastet) werden **in Worten und Form** gezeigt (Text, Position auf einer Skala), nicht über Ampelfarben.

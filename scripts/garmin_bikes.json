@@ -1,5 +1,5 @@
 {
-  "_hinweis": "Erkennung je Fahrt draußen: 1. bekannte Seriennummern (das Rad mit den meisten Treffern gewinnt; Räder ohne Leistungsmesser scheiden bei Fahrten mit Leistung aus), 2. Name des Radprofils am Edge, 3. sonst Gazzetta. Stand 08.11.2026 aus --discover über 25 Fahrten. Nebengeräte (vermutlich AXS-Hebel/Blips) sind dem Rad zugeordnet, mit dem sie gemeinsam auftraten.",
+  "_hinweis": "Erkennung je Fahrt draußen: 1. bekannte Seriennummern (das Rad mit den meisten Treffern gewinnt; Räder ohne Leistungsmesser scheiden bei Fahrten mit Leistung aus), 2. Name des Radprofils am Edge (Endurance = Cube, ARBEITSWEG = Gazzetta, Groß-/Kleinschreibung egal), 3. sonst Gazzetta. Stand 08.11.2026 aus --discover über 25 Fahrten. Nebengeräte (vermutlich AXS-Hebel/Blips) sind dem Rad zugeordnet, mit dem sie gemeinsam auftraten.",
   "serials": {
     "1536554937": "aeroscoop",
     "27968": "aeroscoop",
@@ -10,9 +10,13 @@
     "1527524625": "rose"
   },
   "profile": {
-    "Endurance": "cube"
+    "Endurance": "cube",
+    "ARBEITSWEG": "gazzetta"
   },
-  "ohne_leistungsmesser": ["cube", "gazzetta"],
+  "ohne_leistungsmesser": [
+    "cube",
+    "gazzetta"
+  ],
   "indoor": "rolle",
   "fallback_outdoor": "gazzetta"
 }
