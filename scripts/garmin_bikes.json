@@ -1,6 +1,18 @@
 {
-  "_hinweis": "Seriennummern der AXS-Komponenten je Rad. Ermitteln mit: python3 scripts/garmin_sync.py --discover. Wer sie nicht öffentlich haben will, trägt dieselbe Struktur ins GitHub Secret WB_RAEDER ein und lässt serials hier leer.",
-  "serials": {},
+  "_hinweis": "Erkennung je Fahrt draußen: 1. bekannte Seriennummern (das Rad mit den meisten Treffern gewinnt; Räder ohne Leistungsmesser scheiden bei Fahrten mit Leistung aus), 2. Name des Radprofils am Edge, 3. sonst Gazzetta. Stand 08.11.2026 aus --discover über 25 Fahrten. Nebengeräte (vermutlich AXS-Hebel/Blips) sind dem Rad zugeordnet, mit dem sie gemeinsam auftraten.",
+  "serials": {
+    "1536554937": "aeroscoop",
+    "27968": "aeroscoop",
+    "1139561777": "aeroscoop",
+    "1547591652": "aeroscoop",
+    "1223522510": "rose",
+    "3286696172": "rose",
+    "1527524625": "rose"
+  },
+  "profile": {
+    "Endurance": "cube"
+  },
+  "ohne_leistungsmesser": ["cube", "gazzetta"],
   "indoor": "rolle",
   "fallback_outdoor": "gazzetta"
 }
