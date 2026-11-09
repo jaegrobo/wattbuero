@@ -496,3 +496,24 @@ main > .datenschutz:last-child { padding-bottom: var(--s7); }
 .beitrag { max-width: var(--max); }
 .beitrag img, .beitrag .post-gallery { max-width: 860px; }
 .beitrag .post-meta { hyphens: manual; }
+
+/* Woche im Blick (01) */
+.woche { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); margin: 0 0 var(--s5); padding: var(--s3) 0; border-block: 1px solid var(--line-soft); }
+.woche dt { font: 400 13px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); }
+.woche dd { margin: var(--s1) 0 0; font: 400 16px/1.4 var(--mono); font-variant-numeric: tabular-nums; color: var(--ink-dim); }
+.woche .aktuell dd { color: var(--ink); }
+.woche .aktuell { border-left: 2px solid var(--marker); padding-left: var(--s2); }
+@media (max-width: 600px) { .woche { grid-template-columns: 1fr; } }
+
+/* Zählerstand (03) */
+.zaehler { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); margin: var(--s5) 0; }
+.zaehler .lab { font: 400 13px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); flex-basis: 100%; }
+.zaehler .ziffern { display: inline-flex; gap: 3px; }
+.zaehler .ziffern i { font: 600 28px/1 var(--mono); font-style: normal; font-variant-numeric: tabular-nums; color: var(--ink); border: 1px solid var(--line); background: var(--panel); padding: 8px 6px; min-width: 1.1em; text-align: center; }
+.zaehler .ziffern i.nk { color: var(--ink); border-color: var(--marker); }
+.zaehler .einheit { font: 400 16px var(--mono); color: var(--ink-dim); }
+.zaehler .klein { flex-basis: 100%; margin: 0; font-size: 16px; color: var(--ink-dim); }
+
+/* Kilometer je Rad (Ausrüstung) */
+.geraeteliste .km { font: 400 13px/1.4 var(--mono); letter-spacing: .04em; color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+.geraeteliste .km b { font-weight: 600; color: var(--ink); }

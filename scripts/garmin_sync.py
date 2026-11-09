@@ -310,6 +310,13 @@ def tss(a):
     return t if isinstance(t, (int, float)) and 0 < t < 600 else None
 
 
+def arbeit_kwh(a):
+    """Mechanische Arbeit einer Fahrt in kWh: Durchschnittsleistung × Fahrzeit laut Timer.
+    Garmins Durchschnitt enthält Rollphasen mit 0 W, passt also zur Timer-Zeit."""
+    w, t = a.get("avgPower"), a.get("duration")
+    return w * t / 3.6e6 if w and t else 0.0
+
+
 def training_load(rides, today):
     """CTL (42 Tage) und ATL (7 Tage) als exponentiell gleitende Mittel der täglichen TSS."""
     tss_day = {}
@@ -384,13 +391,60 @@ def summarize(acts, cache, zonen, prev, today=None):
             m["outdoor_km"] += km(a)
         m["elevation_m"] += round(hm(a)); m["rides"] += 1; m["hours"] += h(a)
         m["tss"] += round(tss(a) or 0)
+        p20 = a.get("maxAvgPower_1200")
+        if p20 and not a.get("excludeFromPowerCurveReports"):
+            m["best20_w"] = max(p20, m.get("best20_w", 0))
+        m["kwh"] = m.get("kwh", 0.0) + arbeit_kwh(a)
     monthly = []
     for ym in sorted(months)[-12:]:
         m = months[ym]
         for k in ("outdoor_km", "indoor_km", "hours"):
             m[k] = r1(m[k])
         m["commute_km"] = int(round(m["commute_km"] / 10) * 10)
+        m["kwh"] = round(m.get("kwh", 0.0), 2)
         monthly.append(m)
+
+    # Wochen (ISO, 26 Wochen, ältester zuerst), draußen inkl. Pendeln gegen Rolle
+    wochen = {}
+    for a in rides:
+        iso = local_dt(a).isocalendar()
+        wk = f"{iso[0]}-W{iso[1]:02d}"
+        w = wochen.setdefault(wk, {"woche": wk, "start": (local_dt(a).date() - timedelta(days=iso[2] - 1)).isoformat(),
+                                   "km": 0.0, "hours": 0.0, "outdoor_hours": 0.0, "indoor_hours": 0.0,
+                                   "elevation_m": 0, "tss": 0, "rides": 0})
+        w["km"] += km(a); w["hours"] += h(a); w["elevation_m"] += round(hm(a)); w["rides"] += 1
+        w["indoor_hours" if is_indoor(a) else "outdoor_hours"] += h(a)
+        w["tss"] += round(tss(a) or 0)
+    # leere Wochen auffüllen, damit Pausen sichtbar bleiben
+    montag = today - timedelta(days=today.isoweekday() - 1)
+    weekly = []
+    for i in range(25, -1, -1):
+        d = montag - timedelta(weeks=i)
+        iso = d.isocalendar()
+        wk = f"{iso[0]}-W{iso[1]:02d}"
+        w = wochen.get(wk, {"woche": wk, "start": d.isoformat(), "km": 0.0, "hours": 0.0, "outdoor_hours": 0.0,
+                            "indoor_hours": 0.0, "elevation_m": 0, "tss": 0, "rides": 0})
+        for k in ("km", "hours", "outdoor_hours", "indoor_hours"):
+            w[k] = r1(w[k])
+        weekly.append(w)
+
+    # Langstrecken über 150 km (draußen), mit früheren Läufen zusammengeführt
+    lang = {str(x["id"]): x for x in (prev or {}).get("long_rides", [])}
+    for a in rides:
+        if is_indoor(a) or km(a) < 150:
+            continue
+        fahr = a.get("movingDuration") or a.get("duration") or 0
+        ges = a.get("elapsedDuration") or fahr
+        lang[str(a.get("activityId"))] = {
+            "id": a.get("activityId"), "name": a.get("activityName") or "",
+            "date": local_dt(a).strftime("%Y-%m-%d"), "distance_km": r1(km(a)),
+            "elevation_gain_m": round(hm(a)), "moving_h": round(fahr / 3600, 2), "elapsed_h": round(ges / 3600, 2),
+            "pause_anteil": round(1 - fahr / ges, 3) if ges else None,
+            "np": a.get("normPower"), "average_watts": a.get("avgPower"),
+            "kj": round(arbeit_kwh(a) * 3600) or None, "rad": a["_rad"],
+            "avg_hr": a.get("averageHR"),
+        }
+    long_rides = sorted(lang.values(), key=lambda x: x["date"], reverse=True)
 
     # Jahr
     jahr = [a for a in rides if local_dt(a).year == today.year]
@@ -443,6 +497,16 @@ def summarize(acts, cache, zonen, prev, today=None):
         mit_tss = sum(1 for a in r28 if tss(a))
         load["abdeckung_28"] = {"mit_tss": mit_tss, "fahrten": len(r28)}
 
+    # Arbeit (kWh) je Monat dauerhaft fortschreiben, damit ein Vorjahresvergleich entsteht
+    energie = dict((prev or {}).get("energie_monate", {}))
+    for m in monthly:
+        energie[m["ym"]] = m["kwh"]
+    jahr_kwh = round(sum(v for k, v in energie.items() if k.startswith(str(today.year))), 1)
+    vorjahr = [v for k, v in energie.items() if k.startswith(str(today.year - 1))]
+    vorjahr_bis = round(sum(v for k, v in energie.items()
+                            if k.startswith(str(today.year - 1)) and k[5:] <= today.strftime("%m")), 1)
+    abdeckung_w = {"mit_leistung": sum(1 for a in jahr if a.get("avgPower")), "fahrten": len(jahr)}
+
     return {
         "source": "garmin",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -458,6 +522,12 @@ def summarize(acts, cache, zonen, prev, today=None):
         "last_bike": {"rad": letzte_draussen["_rad"],
                       "date": local_dt(letzte_draussen).strftime("%Y-%m-%d")} if letzte_draussen else None,
         "recent_activities": recent,
+        "weekly": weekly,
+        "long_rides": long_rides,
+        "energie_monate": dict(sorted(energie.items())),
+        "energie": {"jahr_kwh": jahr_kwh,
+                    "vorjahr_bis_heute_kwh": vorjahr_bis if len(vorjahr) >= 12 else None,
+                    "abdeckung": abdeckung_w},
     }
 
 
