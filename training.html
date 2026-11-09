@@ -61,6 +61,11 @@
             <div id="t-pendel-w" hidden><dt>davon Pendeln</dt><dd id="t-pendel">–</dd></div>
           </dl>
         </div>
+        <dl class="woche" id="w-block" hidden>
+          <div class="aktuell"><dt>Diese Woche</dt><dd id="w-jetzt">–</dd></div>
+          <div><dt>Vorwoche</dt><dd id="w-vor">–</dd></div>
+          <div><dt>Schnitt 12 Wochen</dt><dd id="w-schnitt">–</dd></div>
+        </dl>
         <figure class="diagramm" style="margin:0">
           <svg id="c-monat" viewBox="0 0 760 300" role="img" aria-labelledby="c-monat-t"><title id="c-monat-t">Kilometer je Monat, draußen und auf der Rolle, letzte zwölf Monate</title></svg>
           <figcaption class="quelle" id="q1">Stand –</figcaption>
@@ -92,6 +97,7 @@
           <dl class="nebenwerte">
             <div><dt>Fitness</dt><dd id="f-ctl">–</dd></div>
             <div><dt>Ermüdung</dt><dd id="f-atl">–</dd></div>
+            <div><dt>Aufbautempo</dt><dd id="f-ramp">–</dd></div>
             <div><dt>Fahrten mit Leistung</dt><dd id="f-abdeckung">–</dd></div>
           </dl>
         </div>
@@ -103,6 +109,10 @@
           <svg id="c-form" viewBox="0 0 760 300" role="img" aria-labelledby="c-form-t"><title id="c-form-t">Fitness, Ermüdung und Form der letzten zwölf Wochen</title></svg>
           <figcaption class="quelle" id="q2">Stand –</figcaption>
         </figure>
+        <figure class="diagramm" style="margin:0" id="wk-fig" hidden>
+          <svg id="c-wochen" viewBox="0 0 760 240" role="img" aria-labelledby="c-wochen-t"><title id="c-wochen-t">Trainingsbelastung je Woche, letzte 26 Wochen</title></svg>
+          <figcaption class="quelle">Trainingsbelastung (TSS) je Woche · gestrichelt: Schnitt der vollen Wochen</figcaption>
+        </figure>
         <div class="leerzustand" id="f-leer">
           <p>Fitness, Ermüdung und Form kommen mit dem Garmin-Sync.</p>
           <p class="klein">Dafür braucht es die Trainingsbelastung jeder Fahrt, und die liefert Garmin.</p>
@@ -113,6 +123,7 @@
             <li>Eingang: die Trainingsbelastung (TSS) jeder Fahrt mit Leistungsmesser, wie Garmin sie berechnet. Fahrten ohne Leistungsmesser haben keinen TSS und fehlen; wie viele das in den letzten 28 Tagen waren, steht oben.</li>
             <li>Fitness: gleitender Schnitt der täglichen Belastung über 42 Tage. Ermüdung: dasselbe über 7 Tage.</li>
             <li>Form = Fitness minus Ermüdung vom Vortag. Über +5 frisch, bis −10 produktiv, bis −30 ermüdet, darunter überlastet. Die Schwellen sind übliche Praxis, keine feste Norm.</li>
+            <li>Aufbautempo: Veränderung der Fitness in den letzten sieben Tagen. Mehr als etwa +8 pro Woche gilt als steil.</li>
             <li>Einzelne Fahrten mit über 600 TSS gelten als Messfehler und zählen nicht.</li>
           </ol>
         </details>
@@ -131,11 +142,19 @@
           <div><dt>5 min</dt><dd id="p-300">–</dd></div>
           <div><dt>20 min</dt><dd id="p-1200">–</dd></div>
           <div><dt>1 h</dt><dd id="p-3600">–</dd></div>
+          <div><dt>FTP geschätzt</dt><dd id="p-ftp">–</dd></div>
         </dl>
         <figure class="diagramm" style="margin:0" id="p-fig" hidden>
           <svg id="c-kurve" viewBox="0 0 760 300" role="img" aria-labelledby="c-kurve-t"><title id="c-kurve-t">Leistungskurve: beste Durchschnittsleistung je Dauer, Saison und alle Zeiten</title></svg>
           <figcaption class="quelle" id="q3">Stand –</figcaption>
         </figure>
+        <div class="zaehler" id="z-block" hidden>
+          <span class="lab">Zählerstand <span id="z-jahr"></span></span>
+          <span class="ziffern" id="z-ziffern" aria-hidden="true"></span>
+          <span class="einheit">kWh</span>
+          <span class="sr-only" id="z-text"></span>
+          <p class="klein" id="z-info"></p>
+        </div>
         <div class="leerzustand" id="p-leer">
           <p>Leistungskurve und Bestwerte kommen mit dem Garmin-Sync.</p>
           <p class="klein">Dann zeigt die Kurve die besten Durchschnittswerte je Dauer, von 1 Sekunde bis 5 Stunden, für diese Saison und für alle Zeiten.</p>
@@ -143,6 +162,8 @@
         <details class="herleitung">
           <summary>Herleitung</summary>
           <p>Große Zahl: durchschnittliche Leistung aller Fahrten mit Leistungsmesser in den letzten 28 Tagen, gewichtet nach Fahrzeit. Kurve: für jede Dauer die höchste Durchschnittsleistung einer einzelnen Fahrt, wie Garmin sie je Fahrt ausweist. „Saison“ ist das laufende Kalenderjahr, „alle Zeiten“ alles seit Beginn des Garmin-Abrufs. Fahrten, die in Garmin von der Leistungskurve ausgeschlossen sind, zählen nicht.</p>
+          <p>FTP geschätzt: beste 20-Minuten-Leistung der Saison mal 0,95. Eine Schätzung, kein Test.</p>
+          <p>Zählerstand: mechanische Arbeit an der Kurbel, Durchschnittsleistung mal Fahrzeit, summiert über alle Fahrten mit Leistungsmesser im laufenden Jahr. Der Körper setzt dafür etwa das Vier- bis Fünffache an Energie um.</p>
         </details>
       </section>
 
@@ -161,9 +182,17 @@
           <div class="bahn" aria-hidden="true"><span class="grund"></span><span class="fuell" id="d-fuell" style="width:0"></span><span class="marke" id="d-marke" style="left:0"></span><span class="ende"></span></div>
           <div class="skala"><span>0 km</span><span id="d-text">längste Fahrt –</span><span>299 km</span></div>
         </div>
+        <div class="tabelle" id="l-block" hidden>
+          <table>
+            <caption class="quelle" style="caption-side:bottom;text-align:left;padding-top:8px">Langstrecken-Logbuch: alle Fahrten draußen über 150 km</caption>
+            <thead><tr><th scope="col">Datum</th><th scope="col">km</th><th scope="col">hm</th><th scope="col">Fahrzeit</th><th scope="col">Pausen</th><th scope="col">NP</th></tr></thead>
+            <tbody id="l-fahrten"></tbody>
+          </table>
+        </div>
         <details class="herleitung">
           <summary>Herleitung</summary>
           <p>Die Bahn zeigt die längste Fahrt draußen in diesem Jahr im Verhältnis zur Renndistanz von 299 km. Die Kilometer seit Jahresbeginn sind alle Radfahrten des laufenden Jahres, draußen und auf der Rolle.</p>
+          <p>Langstrecken-Logbuch: Pausen sind der Anteil der Standzeit an der Gesamtzeit vom Start bis zum Ziel. Für 299 km mit Zeitlimit zählt jede Minute Stand mit.</p>
         </details>
       </section>
     </div>

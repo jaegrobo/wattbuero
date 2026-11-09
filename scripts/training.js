@@ -162,6 +162,46 @@
     return true;
   }
 
+  // 02 Wochenbelastung: TSS je Woche als Balken
+  function wochenDiagramm(wochen) {
+    var s = $('c-wochen'); if (!s || wochen.length < 2) return false;
+    var schmal = window.matchMedia('(max-width: 600px)').matches;
+    if (schmal) { wochen = wochen.slice(-13); s.setAttribute('viewBox', '0 0 380 240'); }
+    var L = schmal ? 40 : 48, R = schmal ? 372 : 744, T = 20, B = 200;
+    var voll = wochen.slice(0, -1).map(function (w) { return w.tss; });
+    var schnitt = voll.reduce(function (a, b) { return a + b; }, 0) / (voll.length || 1);
+    var max = Math.max.apply(null, wochen.map(function (w) { return w.tss; }).concat([schnitt, 10]));
+    var schritt = [50, 100, 200, 250, 500].filter(function (st) { return max / st <= 4; })[0] || 500;
+    var hi = Math.ceil(max * 1.1 / schritt) * schritt;
+    var y = function (v) { return B - v / hi * (B - T); };
+    for (var v = 0; v <= hi; v += schritt) {
+      el('line', { x1: L, x2: R, y1: y(v), y2: y(v), stroke: 'var(--line-soft)' }, s);
+      txt(s, L - 10, y(v) + 4, fmt(v), { 'text-anchor': 'end' });
+    }
+    var slot = (R - L) / wochen.length, bw = Math.min(slot * 0.7, 22);
+    wochen.forEach(function (w, i) {
+      var x = L + slot * i + (slot - bw) / 2, letzte = i === wochen.length - 1;
+      if (w.tss > 0) el('rect', { x: x, y: y(w.tss), width: bw, height: B - y(w.tss), fill: letzte ? 'none' : 'var(--ink-dim)', stroke: letzte ? 'var(--marker)' : 'none', 'stroke-width': 1.5 }, s);
+      var d = new Date(w.start + 'T12:00:00');
+      if (d.getDate() <= 7) txt(s, x + bw / 2, B + 20, MON[d.getMonth()], { 'text-anchor': 'middle' });
+    });
+    el('line', { x1: L, x2: R, y1: y(schnitt), y2: y(schnitt), stroke: 'var(--ink)', 'stroke-dasharray': '5 4' }, s);
+    return true;
+  }
+
+  // 03 Zählerstand: Ziffern wie am Stromzähler
+  function zaehler(kwh) {
+    var t = kwh.toFixed(1).padStart(6, '0'), z = $('z-ziffern'); if (!z) return;
+    z.innerHTML = '';
+    t.split('').forEach(function (c, i) {
+      if (c === '.') return;
+      var e = document.createElement('i'); e.textContent = c;
+      if (i === t.length - 1) e.className = 'nk';
+      z.appendChild(e);
+    });
+    set('z-text', fmt(kwh, 1) + ' kWh');
+  }
+
   var laden = function (datei) {
     return fetch(root + '/data/' + datei, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   };
@@ -204,6 +244,25 @@
         if (!ld.eingeschwungen) set('f-zustand', 'Form heute · ' + ld.zustand + ' (noch unter 6 Wochen Daten)');
       }
 
+      // 01 Woche im Blick
+      var wk = d.weekly || [];
+      if (wk.length >= 2) {
+        var zeile = function (w) { return fmt(Math.round(w.km)) + ' km · ' + fmt(w.hours, 1) + ' h · ' + fmt(w.elevation_m) + ' hm'; };
+        var jetzt = wk[wk.length - 1], vor = wk[wk.length - 2], zwoelf = wk.slice(-13, -1);
+        var mittel = function (k) { return zwoelf.reduce(function (a, w) { return a + w[k]; }, 0) / zwoelf.length; };
+        set('w-jetzt', zeile(jetzt));
+        set('w-vor', zeile(vor));
+        set('w-schnitt', zeile({ km: mittel('km'), hours: mittel('hours'), elevation_m: Math.round(mittel('elevation_m')) }));
+        var wb = $('w-block'); if (wb) wb.hidden = false;
+      }
+
+      // 02 Aufbautempo und Wochenbelastung
+      if (ld && ld.serie_84 && ld.serie_84.length > 7) {
+        var se = ld.serie_84, ramp = se[se.length - 1].ctl - se[se.length - 8].ctl;
+        set('f-ramp', (ramp >= 0 ? '+' : '−') + fmt(Math.abs(ramp), 1) + ' / Woche');
+      }
+      if (wk.length >= 2) { var wf = $('wk-fig'); if (wf && wochenDiagramm(wk)) wf.hidden = false; }
+
       // 03 Leistung
       var pc = d.power_curve;
       if (pc && pc.season && Object.keys(pc.season).length) {
@@ -211,6 +270,31 @@
         var pw = $('p-werte'); if (pw) pw.hidden = false;
         var pf = $('p-fig'); if (pf) { pf.hidden = false; if (!kurvenDiagramm(pc)) pf.hidden = true; }
         var pl = $('p-leer'); if (pl) pl.hidden = true;
+        if (pc.season['1200']) set('p-ftp', '≈ ' + fmt(Math.round(pc.season['1200'] * 0.95)) + ' W');
+      }
+      var en = d.energie;
+      if (en && en.jahr_kwh > 0) {
+        zaehler(en.jahr_kwh);
+        set('z-jahr', d.year ? d.year.jahr : '');
+        var info = 'Aus ' + en.abdeckung.mit_leistung + ' von ' + en.abdeckung.fahrten + ' Fahrten mit Leistungsmesser.';
+        if (en.vorjahr_bis_heute_kwh) info += ' Vorjahr bis heute: ' + fmt(en.vorjahr_bis_heute_kwh, 1) + ' kWh.';
+        set('z-info', info);
+        var zb = $('z-block'); if (zb) zb.hidden = false;
+      }
+
+      // 04 Langstrecken-Logbuch
+      var lr = d.long_rides || [];
+      if (lr.length) {
+        var tb = $('l-fahrten'); tb.innerHTML = '';
+        lr.forEach(function (r) {
+          var std = Math.floor(r.moving_h), min = Math.round((r.moving_h - std) * 60);
+          var tr = document.createElement('tr');
+          [datum(r.date), fmt(r.distance_km, 1), fmt(r.elevation_gain_m), std + ':' + String(min).padStart(2, '0') + ' h',
+           r.pause_anteil != null ? fmt(Math.round(r.pause_anteil * 100)) + ' %' : '–', r.np ? fmt(r.np) + ' W' : '–']
+            .forEach(function (v) { var td = document.createElement('td'); td.textContent = v; tr.appendChild(td); });
+          tb.appendChild(tr);
+        });
+        var lb = $('l-block'); if (lb) lb.hidden = false;
       }
 
       // 04 längste Fahrt im Verhältnis zur Renndistanz
