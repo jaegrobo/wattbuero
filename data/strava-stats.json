@@ -1,22 +1,16 @@
 {
   "rolling_28_days": {
-    "ride_count": 11,
-    "distance_km": 181.0,
-    "elevation_gain_m": 1316,
-    "moving_time_hours": 7.0,
-    "average_watts": 152
+    "ride_count": 14,
+    "distance_km": 243.0,
+    "elevation_gain_m": 1431,
+    "moving_time_hours": 9.1,
+    "average_watts": 153,
+    "commute": {
+      "count": 4,
+      "km_rounded": 30
+    }
   },
   "monthly": [
-    {
-      "ym": "2025-11",
-      "outdoor_km": 204.2,
-      "indoor_km": 195.1,
-      "commute_km": 0.0,
-      "elevation_m": 4275,
-      "rides": 14,
-      "hours": 17.2,
-      "avg_cadence": 79.4
-    },
     {
       "ym": "2025-12",
       "outdoor_km": 189.0,
@@ -39,9 +33,9 @@
     },
     {
       "ym": "2026-02",
-      "outdoor_km": 287.9,
+      "outdoor_km": 250.9,
       "indoor_km": 355.9,
-      "commute_km": 0.0,
+      "commute_km": 37.0,
       "elevation_m": 6172,
       "rides": 24,
       "hours": 26.1,
@@ -79,9 +73,9 @@
     },
     {
       "ym": "2026-06",
-      "outdoor_km": 981.3,
+      "outdoor_km": 789.7,
       "indoor_km": 0.0,
-      "commute_km": 0.0,
+      "commute_km": 191.6,
       "elevation_m": 2957,
       "rides": 25,
       "hours": 37.9,
@@ -89,9 +83,9 @@
     },
     {
       "ym": "2026-07",
-      "outdoor_km": 1262.5,
+      "outdoor_km": 1003.1,
       "indoor_km": 0.0,
-      "commute_km": 19.1,
+      "commute_km": 278.5,
       "elevation_m": 7724,
       "rides": 31,
       "hours": 53.2,
@@ -99,9 +93,9 @@
     },
     {
       "ym": "2026-08",
-      "outdoor_km": 511.0,
+      "outdoor_km": 444.4,
       "indoor_km": 0.0,
-      "commute_km": 0.0,
+      "commute_km": 66.6,
       "elevation_m": 1443,
       "rides": 11,
       "hours": 19.1,
@@ -109,9 +103,9 @@
     },
     {
       "ym": "2026-09",
-      "outdoor_km": 856.0,
+      "outdoor_km": 810.5,
       "indoor_km": 0.0,
-      "commute_km": 0.0,
+      "commute_km": 45.6,
       "elevation_m": 3761,
       "rides": 18,
       "hours": 36.7,
@@ -119,27 +113,37 @@
     },
     {
       "ym": "2026-10",
-      "outdoor_km": 412.8,
+      "outdoor_km": 379.6,
       "indoor_km": 80.1,
-      "commute_km": 0.0,
+      "commute_km": 33.2,
       "elevation_m": 3410,
       "rides": 15,
       "hours": 20.8,
       "avg_cadence": 83.2
+    },
+    {
+      "ym": "2026-11",
+      "outdoor_km": 45.7,
+      "indoor_km": 83.9,
+      "commute_km": 0.0,
+      "elevation_m": 616,
+      "rides": 4,
+      "hours": 4.9,
+      "avg_cadence": 86.4
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 5145.0
+      "km": 5064.4
     },
     {
       "name": "Gravel",
-      "km": 2009.3
+      "km": 2055.1
     },
     {
       "name": "Virtual",
-      "km": 1628.9
+      "km": 1591.9
     },
     {
       "name": "E-Bike",
@@ -148,6 +152,42 @@
   ],
   "recent_activities": [
     {
+      "id": 20909356949,
+      "name": "Gravel-Fahrt zur Mittagszeit",
+      "date": "2026-11-08T12:25:57Z",
+      "distance_km": 45.7,
+      "elevation_gain_m": 88,
+      "moving_time_min": 117,
+      "average_watts": 145.6
+    },
+    {
+      "id": 20893161277,
+      "name": "ROUVY - W2 B Grundlage 90 min",
+      "date": "2026-11-07T10:48:07Z",
+      "distance_km": 34.7,
+      "elevation_gain_m": 230,
+      "moving_time_min": 76,
+      "average_watts": 153.2
+    },
+    {
+      "id": 20865618669,
+      "name": "ROUVY - W2 A 3x10 min @ 88%",
+      "date": "2026-11-05T05:55:04Z",
+      "distance_km": 24.0,
+      "elevation_gain_m": 146,
+      "moving_time_min": 50,
+      "average_watts": 161.1
+    },
+    {
+      "id": 20831390290,
+      "name": "ROUVY - W1 C Zone 2 + 6x10 s Sprint",
+      "date": "2026-11-02T16:55:01Z",
+      "distance_km": 25.2,
+      "elevation_gain_m": 152,
+      "moving_time_min": 53,
+      "average_watts": 160.2
+    },
+    {
       "id": 20806153206,
       "name": "ROUVY - Three Valley Lake from Sicamous | Canada",
       "date": "2026-10-31T15:22:10Z",
@@ -155,34 +195,7 @@
       "elevation_gain_m": 293,
       "moving_time_min": 81,
       "average_watts": 163.5
-    },
-    {
-      "id": 20781755158,
-      "name": "ROUVY - FTP Ramp Test",
-      "date": "2026-10-29T18:59:09Z",
-      "distance_km": 5.1,
-      "elevation_gain_m": 108,
-      "moving_time_min": 16,
-      "average_watts": 175.6
-    },
-    {
-      "id": 20755927039,
-      "name": "ROUVY - FTP Ramp Test",
-      "date": "2026-10-27T20:53:58Z",
-      "distance_km": 0.5,
-      "elevation_gain_m": 3,
-      "moving_time_min": 2,
-      "average_watts": 95.9
-    },
-    {
-      "id": 20755759465,
-      "name": "ROUVY - 20 min FTP Test (10 min Warm-Up)",
-      "date": "2026-10-27T20:25:04Z",
-      "distance_km": 5.5,
-      "elevation_gain_m": 119,
-      "moving_time_min": 17,
-      "average_watts": 161.6
     }
   ],
-  "generated_at": "2026-11-02T15:05:03.799327+00:00"
+  "generated_at": "2026-11-09T15:36:07.294156+00:00"
 }
