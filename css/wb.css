@@ -320,6 +320,12 @@ a { color: inherit; }
 .tabelle th:nth-child(-n+2), .tabelle td:nth-child(-n+2) { text-align: left; }
 .tabelle td:nth-child(2) { font-family: var(--body); font-size: 16px; }
 .tabelle td.leer { color: var(--ink-faint); }
+@media (max-width: 600px) {
+  #l-block table { min-width: 0; font-size: 13px; }
+  #l-block th, #l-block td { padding: var(--s2) var(--s1); }
+  #l-block th:nth-child(5), #l-block td:nth-child(5) { display: none; } /* Pausen: nur Desktop */
+  #l-block th { font-size: 11px; letter-spacing: .04em; }
+}
 
 .leerzustand { border: 1px dashed var(--line); padding: var(--s5); display: grid; gap: var(--s3); max-width: 720px; }
 .leerzustand p { margin: 0; }
