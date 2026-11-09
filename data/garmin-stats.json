@@ -1,6 +1,6 @@
 {
  "source": "garmin",
- "generated_at": "2026-11-08T15:56:18+00:00",
+ "generated_at": "2026-11-09T12:59:23+00:00",
  "rolling_28_days": {
   "ride_count": 11,
   "distance_km": 209.9,
@@ -142,25 +142,19 @@
   },
   "rad_km": {
    "aeroscoop": 2456,
-   "cube": 1815,
-   "gazzetta": 70,
+   "cube": 1857,
+   "gazzetta": 99,
    "rolle": 962,
-   "rose": 1365
+   "rose": 1841
   }
  },
  "load": {
-  "ctl": 27.8,
-  "atl": 37.0,
-  "tsb": 3.2,
+  "ctl": 27.1,
+  "atl": 31.7,
+  "tsb": -9.2,
   "zustand": "Produktiv",
   "eingeschwungen": true,
   "serie_84": [
-   {
-    "d": "2026-08-17",
-    "ctl": 41.8,
-    "atl": 14.1,
-    "tsb": 26.4
-   },
    {
     "d": "2026-08-18",
     "ctl": 40.8,
@@ -658,6 +652,12 @@
     "ctl": 27.8,
     "atl": 37.0,
     "tsb": 3.2
+   },
+   {
+    "d": "2026-11-09",
+    "ctl": 27.1,
+    "atl": 31.7,
+    "tsb": -9.2
    }
   ],
   "abdeckung_28": {
