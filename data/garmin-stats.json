@@ -1,6 +1,6 @@
 {
  "source": "garmin",
- "generated_at": "2026-11-09T12:59:23+00:00",
+ "generated_at": "2026-11-09T15:24:25+00:00",
  "rolling_28_days": {
   "ride_count": 11,
   "distance_km": 209.9,
@@ -19,7 +19,9 @@
    "elevation_m": 4185,
    "rides": 16,
    "hours": 18.3,
-   "tss": 1382
+   "tss": 1382,
+   "best20_w": 199,
+   "kwh": 2.87
   },
   {
    "ym": "2026-01",
@@ -29,7 +31,9 @@
    "elevation_m": 4320,
    "rides": 18,
    "hours": 18.8,
-   "tss": 1413
+   "tss": 1413,
+   "best20_w": 215,
+   "kwh": 2.94
   },
   {
    "ym": "2026-02",
@@ -39,7 +43,9 @@
    "elevation_m": 6172,
    "rides": 24,
    "hours": 26.1,
-   "tss": 1794
+   "tss": 1794,
+   "best20_w": 213,
+   "kwh": 4.17
   },
   {
    "ym": "2026-03",
@@ -49,7 +55,9 @@
    "elevation_m": 4764,
    "rides": 21,
    "hours": 34.5,
-   "tss": 923
+   "tss": 923,
+   "best20_w": 198,
+   "kwh": 2.17
   },
   {
    "ym": "2026-04",
@@ -59,7 +67,9 @@
    "elevation_m": 2795,
    "rides": 14,
    "hours": 30.3,
-   "tss": 1489
+   "tss": 1489,
+   "best20_w": 197,
+   "kwh": 3.73
   },
   {
    "ym": "2026-05",
@@ -69,7 +79,9 @@
    "elevation_m": 5438,
    "rides": 12,
    "hours": 30.2,
-   "tss": 1146
+   "tss": 1146,
+   "best20_w": 213,
+   "kwh": 2.61
   },
   {
    "ym": "2026-06",
@@ -79,7 +91,9 @@
    "elevation_m": 2763,
    "rides": 12,
    "hours": 30.8,
-   "tss": 2183
+   "tss": 2183,
+   "best20_w": 199,
+   "kwh": 5.29
   },
   {
    "ym": "2026-07",
@@ -89,7 +103,9 @@
    "elevation_m": 7297,
    "rides": 12,
    "hours": 39.1,
-   "tss": 2041
+   "tss": 2041,
+   "best20_w": 225,
+   "kwh": 6.51
   },
   {
    "ym": "2026-08",
@@ -99,7 +115,9 @@
    "elevation_m": 1311,
    "rides": 6,
    "hours": 14.4,
-   "tss": 908
+   "tss": 908,
+   "best20_w": 220,
+   "kwh": 1.94
   },
   {
    "ym": "2026-09",
@@ -109,7 +127,9 @@
    "elevation_m": 3679,
    "rides": 11,
    "hours": 31.0,
-   "tss": 1692
+   "tss": 1692,
+   "kwh": 3.87,
+   "best20_w": 219
   },
   {
    "ym": "2026-10",
@@ -119,7 +139,9 @@
    "elevation_m": 3345,
    "rides": 11,
    "hours": 17.6,
-   "tss": 180
+   "tss": 180,
+   "best20_w": 179,
+   "kwh": 0.44
   },
   {
    "ym": "2026-11",
@@ -129,7 +151,9 @@
    "elevation_m": 616,
    "rides": 4,
    "hours": 4.9,
-   "tss": 280
+   "tss": 280,
+   "best20_w": 193,
+   "kwh": 0.83
   }
  ],
  "year": {
@@ -782,5 +806,347 @@
    "indoor": true,
    "rad": "rolle"
   }
- ]
+ ],
+ "weekly": [
+  {
+   "woche": "2026-W21",
+   "start": "2026-05-18",
+   "km": 51.2,
+   "hours": 1.7,
+   "outdoor_hours": 1.7,
+   "indoor_hours": 0.0,
+   "elevation_m": 78,
+   "tss": 132,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W22",
+   "start": "2026-05-25",
+   "km": 131.5,
+   "hours": 4.8,
+   "outdoor_hours": 4.8,
+   "indoor_hours": 0.0,
+   "elevation_m": 744,
+   "tss": 479,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W23",
+   "start": "2026-06-01",
+   "km": 321.5,
+   "hours": 11.9,
+   "outdoor_hours": 11.9,
+   "indoor_hours": 0.0,
+   "elevation_m": 1174,
+   "tss": 805,
+   "rides": 4
+  },
+  {
+   "woche": "2026-W24",
+   "start": "2026-06-08",
+   "km": 186.8,
+   "hours": 7.1,
+   "outdoor_hours": 7.1,
+   "indoor_hours": 0.0,
+   "elevation_m": 831,
+   "tss": 485,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W25",
+   "start": "2026-06-15",
+   "km": 219.7,
+   "hours": 7.7,
+   "outdoor_hours": 7.7,
+   "indoor_hours": 0.0,
+   "elevation_m": 485,
+   "tss": 533,
+   "rides": 3
+  },
+  {
+   "woche": "2026-W26",
+   "start": "2026-06-22",
+   "km": 66.5,
+   "hours": 2.5,
+   "outdoor_hours": 2.5,
+   "indoor_hours": 0.0,
+   "elevation_m": 159,
+   "tss": 180,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W27",
+   "start": "2026-06-29",
+   "km": 322.2,
+   "hours": 12.1,
+   "outdoor_hours": 12.1,
+   "indoor_hours": 0.0,
+   "elevation_m": 1343,
+   "tss": 911,
+   "rides": 5
+  },
+  {
+   "woche": "2026-W28",
+   "start": "2026-07-06",
+   "km": 218.0,
+   "hours": 8.3,
+   "outdoor_hours": 8.3,
+   "indoor_hours": 0.0,
+   "elevation_m": 1005,
+   "tss": 605,
+   "rides": 3
+  },
+  {
+   "woche": "2026-W29",
+   "start": "2026-07-13",
+   "km": 209.8,
+   "hours": 8.0,
+   "outdoor_hours": 8.0,
+   "indoor_hours": 0.0,
+   "elevation_m": 1303,
+   "tss": 705,
+   "rides": 3
+  },
+  {
+   "woche": "2026-W30",
+   "start": "2026-07-20",
+   "km": 312.6,
+   "hours": 12.3,
+   "outdoor_hours": 12.3,
+   "indoor_hours": 0.0,
+   "elevation_m": 3760,
+   "tss": 0,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W31",
+   "start": "2026-07-27",
+   "km": 0.0,
+   "hours": 0.0,
+   "outdoor_hours": 0.0,
+   "indoor_hours": 0.0,
+   "elevation_m": 0,
+   "tss": 0,
+   "rides": 0
+  },
+  {
+   "woche": "2026-W32",
+   "start": "2026-08-03",
+   "km": 23.7,
+   "hours": 0.9,
+   "outdoor_hours": 0.9,
+   "indoor_hours": 0.0,
+   "elevation_m": 41,
+   "tss": 68,
+   "rides": 1
+  },
+  {
+   "woche": "2026-W33",
+   "start": "2026-08-10",
+   "km": 39.8,
+   "hours": 1.5,
+   "outdoor_hours": 1.5,
+   "indoor_hours": 0.0,
+   "elevation_m": 76,
+   "tss": 143,
+   "rides": 1
+  },
+  {
+   "woche": "2026-W34",
+   "start": "2026-08-17",
+   "km": 154.9,
+   "hours": 5.6,
+   "outdoor_hours": 5.6,
+   "indoor_hours": 0.0,
+   "elevation_m": 661,
+   "tss": 165,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W35",
+   "start": "2026-08-24",
+   "km": 187.6,
+   "hours": 6.4,
+   "outdoor_hours": 6.4,
+   "indoor_hours": 0.0,
+   "elevation_m": 533,
+   "tss": 532,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W36",
+   "start": "2026-08-31",
+   "km": 206.8,
+   "hours": 8.3,
+   "outdoor_hours": 8.3,
+   "indoor_hours": 0.0,
+   "elevation_m": 1794,
+   "tss": 702,
+   "rides": 3
+  },
+  {
+   "woche": "2026-W37",
+   "start": "2026-09-07",
+   "km": 266.8,
+   "hours": 10.3,
+   "outdoor_hours": 10.3,
+   "indoor_hours": 0.0,
+   "elevation_m": 766,
+   "tss": 724,
+   "rides": 3
+  },
+  {
+   "woche": "2026-W38",
+   "start": "2026-09-14",
+   "km": 82.6,
+   "hours": 3.0,
+   "outdoor_hours": 3.0,
+   "indoor_hours": 0.0,
+   "elevation_m": 229,
+   "tss": 266,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W39",
+   "start": "2026-09-21",
+   "km": 82.5,
+   "hours": 3.6,
+   "outdoor_hours": 3.6,
+   "indoor_hours": 0.0,
+   "elevation_m": 627,
+   "tss": 0,
+   "rides": 1
+  },
+  {
+   "woche": "2026-W40",
+   "start": "2026-09-28",
+   "km": 425.5,
+   "hours": 17.9,
+   "outdoor_hours": 17.9,
+   "indoor_hours": 0.0,
+   "elevation_m": 2346,
+   "tss": 0,
+   "rides": 5
+  },
+  {
+   "woche": "2026-W41",
+   "start": "2026-10-05",
+   "km": 67.7,
+   "hours": 2.8,
+   "outdoor_hours": 2.8,
+   "indoor_hours": 0.0,
+   "elevation_m": 501,
+   "tss": 0,
+   "rides": 1
+  },
+  {
+   "woche": "2026-W42",
+   "start": "2026-10-12",
+   "km": 14.3,
+   "hours": 0.6,
+   "outdoor_hours": 0.0,
+   "indoor_hours": 0.6,
+   "elevation_m": 230,
+   "tss": 35,
+   "rides": 1
+  },
+  {
+   "woche": "2026-W43",
+   "start": "2026-10-19",
+   "km": 8.2,
+   "hours": 0.2,
+   "outdoor_hours": 0.0,
+   "indoor_hours": 0.2,
+   "elevation_m": 8,
+   "tss": 21,
+   "rides": 2
+  },
+  {
+   "woche": "2026-W44",
+   "start": "2026-10-26",
+   "km": 57.9,
+   "hours": 1.9,
+   "outdoor_hours": 0.0,
+   "indoor_hours": 1.9,
+   "elevation_m": 523,
+   "tss": 124,
+   "rides": 4
+  },
+  {
+   "woche": "2026-W45",
+   "start": "2026-11-02",
+   "km": 129.6,
+   "hours": 4.9,
+   "outdoor_hours": 1.9,
+   "indoor_hours": 3.0,
+   "elevation_m": 616,
+   "tss": 280,
+   "rides": 4
+  },
+  {
+   "woche": "2026-W46",
+   "start": "2026-11-09",
+   "km": 0.0,
+   "hours": 0.0,
+   "outdoor_hours": 0.0,
+   "indoor_hours": 0.0,
+   "elevation_m": 0,
+   "tss": 0,
+   "rides": 0
+  }
+ ],
+ "long_rides": [
+  {
+   "id": 23741613986,
+   "name": "Regensburg Gravel/Offroad-Radfahren",
+   "date": "2026-07-26",
+   "distance_km": 242.3,
+   "elevation_gain_m": 3576,
+   "moving_h": 9.82,
+   "elapsed_h": 11.37,
+   "pause_anteil": 0.136,
+   "np": 193.0,
+   "average_watts": 184.0,
+   "kj": 6512,
+   "rad": "aeroscoop",
+   "avg_hr": null
+  },
+  {
+   "id": 22903584738,
+   "name": "Beilngries Rennradfahren",
+   "date": "2026-05-16",
+   "distance_km": 217.4,
+   "elevation_gain_m": 2986,
+   "moving_h": 8.35,
+   "elapsed_h": 9.38,
+   "pause_anteil": 0.109,
+   "np": null,
+   "average_watts": null,
+   "kj": null,
+   "rad": "cube",
+   "avg_hr": null
+  }
+ ],
+ "energie_monate": {
+  "2025-12": 2.87,
+  "2026-01": 2.94,
+  "2026-02": 4.17,
+  "2026-03": 2.17,
+  "2026-04": 3.73,
+  "2026-05": 2.61,
+  "2026-06": 5.29,
+  "2026-07": 6.51,
+  "2026-08": 1.94,
+  "2026-09": 3.87,
+  "2026-10": 0.44,
+  "2026-11": 0.83
+ },
+ "energie": {
+  "jahr_kwh": 34.5,
+  "vorjahr_bis_heute_kwh": null,
+  "abdeckung": {
+   "mit_leistung": 116,
+   "fahrten": 145
+  }
+ }
 }
