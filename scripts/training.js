@@ -82,7 +82,7 @@
     el('line', { x1: L, x2: R, y1: y(schnitt), y2: y(schnitt), stroke: 'var(--ink)', 'stroke-width': 1, 'stroke-dasharray': '5 5' }, s);
     txt(s, L + 4, y(schnitt) - 8, 'Ø ' + fmt(Math.round(schnitt)) + ' km' + (schmal ? '' : ' je Monat')).style.fill = 'var(--ink)';
     // Legende als direkte Beschriftung
-    txt(s, R, T - (schmal ? 14 : 6), schmal ? 'gefüllt draußen · schraffiert Rolle · gepunktet Pendeln' : 'gefüllt: draußen · schraffiert: Rolle · gepunktet: Pendeln', { 'text-anchor': 'end' });
+    txt(s, R, T - (schmal ? 14 : 6), schmal ? 'Rad voll · Rolle schraffiert · Pendeln gepunktet' : 'gefüllt: draußen · schraffiert: Rolle · gepunktet: Pendeln', { 'text-anchor': 'end' });
   }
 
   // 02 Formverlauf: Fitness, Ermüdung, Form über 12 Wochen
