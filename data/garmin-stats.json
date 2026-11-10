@@ -1,13 +1,13 @@
 {
  "source": "garmin",
- "generated_at": "2026-11-09T15:24:25+00:00",
+ "generated_at": "2026-11-10T12:44:23+00:00",
  "rolling_28_days": {
-  "ride_count": 11,
-  "distance_km": 209.9,
-  "elevation_gain_m": 1377,
-  "moving_time_hours": 7.6,
-  "average_watts": 165,
-  "tss": 461,
+  "ride_count": 12,
+  "distance_km": 232.8,
+  "elevation_gain_m": 1493,
+  "moving_time_hours": 8.4,
+  "average_watts": 164,
+  "tss": 504,
   "commute": null
  },
  "monthly": [
@@ -146,20 +146,20 @@
   {
    "ym": "2026-11",
    "outdoor_km": 45.7,
-   "indoor_km": 83.9,
+   "indoor_km": 106.7,
    "commute_km": 0,
-   "elevation_m": 616,
-   "rides": 4,
-   "hours": 4.9,
-   "tss": 280,
+   "elevation_m": 732,
+   "rides": 5,
+   "hours": 5.7,
+   "tss": 323,
    "best20_w": 193,
-   "kwh": 0.83
+   "kwh": 0.95
   }
  ],
  "year": {
   "jahr": 2026,
-  "distance_km": 7215.5,
-  "rides": 145,
+  "distance_km": 7238.4,
+  "rides": 146,
   "laengste_fahrt": {
    "distance_km": 242.3,
    "date": "2026-07-26"
@@ -168,23 +168,17 @@
    "aeroscoop": 2456,
    "cube": 1857,
    "gazzetta": 99,
-   "rolle": 962,
+   "rolle": 985,
    "rose": 1841
   }
  },
  "load": {
-  "ctl": 27.1,
-  "atl": 31.7,
-  "tsb": -9.2,
+  "ctl": 27.5,
+  "atl": 32.5,
+  "tsb": -9.7,
   "zustand": "Produktiv",
   "eingeschwungen": true,
   "serie_84": [
-   {
-    "d": "2026-08-18",
-    "ctl": 40.8,
-    "atl": 12.1,
-    "tsb": 27.8
-   },
    {
     "d": "2026-08-19",
     "ctl": 43.8,
@@ -679,14 +673,20 @@
    },
    {
     "d": "2026-11-09",
-    "ctl": 27.1,
-    "atl": 31.7,
+    "ctl": 28.1,
+    "atl": 37.9,
     "tsb": -9.2
+   },
+   {
+    "d": "2026-11-10",
+    "ctl": 27.5,
+    "atl": 32.5,
+    "tsb": -9.7
    }
   ],
   "abdeckung_28": {
-   "mit_tss": 11,
-   "fahrten": 11
+   "mit_tss": 12,
+   "fahrten": 12
   }
  },
  "power_curve": {
@@ -742,6 +742,19 @@
  },
  "recent_activities": [
   {
+   "id": 25022639983,
+   "name": "ROUVY - W2 C VO2 5x4 min @ 105%",
+   "date": "2026-11-09",
+   "distance_km": 22.9,
+   "elevation_gain_m": 116,
+   "moving_time_min": 48,
+   "average_watts": 151.0,
+   "np": 164.0,
+   "tss": 43,
+   "indoor": true,
+   "rad": "rolle"
+  },
+  {
    "id": 25009816473,
    "name": "Essenbach Gravel/Offroad-Radfahren",
    "date": "2026-11-08",
@@ -790,19 +803,6 @@
    "average_watts": 160.0,
    "np": 168.0,
    "tss": 49,
-   "indoor": true,
-   "rad": "rolle"
-  },
-  {
-   "id": 24918918063,
-   "name": "ROUVY - Three Valley Lake from Sicamous | Canada",
-   "date": "2026-10-31",
-   "distance_km": 46.7,
-   "elevation_gain_m": 293,
-   "moving_time_min": 81,
-   "average_watts": 164.0,
-   "np": 166.0,
-   "tss": 74,
    "indoor": true,
    "rad": "rolle"
   }
@@ -1086,13 +1086,13 @@
   {
    "woche": "2026-W46",
    "start": "2026-11-09",
-   "km": 0.0,
-   "hours": 0.0,
+   "km": 22.9,
+   "hours": 0.8,
    "outdoor_hours": 0.0,
-   "indoor_hours": 0.0,
-   "elevation_m": 0,
-   "tss": 0,
-   "rides": 0
+   "indoor_hours": 0.8,
+   "elevation_m": 116,
+   "tss": 43,
+   "rides": 1
   }
  ],
  "long_rides": [
@@ -1139,14 +1139,14 @@
   "2026-08": 1.94,
   "2026-09": 3.87,
   "2026-10": 0.44,
-  "2026-11": 0.83
+  "2026-11": 0.95
  },
  "energie": {
-  "jahr_kwh": 34.5,
+  "jahr_kwh": 34.6,
   "vorjahr_bis_heute_kwh": null,
   "abdeckung": {
-   "mit_leistung": 116,
-   "fahrten": 145
+   "mit_leistung": 117,
+   "fahrten": 146
   }
  }
 }
