@@ -1,13 +1,13 @@
 {
  "source": "garmin",
- "generated_at": "2026-11-11T11:56:24+00:00",
+ "generated_at": "2026-11-12T12:52:08+00:00",
  "rolling_28_days": {
-  "ride_count": 12,
-  "distance_km": 232.8,
-  "elevation_gain_m": 1493,
-  "moving_time_hours": 8.4,
-  "average_watts": 164,
-  "tss": 504,
+  "ride_count": 13,
+  "distance_km": 256.5,
+  "elevation_gain_m": 1629,
+  "moving_time_hours": 9.2,
+  "average_watts": 165,
+  "tss": 556,
   "commute": null
  },
  "monthly": [
@@ -146,20 +146,20 @@
   {
    "ym": "2026-11",
    "outdoor_km": 45.7,
-   "indoor_km": 106.7,
+   "indoor_km": 130.4,
    "commute_km": 0,
-   "elevation_m": 732,
-   "rides": 5,
-   "hours": 5.7,
-   "tss": 323,
+   "elevation_m": 868,
+   "rides": 6,
+   "hours": 6.5,
+   "tss": 375,
    "best20_w": 193,
-   "kwh": 0.95
+   "kwh": 1.09
   }
  ],
  "year": {
   "jahr": 2026,
-  "distance_km": 7238.4,
-  "rides": 146,
+  "distance_km": 7262.1,
+  "rides": 147,
   "laengste_fahrt": {
    "distance_km": 242.3,
    "date": "2026-07-26"
@@ -168,23 +168,17 @@
    "aeroscoop": 2456,
    "cube": 1857,
    "gazzetta": 99,
-   "rolle": 985,
+   "rolle": 1009,
    "rose": 1841
   }
  },
  "load": {
-  "ctl": 26.8,
-  "atl": 27.8,
-  "tsb": -5.0,
+  "ctl": 27.4,
+  "atl": 30.2,
+  "tsb": -7.2,
   "zustand": "Produktiv",
   "eingeschwungen": true,
   "serie_84": [
-   {
-    "d": "2026-08-20",
-    "ctl": 42.7,
-    "atl": 29.1,
-    "tsb": 9.9
-   },
    {
     "d": "2026-08-21",
     "ctl": 41.7,
@@ -679,14 +673,20 @@
    },
    {
     "d": "2026-11-11",
-    "ctl": 26.8,
-    "atl": 27.8,
+    "ctl": 28.0,
+    "atl": 35.2,
     "tsb": -5.0
+   },
+   {
+    "d": "2026-11-12",
+    "ctl": 27.4,
+    "atl": 30.2,
+    "tsb": -7.2
    }
   ],
   "abdeckung_28": {
-   "mit_tss": 12,
-   "fahrten": 12
+   "mit_tss": 13,
+   "fahrten": 13
   }
  },
  "power_curve": {
@@ -742,6 +742,19 @@
  },
  "recent_activities": [
   {
+   "id": 25047051863,
+   "name": "ROUVY - W3 A 3x10 min @ 91%",
+   "date": "2026-11-11",
+   "distance_km": 23.7,
+   "elevation_gain_m": 136,
+   "moving_time_min": 48,
+   "average_watts": 172.0,
+   "np": 182.0,
+   "tss": 52,
+   "indoor": true,
+   "rad": "rolle"
+  },
+  {
    "id": 25022639983,
    "name": "ROUVY - W2 C VO2 5x4 min @ 105%",
    "date": "2026-11-09",
@@ -790,19 +803,6 @@
    "average_watts": 161.0,
    "np": 167.0,
    "tss": 46,
-   "indoor": true,
-   "rad": "rolle"
-  },
-  {
-   "id": 24941440044,
-   "name": "ROUVY - W1 C Zone 2 + 6x10 s Sprint",
-   "date": "2026-11-02",
-   "distance_km": 25.2,
-   "elevation_gain_m": 152,
-   "moving_time_min": 53,
-   "average_watts": 160.0,
-   "np": 168.0,
-   "tss": 49,
    "indoor": true,
    "rad": "rolle"
   }
@@ -1086,13 +1086,13 @@
   {
    "woche": "2026-W46",
    "start": "2026-11-09",
-   "km": 22.9,
-   "hours": 0.8,
+   "km": 46.6,
+   "hours": 1.6,
    "outdoor_hours": 0.0,
-   "indoor_hours": 0.8,
-   "elevation_m": 116,
-   "tss": 43,
-   "rides": 1
+   "indoor_hours": 1.6,
+   "elevation_m": 252,
+   "tss": 95,
+   "rides": 2
   }
  ],
  "long_rides": [
@@ -1139,14 +1139,14 @@
   "2026-08": 1.94,
   "2026-09": 3.87,
   "2026-10": 0.44,
-  "2026-11": 0.95
+  "2026-11": 1.09
  },
  "energie": {
-  "jahr_kwh": 34.6,
+  "jahr_kwh": 34.8,
   "vorjahr_bis_heute_kwh": null,
   "abdeckung": {
-   "mit_leistung": 117,
-   "fahrten": 146
+   "mit_leistung": 118,
+   "fahrten": 147
   }
  }
 }
