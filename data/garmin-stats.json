@@ -1,6 +1,6 @@
 {
  "source": "garmin",
- "generated_at": "2026-11-12T12:52:08+00:00",
+ "generated_at": "2026-11-13T12:19:31+00:00",
  "rolling_28_days": {
   "ride_count": 13,
   "distance_km": 256.5,
@@ -173,18 +173,12 @@
   }
  },
  "load": {
-  "ctl": 27.4,
-  "atl": 30.2,
-  "tsb": -7.2,
+  "ctl": 26.7,
+  "atl": 25.9,
+  "tsb": -2.8,
   "zustand": "Produktiv",
   "eingeschwungen": true,
   "serie_84": [
-   {
-    "d": "2026-08-21",
-    "ctl": 41.7,
-    "atl": 24.9,
-    "tsb": 13.7
-   },
    {
     "d": "2026-08-22",
     "ctl": 40.7,
@@ -682,6 +676,12 @@
     "ctl": 27.4,
     "atl": 30.2,
     "tsb": -7.2
+   },
+   {
+    "d": "2026-11-13",
+    "ctl": 26.7,
+    "atl": 25.9,
+    "tsb": -2.8
    }
   ],
   "abdeckung_28": {
