@@ -523,3 +523,45 @@ main > .datenschutz:last-child { padding-bottom: var(--s7); }
 /* Kilometer je Rad (Ausrüstung) */
 .geraeteliste .km { font: 400 13px/1.4 var(--mono); letter-spacing: .04em; color: var(--ink-dim); font-variant-numeric: tabular-nums; }
 .geraeteliste .km b { font-weight: 600; color: var(--ink); }
+
+/* Streckenposts: Grafiken und Rad-Karte --------------------------------- */
+.beitrag .gen { display: grid; gap: var(--s4); min-width: 0; }
+.beitrag .gen > * { margin: 0; min-width: 0; }
+.beitrag .gen > h2 { margin-top: var(--s6); }
+.beitrag .gen > h2:first-child { margin-top: var(--s5); }
+.beitrag figure.graf { margin: 0; display: grid; gap: var(--s2); min-width: 0; }
+.beitrag figure.graf svg { width: 100%; height: auto; display: block; overflow: visible; }
+.beitrag figure.graf svg text { font: 400 13px var(--mono); fill: var(--ink-dim); }
+.beitrag figure.graf figcaption, .beitrag p.quelle { font: 400 13px/1.5 var(--mono); color: var(--ink-faint); max-width: 80ch; margin: 0; }
+.beitrag figure.kopf { background: var(--panel); border: 1px solid var(--line); padding: var(--s5) var(--s5) var(--s4); }
+.beitrag figure.kopf svg { max-height: 420px; }
+.beitrag .graf .fl { fill: var(--ghost); }
+.beitrag .graf .ln { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; }
+.beitrag .graf .an { fill: none; stroke: var(--marker); stroke-width: 3.4; stroke-linejoin: round; stroke-linecap: round; }
+.beitrag .graf .pt { fill: var(--marker); }
+.beitrag .graf text.hi { fill: var(--ink); font-weight: 600; }
+.beitrag .graf .gl { stroke: var(--line-soft); stroke-width: 1; }
+.beitrag .graf .rt { fill: none; stroke: var(--ink-faint); stroke-linejoin: round; stroke-linecap: round; }
+.beitrag .graf .rtk { fill: none; stroke: var(--marker); stroke-linejoin: round; stroke-linecap: round; }
+.beitrag .graf .b { fill: var(--ink-faint); }
+.beitrag .graf .bm { fill: var(--marker); }
+.beitrag .graf .b0 { fill: var(--line); }
+.beitrag .graf .ref { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 4 4; }
+.beitrag .graf text.refl { fill: var(--ink); }
+.beitrag .tabelle td.m { color: var(--marker); }
+.beitrag a.rad { display: grid; grid-template-columns: 96px 1fr; gap: var(--s4); align-items: center; width: fit-content; max-width: 100%;
+  border: 1px solid var(--line); background: var(--panel); padding: var(--s2) var(--s4) var(--s2) var(--s2); text-decoration: none; }
+.beitrag a.rad:hover { border-color: var(--marker); }
+.beitrag a.rad picture, .beitrag a.rad img { display: block; width: 96px; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; margin: 0; border: 0; filter: grayscale(1); }
+.rad-t { display: grid; gap: 2px; min-width: 0; }
+.rad-k { font: 400 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-dim); }
+.rad-n { font: 700 18px/1.2 var(--display); font-stretch: 108%; color: var(--ink); }
+.rad-l { font: 400 13px var(--mono); color: var(--ink-dim); text-decoration: underline; text-decoration-color: var(--marker); text-underline-offset: 4px; }
+@media (max-width: 600px) {
+  .beitrag figure.graf svg text { font-size: 30px; }
+  .beitrag figure.kopf { padding: var(--s3); }
+  .beitrag a.rad { grid-template-columns: 80px 1fr; gap: var(--s3); }
+  .beitrag a.rad picture, .beitrag a.rad img { width: 80px; }
+}
+
+.beitrag .gen .tabelle td { font-family: var(--mono); white-space: nowrap; }
