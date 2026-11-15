@@ -1,13 +1,13 @@
 {
  "source": "garmin",
- "generated_at": "2026-11-14T11:35:18+00:00",
+ "generated_at": "2026-11-15T12:00:24+00:00",
  "rolling_28_days": {
   "ride_count": 13,
-  "distance_km": 256.5,
-  "elevation_gain_m": 1629,
-  "moving_time_hours": 9.2,
-  "average_watts": 165,
-  "tss": 556,
+  "distance_km": 278.0,
+  "elevation_gain_m": 1650,
+  "moving_time_hours": 10.1,
+  "average_watts": 168,
+  "tss": 623,
   "commute": null
  },
  "monthly": [
@@ -145,21 +145,21 @@
   },
   {
    "ym": "2026-11",
-   "outdoor_km": 45.7,
+   "outdoor_km": 81.6,
    "indoor_km": 130.4,
    "commute_km": 0,
-   "elevation_m": 868,
-   "rides": 6,
-   "hours": 6.5,
-   "tss": 375,
+   "elevation_m": 1119,
+   "rides": 7,
+   "hours": 8.0,
+   "tss": 476,
    "best20_w": 193,
-   "kwh": 1.09
+   "kwh": 1.35
   }
  ],
  "year": {
   "jahr": 2026,
-  "distance_km": 7262.1,
-  "rides": 147,
+  "distance_km": 7297.9,
+  "rides": 148,
   "laengste_fahrt": {
    "distance_km": 242.3,
    "date": "2026-07-26"
@@ -169,22 +169,16 @@
    "cube": 1857,
    "gazzetta": 99,
    "rolle": 1009,
-   "rose": 1841
+   "rose": 1877
   }
  },
  "load": {
-  "ctl": 26.1,
-  "atl": 22.2,
-  "tsb": 0.8,
+  "ctl": 27.8,
+  "atl": 31.4,
+  "tsb": -8.2,
   "zustand": "Produktiv",
   "eingeschwungen": true,
   "serie_84": [
-   {
-    "d": "2026-08-23",
-    "ctl": 39.8,
-    "atl": 18.3,
-    "tsb": 19.4
-   },
    {
     "d": "2026-08-24",
     "ctl": 38.8,
@@ -679,9 +673,15 @@
    },
    {
     "d": "2026-11-14",
-    "ctl": 26.1,
-    "atl": 22.2,
+    "ctl": 28.5,
+    "atl": 36.6,
     "tsb": 0.8
+   },
+   {
+    "d": "2026-11-15",
+    "ctl": 27.8,
+    "atl": 31.4,
+    "tsb": -8.2
    }
   ],
   "abdeckung_28": {
@@ -738,9 +738,22 @@
  },
  "last_bike": {
   "rad": "rose",
-  "date": "2026-11-08"
+  "date": "2026-11-14"
  },
  "recent_activities": [
+  {
+   "id": 25075289255,
+   "name": "Essenbach Gravel/Offroad-Radfahren",
+   "date": "2026-11-14",
+   "distance_km": 35.8,
+   "elevation_gain_m": 251,
+   "moving_time_min": 87,
+   "average_watts": 182.0,
+   "np": 188.0,
+   "tss": 101,
+   "indoor": false,
+   "rad": "rose"
+  },
   {
    "id": 25047051863,
    "name": "ROUVY - W3 A 3x10 min @ 91%",
@@ -790,19 +803,6 @@
    "average_watts": 153.0,
    "np": 154.0,
    "tss": 59,
-   "indoor": true,
-   "rad": "rolle"
-  },
-  {
-   "id": 24971402291,
-   "name": "ROUVY - W2 A 3x10 min @ 88%",
-   "date": "2026-11-05",
-   "distance_km": 24.0,
-   "elevation_gain_m": 146,
-   "moving_time_min": 50,
-   "average_watts": 161.0,
-   "np": 167.0,
-   "tss": 46,
    "indoor": true,
    "rad": "rolle"
   }
@@ -1086,13 +1086,13 @@
   {
    "woche": "2026-W46",
    "start": "2026-11-09",
-   "km": 46.6,
-   "hours": 1.6,
-   "outdoor_hours": 0.0,
+   "km": 82.4,
+   "hours": 3.0,
+   "outdoor_hours": 1.5,
    "indoor_hours": 1.6,
-   "elevation_m": 252,
-   "tss": 95,
-   "rides": 2
+   "elevation_m": 503,
+   "tss": 196,
+   "rides": 3
   }
  ],
  "long_rides": [
@@ -1139,14 +1139,14 @@
   "2026-08": 1.94,
   "2026-09": 3.87,
   "2026-10": 0.44,
-  "2026-11": 1.09
+  "2026-11": 1.35
  },
  "energie": {
-  "jahr_kwh": 34.8,
+  "jahr_kwh": 35.0,
   "vorjahr_bis_heute_kwh": null,
   "abdeckung": {
-   "mit_leistung": 118,
-   "fahrten": 147
+   "mit_leistung": 119,
+   "fahrten": 148
   }
  }
 }
