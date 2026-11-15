@@ -2,9 +2,9 @@ name: Garmin Sync
 
 "on":
   schedule:
-    # täglich 04:17 UTC = 05:17/06:17 Uhr deutscher Zeit (krumme Minute: zur vollen
+    # wöchentlich sonntags 04:17 UTC = 05:17/06:17 Uhr deutscher Zeit (krumme Minute: zur vollen
     # Stunde sind die GitHub-Runner überlastet und starten oft verspätet)
-    - cron: "17 4 * * *"
+    - cron: "17 4 * * 0"
   workflow_dispatch: {}
 
 permissions:
