@@ -1,10 +1,10 @@
 {
   "rolling_28_days": {
-    "ride_count": 14,
-    "distance_km": 243.0,
-    "elevation_gain_m": 1431,
-    "moving_time_hours": 9.1,
-    "average_watts": 153,
+    "ride_count": 17,
+    "distance_km": 388.5,
+    "elevation_gain_m": 1900,
+    "moving_time_hours": 14.4,
+    "average_watts": 157,
     "commute": {
       "count": 4,
       "km_rounded": 30
@@ -123,27 +123,27 @@
     },
     {
       "ym": "2026-11",
-      "outdoor_km": 45.7,
-      "indoor_km": 83.9,
+      "outdoor_km": 158.9,
+      "indoor_km": 130.4,
       "commute_km": 0.0,
-      "elevation_m": 616,
-      "rides": 4,
-      "hours": 4.9,
-      "avg_cadence": 86.4
+      "elevation_m": 1315,
+      "rides": 8,
+      "hours": 10.8,
+      "avg_cadence": 87.0
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 5064.4
+      "km": 5033.8
     },
     {
       "name": "Gravel",
-      "km": 2055.1
+      "km": 2090.9
     },
     {
       "name": "Virtual",
-      "km": 1591.9
+      "km": 1488.2
     },
     {
       "name": "E-Bike",
@@ -152,6 +152,42 @@
   ],
   "recent_activities": [
     {
+      "id": 20999819928,
+      "name": "Mittagsradfahrt",
+      "date": "2026-11-15T11:52:51Z",
+      "distance_km": 77.4,
+      "elevation_gain_m": 196,
+      "moving_time_min": 172,
+      "average_watts": 170.1
+    },
+    {
+      "id": 20983493338,
+      "name": "Gravel-Fahrt zur Mittagszeit",
+      "date": "2026-11-14T11:27:38Z",
+      "distance_km": 35.8,
+      "elevation_gain_m": 251,
+      "moving_time_min": 88,
+      "average_watts": 154.1
+    },
+    {
+      "id": 20951042781,
+      "name": "ROUVY - W3 A 3x10 min @ 91%",
+      "date": "2026-11-11T19:26:51Z",
+      "distance_km": 23.7,
+      "elevation_gain_m": 136,
+      "moving_time_min": 48,
+      "average_watts": 171.8
+    },
+    {
+      "id": 20923419279,
+      "name": "ROUVY - W2 C VO2 5x4 min @ 105%",
+      "date": "2026-11-09T18:39:35Z",
+      "distance_km": 22.9,
+      "elevation_gain_m": 116,
+      "moving_time_min": 48,
+      "average_watts": 151.4
+    },
+    {
       "id": 20909356949,
       "name": "Gravel-Fahrt zur Mittagszeit",
       "date": "2026-11-08T12:25:57Z",
@@ -159,43 +195,7 @@
       "elevation_gain_m": 88,
       "moving_time_min": 117,
       "average_watts": 145.6
-    },
-    {
-      "id": 20893161277,
-      "name": "ROUVY - W2 B Grundlage 90 min",
-      "date": "2026-11-07T10:48:07Z",
-      "distance_km": 34.7,
-      "elevation_gain_m": 230,
-      "moving_time_min": 76,
-      "average_watts": 153.2
-    },
-    {
-      "id": 20865618669,
-      "name": "ROUVY - W2 A 3x10 min @ 88%",
-      "date": "2026-11-05T05:55:04Z",
-      "distance_km": 24.0,
-      "elevation_gain_m": 146,
-      "moving_time_min": 50,
-      "average_watts": 161.1
-    },
-    {
-      "id": 20831390290,
-      "name": "ROUVY - W1 C Zone 2 + 6x10 s Sprint",
-      "date": "2026-11-02T16:55:01Z",
-      "distance_km": 25.2,
-      "elevation_gain_m": 152,
-      "moving_time_min": 53,
-      "average_watts": 160.2
-    },
-    {
-      "id": 20806153206,
-      "name": "ROUVY - Three Valley Lake from Sicamous | Canada",
-      "date": "2026-10-31T15:22:10Z",
-      "distance_km": 46.7,
-      "elevation_gain_m": 293,
-      "moving_time_min": 81,
-      "average_watts": 163.5
     }
   ],
-  "generated_at": "2026-11-09T15:36:07.294156+00:00"
+  "generated_at": "2026-11-16T15:11:38.750458+00:00"
 }
