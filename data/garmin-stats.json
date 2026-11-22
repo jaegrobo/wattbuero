@@ -1,13 +1,13 @@
 {
  "source": "garmin",
- "generated_at": "2026-11-15T12:00:24+00:00",
+ "generated_at": "2026-11-22T12:32:50+00:00",
  "rolling_28_days": {
-  "ride_count": 13,
-  "distance_km": 278.0,
-  "elevation_gain_m": 1650,
-  "moving_time_hours": 10.1,
-  "average_watts": 168,
-  "tss": 623,
+  "ride_count": 14,
+  "distance_km": 437.5,
+  "elevation_gain_m": 2057,
+  "moving_time_hours": 15.9,
+  "average_watts": 176,
+  "tss": 1048,
   "commute": null
  },
  "monthly": [
@@ -145,82 +145,40 @@
   },
   {
    "ym": "2026-11",
-   "outdoor_km": 81.6,
-   "indoor_km": 130.4,
+   "outdoor_km": 232.9,
+   "indoor_km": 146.8,
    "commute_km": 0,
-   "elevation_m": 1119,
-   "rides": 7,
-   "hours": 8.0,
-   "tss": 476,
-   "best20_w": 193,
-   "kwh": 1.35
+   "elevation_m": 1534,
+   "rides": 10,
+   "hours": 14.0,
+   "tss": 923,
+   "best20_w": 203,
+   "kwh": 2.49
   }
  ],
  "year": {
   "jahr": 2026,
-  "distance_km": 7297.9,
-  "rides": 148,
+  "distance_km": 7465.6,
+  "rides": 151,
   "laengste_fahrt": {
    "distance_km": 242.3,
    "date": "2026-07-26"
   },
   "rad_km": {
-   "aeroscoop": 2456,
+   "aeroscoop": 2608,
    "cube": 1857,
    "gazzetta": 99,
-   "rolle": 1009,
+   "rolle": 1025,
    "rose": 1877
   }
  },
  "load": {
-  "ctl": 27.8,
-  "atl": 31.4,
-  "tsb": -8.2,
-  "zustand": "Produktiv",
+  "ctl": 33.2,
+  "atl": 49.1,
+  "tsb": -23.3,
+  "zustand": "Ermüdet",
   "eingeschwungen": true,
   "serie_84": [
-   {
-    "d": "2026-08-24",
-    "ctl": 38.8,
-    "atl": 15.7,
-    "tsb": 21.5
-   },
-   {
-    "d": "2026-08-25",
-    "ctl": 37.9,
-    "atl": 13.4,
-    "tsb": 23.1
-   },
-   {
-    "d": "2026-08-26",
-    "ctl": 37.0,
-    "atl": 11.5,
-    "tsb": 24.4
-   },
-   {
-    "d": "2026-08-27",
-    "ctl": 36.1,
-    "atl": 9.9,
-    "tsb": 25.5
-   },
-   {
-    "d": "2026-08-28",
-    "ctl": 40.0,
-    "atl": 37.0,
-    "tsb": 26.2
-   },
-   {
-    "d": "2026-08-29",
-    "ctl": 39.1,
-    "atl": 31.7,
-    "tsb": 3.0
-   },
-   {
-    "d": "2026-08-30",
-    "ctl": 46.0,
-    "atl": 74.6,
-    "tsb": 7.4
-   },
    {
     "d": "2026-08-31",
     "ctl": 44.9,
@@ -679,14 +637,56 @@
    },
    {
     "d": "2026-11-15",
-    "ctl": 27.8,
-    "atl": 31.4,
+    "ctl": 32.8,
+    "atl": 61.6,
     "tsb": -8.2
+   },
+   {
+    "d": "2026-11-16",
+    "ctl": 32.1,
+    "atl": 52.8,
+    "tsb": -28.7
+   },
+   {
+    "d": "2026-11-17",
+    "ctl": 31.3,
+    "atl": 45.2,
+    "tsb": -20.7
+   },
+   {
+    "d": "2026-11-18",
+    "ctl": 30.6,
+    "atl": 38.8,
+    "tsb": -13.9
+   },
+   {
+    "d": "2026-11-19",
+    "ctl": 30.4,
+    "atl": 36.5,
+    "tsb": -8.2
+   },
+   {
+    "d": "2026-11-20",
+    "ctl": 29.6,
+    "atl": 31.3,
+    "tsb": -6.2
+   },
+   {
+    "d": "2026-11-21",
+    "ctl": 34.0,
+    "atl": 57.3,
+    "tsb": -1.7
+   },
+   {
+    "d": "2026-11-22",
+    "ctl": 33.2,
+    "atl": 49.1,
+    "tsb": -23.3
    }
   ],
   "abdeckung_28": {
-   "mit_tss": 13,
-   "fahrten": 13
+   "mit_tss": 14,
+   "fahrten": 14
   }
  },
  "power_curve": {
@@ -737,10 +737,49 @@
   }
  },
  "last_bike": {
-  "rad": "rose",
-  "date": "2026-11-14"
+  "rad": "aeroscoop",
+  "date": "2026-11-21"
  },
  "recent_activities": [
+  {
+   "id": 25152604410,
+   "name": "Essenbach Rennradfahren",
+   "date": "2026-11-21",
+   "distance_km": 73.9,
+   "elevation_gain_m": 165,
+   "moving_time_min": 157,
+   "average_watts": 199.0,
+   "np": 203.0,
+   "tss": 213,
+   "indoor": false,
+   "rad": "aeroscoop"
+  },
+  {
+   "id": 25133755234,
+   "name": "ROUVY - W4 B Grundlage 75 min",
+   "date": "2026-11-19",
+   "distance_km": 16.3,
+   "elevation_gain_m": 54,
+   "moving_time_min": 33,
+   "average_watts": 144.0,
+   "np": 146.0,
+   "tss": 23,
+   "indoor": true,
+   "rad": "rolle"
+  },
+  {
+   "id": 25089243742,
+   "name": "Essenbach Rennradfahren",
+   "date": "2026-11-15",
+   "distance_km": 77.4,
+   "elevation_gain_m": 196,
+   "moving_time_min": 171,
+   "average_watts": 188.0,
+   "np": 194.0,
+   "tss": 211,
+   "indoor": false,
+   "rad": "aeroscoop"
+  },
   {
    "id": 25075289255,
    "name": "Essenbach Gravel/Offroad-Radfahren",
@@ -766,59 +805,9 @@
    "tss": 52,
    "indoor": true,
    "rad": "rolle"
-  },
-  {
-   "id": 25022639983,
-   "name": "ROUVY - W2 C VO2 5x4 min @ 105%",
-   "date": "2026-11-09",
-   "distance_km": 22.9,
-   "elevation_gain_m": 116,
-   "moving_time_min": 48,
-   "average_watts": 151.0,
-   "np": 164.0,
-   "tss": 43,
-   "indoor": true,
-   "rad": "rolle"
-  },
-  {
-   "id": 25009816473,
-   "name": "Essenbach Gravel/Offroad-Radfahren",
-   "date": "2026-11-08",
-   "distance_km": 45.7,
-   "elevation_gain_m": 88,
-   "moving_time_min": 116,
-   "average_watts": 186.0,
-   "np": 181.0,
-   "tss": 126,
-   "indoor": false,
-   "rad": "rose"
-  },
-  {
-   "id": 24995878917,
-   "name": "ROUVY - W2 B Grundlage 90 min",
-   "date": "2026-11-07",
-   "distance_km": 34.7,
-   "elevation_gain_m": 230,
-   "moving_time_min": 76,
-   "average_watts": 153.0,
-   "np": 154.0,
-   "tss": 59,
-   "indoor": true,
-   "rad": "rolle"
   }
  ],
  "weekly": [
-  {
-   "woche": "2026-W21",
-   "start": "2026-05-18",
-   "km": 51.2,
-   "hours": 1.7,
-   "outdoor_hours": 1.7,
-   "indoor_hours": 0.0,
-   "elevation_m": 78,
-   "tss": 132,
-   "rides": 2
-  },
   {
    "woche": "2026-W22",
    "start": "2026-05-25",
@@ -1086,13 +1075,24 @@
   {
    "woche": "2026-W46",
    "start": "2026-11-09",
-   "km": 82.4,
-   "hours": 3.0,
-   "outdoor_hours": 1.5,
+   "km": 159.8,
+   "hours": 5.9,
+   "outdoor_hours": 4.3,
    "indoor_hours": 1.6,
-   "elevation_m": 503,
-   "tss": 196,
-   "rides": 3
+   "elevation_m": 699,
+   "tss": 407,
+   "rides": 4
+  },
+  {
+   "woche": "2026-W47",
+   "start": "2026-11-16",
+   "km": 90.2,
+   "hours": 3.2,
+   "outdoor_hours": 2.6,
+   "indoor_hours": 0.6,
+   "elevation_m": 219,
+   "tss": 236,
+   "rides": 2
   }
  ],
  "long_rides": [
@@ -1139,14 +1139,14 @@
   "2026-08": 1.94,
   "2026-09": 3.87,
   "2026-10": 0.44,
-  "2026-11": 1.35
+  "2026-11": 2.49
  },
  "energie": {
-  "jahr_kwh": 35.0,
+  "jahr_kwh": 36.2,
   "vorjahr_bis_heute_kwh": null,
   "abdeckung": {
-   "mit_leistung": 119,
-   "fahrten": 148
+   "mit_leistung": 122,
+   "fahrten": 151
   }
  }
 }
