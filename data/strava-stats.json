@@ -1,13 +1,13 @@
 {
   "rolling_28_days": {
-    "ride_count": 17,
-    "distance_km": 388.5,
-    "elevation_gain_m": 1900,
-    "moving_time_hours": 14.4,
-    "average_watts": 157,
+    "ride_count": 16,
+    "distance_km": 454.9,
+    "elevation_gain_m": 2084,
+    "moving_time_hours": 16.7,
+    "average_watts": 156,
     "commute": {
-      "count": 4,
-      "km_rounded": 30
+      "count": 2,
+      "km_rounded": 20
     }
   },
   "monthly": [
@@ -123,19 +123,19 @@
     },
     {
       "ym": "2026-11",
-      "outdoor_km": 158.9,
-      "indoor_km": 130.4,
+      "outdoor_km": 232.9,
+      "indoor_km": 146.8,
       "commute_km": 0.0,
-      "elevation_m": 1315,
-      "rides": 8,
-      "hours": 10.8,
-      "avg_cadence": 87.0
+      "elevation_m": 1534,
+      "rides": 10,
+      "hours": 14.0,
+      "avg_cadence": 87.2
     }
   ],
   "sport_split": [
     {
       "name": "Rennrad",
-      "km": 5033.8
+      "km": 5107.7
     },
     {
       "name": "Gravel",
@@ -143,7 +143,7 @@
     },
     {
       "name": "Virtual",
-      "km": 1488.2
+      "km": 1394.0
     },
     {
       "name": "E-Bike",
@@ -151,6 +151,24 @@
     }
   ],
   "recent_activities": [
+    {
+      "id": 21071508921,
+      "name": "Mittagsradfahrt",
+      "date": "2026-11-21T12:22:29Z",
+      "distance_km": 73.9,
+      "elevation_gain_m": 165,
+      "moving_time_min": 158,
+      "average_watts": 179.9
+    },
+    {
+      "id": 21049934240,
+      "name": "ROUVY - W4 B Grundlage 75 min",
+      "date": "2026-11-19T18:52:38Z",
+      "distance_km": 16.3,
+      "elevation_gain_m": 54,
+      "moving_time_min": 33,
+      "average_watts": 144.1
+    },
     {
       "id": 20999819928,
       "name": "Mittagsradfahrt",
@@ -177,25 +195,7 @@
       "elevation_gain_m": 136,
       "moving_time_min": 48,
       "average_watts": 171.8
-    },
-    {
-      "id": 20923419279,
-      "name": "ROUVY - W2 C VO2 5x4 min @ 105%",
-      "date": "2026-11-09T18:39:35Z",
-      "distance_km": 22.9,
-      "elevation_gain_m": 116,
-      "moving_time_min": 48,
-      "average_watts": 151.4
-    },
-    {
-      "id": 20909356949,
-      "name": "Gravel-Fahrt zur Mittagszeit",
-      "date": "2026-11-08T12:25:57Z",
-      "distance_km": 45.7,
-      "elevation_gain_m": 88,
-      "moving_time_min": 117,
-      "average_watts": 145.6
     }
   ],
-  "generated_at": "2026-11-16T15:11:38.750458+00:00"
+  "generated_at": "2026-11-23T17:39:43.484613+00:00"
 }
